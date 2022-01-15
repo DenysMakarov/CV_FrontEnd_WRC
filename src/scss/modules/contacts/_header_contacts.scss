@@ -1,0 +1,49 @@
+
+
+.header_contacts_block{
+  color: $color-main-text;
+  padding-top: 10%;
+  padding-left: 100px;
+  text-align: left;
+
+  @media all and (max-width: 414px){
+    padding: 5%;
+    padding-top: 18%;
+  }
+}
+
+.header_contacts_first_text{
+  font-size: 60px;
+
+  @media all and (max-width: 414px){
+    font-size: 25px;
+  }
+}
+
+.header_contacts_second_text{
+  @media all and (max-width: 414px){
+    font-size: 15px;
+  }
+}
+
+
+
+.header_contacts_button{
+  border: none;
+  background: $color-contrast-line;
+  color:$color-main-text ;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+  outline: none !important;
+  animation-name: header_contacts_button;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+
+  a{
+    color: $color-main-text !important;
+    text-decoration: none;
+  }
+}
+

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+.all_tickets_block {
+  right: 5%;
+}
+
+.tickets_which_already_exist_block {
+  position: absolute;
+  width: 35%;
+  height: 80%;
+  right: 10%;
+  top: 10%;
+  color: white;
+  font-size: 50px;
+
+  @media all and (max-width: 414px){
+    height: 50%;
+    width: 40%;
+    font-size: 15px;
+  }
+
+
+  .your_tickets_array_cover {
+    margin-top: 5%;
+    width: 75%;
+    height: 85%;
+    position: absolute;
+    left: 10px;
+    transition: .3s;
+
+    animation-name: ticket_animation_appear;
+    animation-duration: .5s;
+
+    &:hover {
+      margin-top: 0;
+    }
+  }
+
+  .hide_ticket_button {
+    width: 15%;
+    height: 5%;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    outline: none !important;
+    border: none;
+    font-size: 15px;
+    display: none;
+    z-index: 90;
+    border-radius: 5px;
+
+    @media all and (max-width: 768px){
+      width: 20% !important;
+    }
+    @media all and (max-width: 414px){
+      font-size: 10px;
+      width: 300px !important;
+    }
+
+    &:hover{
+      border: 1px solid $color-contrast-line;
+    }
+  }
+
+  .hide_ticket_button_active{
+    display: block;
+  }
+
+  .your_tickets_active {
+    margin-top: 0;
+    width: 90%;
+    height: 100%;
+    left: -40% !important;
+    z-index: 40;
+    opacity: 1 !important;
+    transform: perspective(0) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0) translateY(0) translateZ(0) !important;
+  }
+
+  .your_tickets_array {
+    width: 100%;
+    height: 100%;
+    background: url("../img/ticketBg.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 5px;
+    position: absolute;
+    transform: perspective(900px) rotateX(-1deg) rotateY(-11deg) rotate(0deg) translateX(0) translateY(0) translateZ(0);
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+
+    @media all and (max-width: 414px){
+      padding: 5px;
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.your_tickets {
+  color: $main-bg;
+  width: 50%;
+  float: left;
+  margin-top: 5px;
+  text-align: left;
+  padding: 3px;
+  font-family: 'Abel', sans-serif;
+  font-size: 25px;
+
+  @media all and (max-width: 414px){
+    font-size: 10px;
+  }
+}
+
+.your_tickets_nameTicket {
+  position: absolute;
+  bottom: 3%;
+  font-size: 38px;
+  font-family: 'Righteous', cursive;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+
+}
+
+.your_tickets_price {
+  float: right;
+}
+
+.your_tickets_placeOfEvent, .your_tickets_dateOfEvent, .your_tickets_price {
+  text-align: right;
+}
+
+.qr_code {
+  font-size: 21px;
+  transform: rotate(-90deg);
+  position: absolute;
+  right: -8%;
+  width: 200px;
+  height: 100px;
+  bottom: 20%;
+  background: url("../img/qr_code.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media all and (max-width: 1440px) {
+    right: -10%;
+  }
+
+  @media all and (max-width: 414px){
+    width: 70px;
+    height: 30px;
+  }
+
+  p {
+    position: relative;
+    height: 15px;
+    //border: 1px solid red;
+  }
+}
+
+.passed_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  //border: 1px solid red;
+  //background: rgba(0,0,0,.8);
+
+  p {
+    margin: auto;
+    margin-top: 60%;
+    transform: rotate(-45deg);
+    border: 3px solid red;
+    border-radius: 10px;
+    color: red;
+  }
+}
+
+
+
+
+

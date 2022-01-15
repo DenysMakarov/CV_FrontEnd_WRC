@@ -1,0 +1,148 @@
+@import "works";
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+
+.portfolio_container {
+  width: 100%;
+  height: 100%;
+  background: $main-bg;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+
+  .portfolio_text {
+    color: $colors-number-menu;
+    opacity: .1;
+    position: absolute;
+
+
+    &:nth-child(5) {
+      font-family: 'Londrina Shadow', cursive;
+      font-size: 165px;
+      left: -5%;
+      top: 55%;
+
+      @media all and (min-width: 1920px){
+        left: 15%;
+      }
+    }
+
+    &:nth-child(6) {
+      font-family: 'Bungee Shade', cursive;
+      font-size: 145px;
+      right: -5%;
+      top: 10%;
+
+      @media all and (min-width: 1920px){
+        top: 10%;
+        right: 5%;
+      }
+    }
+
+    &:nth-child(7) {
+      font-family: 'Bungee Outline', cursive;
+      font-size: 105px;
+      right: 5%;
+      top: 80%;
+
+      @media all and (min-width: 1920px){
+        top: 85%;
+        right: 15%;
+      }
+    }
+  }
+
+  .portfolio_item_cover {
+    width: 50%;
+    height: 50%;
+    //border: 1px solid red;
+    position: relative;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+
+    .portfolio_items{
+      width: 90%;
+      height: 80%;
+      //border: 1px solid red;
+      position: absolute;
+    }
+
+    &:nth-child(1) .portfolio_items {
+      right: 0;
+      bottom: 0;
+      border-left: none;
+      border-top: none;
+    }
+    &:nth-child(2) .portfolio_items {
+      left: 0;
+      bottom: 0;
+      border-top: none;
+      border-right: none;
+    }
+    &:nth-child(3) .portfolio_items {
+      right: 0;
+      top: 0;
+      border-left: none;
+      border-bottom: none;
+    }
+    &:nth-child(4) .portfolio_items {
+      left: 0;
+      top: 0;
+      border-right: none;
+      border-bottom: none;;
+    }
+  }
+
+  .works_header_cover{
+    width: 100%;
+    position: absolute;
+    height: 15%;
+    top: 42.5%;
+
+    .works_header{
+      width: 18%;
+      height: 100%;
+      background: $main-bg;
+      position: relative;
+      margin: auto;
+    }
+  }
+
+  .portfolio_item{
+    width: 80%;
+    height: 90%;
+    //border: 1px solid red;
+    position: absolute;
+    color: white;
+  }
+
+  .portfolio_items_Magic, .portfolio_items_Restaurant{
+    right: 0;
+  }
+  .portfolio_items_Restaurant, .portfolio_items_Sneakers{
+    bottom: 0;
+  }
+}
+
+.works_header{
+  color: $colors-number-menu;
+  opacity: 1;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Outline', cursive;
+
+  .works_header_words{
+    opacity: 0;
+    animation-name: words_header_portfolio;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+  }
+
+}
