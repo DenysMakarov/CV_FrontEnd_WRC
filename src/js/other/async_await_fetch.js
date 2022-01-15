@@ -105,7 +105,7 @@
 //     let formData = new FormData(form) //// => будет передавать все данные с формы
 //     let obj = {}
 //     formData.forEach((el, key) => { // el => это значение из формы
-//         obj[key] = el               // ключи записаны в name в формме
+//         obj[key] = el               // ключи записаны в login в формме
 //     });
 //     getReq(url, obj) // => obj это data
 // }

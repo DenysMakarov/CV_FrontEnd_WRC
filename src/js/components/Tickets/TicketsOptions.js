@@ -46,7 +46,7 @@
 //         return (
 //             <div className="tickets_events">
 //                 {eventInfo.map((el) => (
-//                     <div data-name={el.textBottom}
+//                     <div data-login={el.textBottom}
 //                          key={el.imgPath}
 //                          className="tickets_option_cover">
 //

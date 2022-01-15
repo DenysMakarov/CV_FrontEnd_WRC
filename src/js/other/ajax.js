@@ -74,7 +74,7 @@
 // }, {"once": true})
 
 //// !!!!!!! ============== передача через new formData =======
-//// в форме в импутах должны быть name = ""
+//// в форме в импутах должны быть login = ""
 //// имена бывают email | text | file - для передачи файлов
 //     let form = document.getElementById("form")
 //
@@ -130,7 +130,7 @@
 //     let request = await fetch(url3)// => обращаемся к база данных на сервере
 //         .then(dataReq => dataReq.json()) // => получаем данные
 //         .then((dataReq) => {
-//             let result = dataReq.filter(el=> el.name == dataHost.name || el.email == dataHost.email); // => находим совпадения в базе с нашим обьектом
+//             let result = dataReq.filter(el=> el.login == dataHost.login || el.email == dataHost.email); // => находим совпадения в базе с нашим обьектом
 //             (result.length == 0)? result = true : result = false;
 //             return  result
 //         }).then((result)=>{ // передаем результат совпадения в след then
@@ -237,7 +237,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 
 // ----- POST -----
 // let user = {
-//     name: "Denys",
+//     login: "Denys",
 //     age: 34
 // }
 //

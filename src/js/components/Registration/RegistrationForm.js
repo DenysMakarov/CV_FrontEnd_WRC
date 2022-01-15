@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from "react-redux";
 import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
 import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
+import MyInput from "./MyInput";
+import {test} from "npm/lib/utils/module-name";
 
 const mapStateToProps = (state) => {
     return {
@@ -23,39 +25,46 @@ class RegistrationForm extends React.Component {
         super(props);
         this.state = {
             registration: {
-                id: "",
-                name: "",
+                // id: "",
+                login: "",
                 username: "",
                 email: "",
-                newPassword: "",
-                repeatPassword: ""
+                password: "",
+                repeatPassword: "",
+                phoneNumber: "",
+                address: {
+                    country: "",
+                    city: "",
+                    street: ""
+                }
             },
             users: "",
-            foundEmailInToDB: false
+            foundEmailInToDB: false,
+            conflictAddUser: true
         }
     }
 
-    componentDidMount() {
-        const {setUsers} = this.props
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(data => setUsers(data)) // add to redux
-            .then(() => {
-                // console.log(this.props)
-            })
-            .then(data => {
-                this.setState({
-                    registration: {
-                        id: this.props.users.length + 1,
-                        name: "",
-                        username: "",
-                        email: "",
-                        newPassword: "",
-                        repeatPassword: ""
-                    }
-                })
-            })
-    }
+    // componentDidMount() {
+    //     const {setUsers} = this.props
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(response => response.json())
+    //         .then(data => setUsers(data)) // add to redux
+    //         .then(() => {
+    //             // console.log(this.props)
+    //         })
+    //         .then(data => {
+    //             this.setState({
+    //                 registration: {
+    //                     id: this.props.users.length + 1,
+    //                     name: "",
+    //                     username: "",
+    //                     email: "",
+    //                     password: "",
+    //                     repeatPassword: ""
+    //                 }
+    //             })
+    //         })
+    // }
 
 
     // get param outside inputs and validation
@@ -93,13 +102,13 @@ class RegistrationForm extends React.Component {
     }
 
     validationForm = () => {
-        const {name, username, email, newPassword, repeatPassword} = this.state.registration
-        const nameInput = document.getElementById("name")
+        const {login, username, email, password, repeatPassword} = this.state.registration
+        const nameInput = document.getElementById("login")
         const usernameInput = document.getElementById("username")
         const nameError = document.getElementById("nameError")
         const usernameError = document.getElementById("usernameError")
         const emailForm = document.getElementById("email")
-        const newPass = document.getElementById("newPassword")
+        const newPass = document.getElementById("password")
         const emailInvalid = document.getElementById("emailError")
         const passwordInvalid = document.getElementById("passError")
         const passwordRepeatInput = document.getElementById("repeatPassword")
@@ -119,8 +128,8 @@ class RegistrationForm extends React.Component {
             border: "2px solid transparent"
         }
 
-        if (name === "") {
-            nameError.innerText = "Please write your`s name"
+        if (login === "") {
+            nameError.innerText = "Please write your`s login"
             nameInput.style.border = styleError.border
         } else {
             nameError.innerText = ""
@@ -128,7 +137,7 @@ class RegistrationForm extends React.Component {
         }
 
         if (username === "") {
-            usernameError.innerText = "Please write your`s second name"
+            usernameError.innerText = "Please write your`s second login"
             usernameInput.style.border = styleError.border
         } else {
             usernameError.innerText = ""
@@ -147,23 +156,23 @@ class RegistrationForm extends React.Component {
         }
 
         // add error if smt wrong in ti the inputs
-        if (!isLowerWord(newPassword)) {
+        if (!isLowerWord(password)) {
             errorTextPass.push(" Please enter a-z")
         }
-        if (!isUpperWord(newPassword)) {
+        if (!isUpperWord(password)) {
             errorTextPass.push(" Please enter A-Z")
         }
-        if (!isNumber(newPassword)) {
+        if (!isNumber(password)) {
             errorTextPass.push(" Please enter 0-9")
         }
-        if (!isNumber(newPassword) || !isUpperWord(newPassword) || !isLowerWord(newPassword)) {
+        if (!isNumber(password) || !isUpperWord(password) || !isLowerWord(password)) {
             newPass.style.border = styleError.border
         } else {
             newPass.style.border = styleValid.border
         }
         passwordInvalid.innerText = errorTextPass
 
-        if (repeatPassword !== newPassword || repeatPassword === "") {
+        if (repeatPassword !== password || repeatPassword === "") {
             secondPassInvalid.innerText = "Password is not the same as above"
             passwordRepeatInput.style.border = styleError.border
         } else {
@@ -173,7 +182,7 @@ class RegistrationForm extends React.Component {
 
         // finally decision validated or not
         const {inValidForm, validForm} = this.props
-        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB === false && name !== "" && username !== "") {
+        if (isLowerWord(password) && isUpperWord(password) && isNumber(password) && repeatPassword === password && this.state.foundEmailInToDB === false && login !== "" && username !== "") {
             validForm()
         } else {
             inValidForm()
@@ -181,31 +190,43 @@ class RegistrationForm extends React.Component {
     }
 
     informPageAppear = () => {
-        const informPage = document.getElementById("informPage_cover")
-        const informPageText = document.getElementById("informPageText")
-        informPageText.innerText = this.state.registration.name + ", Thank you for registration!"
+        const informPage = document.getElementById("informPage_cover");
+        const informPageText = document.getElementById("informPageText");
+        let informText = (!this.state.conflictAddUser) ?
+            this.state.registration.login + ", Thank you for registration!"
+            : "User " + this.state.registration.login + " has already done. Please, choose another login"
+        informPageText.innerText = informText;
         informPage.style.display = "flex"
     }
 
     addUser = () => {
         const {validation} = this.props.validation
-
         if (validation) {
-            this.props.setUsers(this.state.registration)
-            this.props.inValidForm()
+            this.props.setUsers(this.state.registration);
+            this.props.inValidForm();
+            this.post();
+            console.log(this.state.conflictAddUser)
             this.setState({
                 registration: {
-                    id: this.props.users.length + 2,
-                    name: "",
+                    // id: this.props.users.length + 2,
+                    login: "",
                     username: "",
                     email: "",
-                    newPassword: "",
-                    repeatPassword: ""
+                    password: "",
+                    repeatPassword: "",
+                    phoneNumber: "",
+                    address: {
+                        country: "",
+                        city: "",
+                        street: ""
+                    }
                 },
                 users: "",
                 foundEmailInToDB: false
-            })
-            this.informPageAppear()
+            });
+
+            console.log(this.state.registration)
+            // this.informPageAppear()
         }
     }
 
@@ -216,6 +237,29 @@ class RegistrationForm extends React.Component {
         this.addUser()
     }
 
+    post = () => {
+        fetch("http://localhost:8080/user", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state.registration)
+        })
+            .then(data => {
+                if (data.status !== 409) {
+                    this.setState({
+                        conflictAddUser: false
+                    })
+                    console.log(this.state.conflictAddUser)
+                } else {
+                    this.setState({
+                        conflictAddUser: true
+                    })
+                }
+                this.informPageAppear()
+            })
+    }
+
 
     render() {
         return (
@@ -223,20 +267,29 @@ class RegistrationForm extends React.Component {
                   id="registration_block"
                   className="registration_block registration_panel">
                 <span className="name_of_block">REGISTRATION</span>
-                <label htmlFor="name">
+
+                {/*<button onClick={this.post}>PUSH</button>*/}
+                {/*<button onClick={this.get}>GET</button>*/}
+                {/*<MyInput*/}
+                {/*    props={this.state.registration}*/}
+                {/*    fun={this.changeValue}*/}
+                {/*    nameId={"login"}*/}
+                {/*></MyInput>*/}
+
+                <label htmlFor="login">
                     <span id="nameError" className="text_error"/>
-                    First Name
+                    Login
                 </label>
                 <input onChange={this.changeValue}
-                       id="name"
+                       id="login"
                        className="input_panel"
-                       name="name"
+                       name="login"
                        type="text"
-                       value={this.state.registration.name}
+                       value={this.state.registration.login}
                 />
                 <label htmlFor="username">
                     <span id="usernameError" className="text_error"/>
-                    Second Name
+                    Name
                 </label>
                 <input onChange={this.changeValue}
                        id="username"
@@ -256,16 +309,16 @@ class RegistrationForm extends React.Component {
                        name="email"
                        value={this.state.registration.email}
                 />
-                <label htmlFor="newPassword">
+                <label htmlFor="password">
                     <span id="passError" className="text_error"/>
-                    New Password
+                    Password
                 </label>
                 <input onChange={this.changeValue}
                        className="input_panel"
-                       id="newPassword"
-                       name="newPassword"
+                       id="password"
+                       name="password"
                        type="text"
-                       value={this.state.registration.newPassword}
+                       value={this.state.registration.password}
                 />
                 <label htmlFor="repeatPassword">
                     <span id="secondPassError" className="text_error"/>

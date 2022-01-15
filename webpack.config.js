@@ -14,6 +14,9 @@ module.exports = {
         // publicPath: '/',
         // publicPath: '/dist/'         //// что бы не добавлять этот путь в картиках нужно отключить и вкл в dev ser contentBase: path.join(__dirname, "dist")
     },
+    // resolve: {
+    //     extensions: ['.js', '.jsx']
+    // },
     module: {
         rules:[{
             test: /\.js$/,              //// берем все js и с помощью     $ - символизирует конец строки
@@ -26,7 +29,7 @@ module.exports = {
                     loader: "file-loader",
                     options: {
                         outputPath: 'img',
-                        name: '[name].[ext]',
+                        name: '[login].[ext]',
                         useRelativePath: true
                     }
                 },{
@@ -47,7 +50,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
                 outputPath:'fonts',
-                name:'[name].[ext]'
+                name:'[login].[ext]'
             }
         }, {
             test: /\.scss$/,
@@ -81,7 +84,7 @@ module.exports = {
     },
     plugins: [                      //// регестрируем плагины => смотр. на оф сфйтах
         new MiniCssExtractPlugin({
-            filename: "[name].css",
+            filename: "[login].css",
         }),
         new HtmlWebpackPlugin({
             template: "./src/index.html"

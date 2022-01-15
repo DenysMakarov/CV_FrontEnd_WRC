@@ -355,11 +355,11 @@
 // ---------- деструктуризация ----------------
 
 // const obj = {
-//     name: 'Joe',
+//     login: 'Joe',
 //     food: 'cake'
 // }
 //
-// const { name: myName, food: myFood } = obj;
+// const { login: myName, food: myFood } = obj;
 // console.log(myName, myFood);
 
 

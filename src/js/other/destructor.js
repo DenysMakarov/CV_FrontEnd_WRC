@@ -3,7 +3,7 @@
 
 //// ============ Object ===========
 // const obj = {
-//     name: 'Joe',
+//     login: 'Joe',
 //     job: 'baker',
 //     adress: {
 //         country: "USA",
@@ -12,15 +12,15 @@
 //     }
 // }
 
-// const { name: myName, job: myJob } = obj; // myName и myJob => переменные в которые мы помещаем ключи
+// const { login: myName, job: myJob } = obj; // myName и myJob => переменные в которые мы помещаем ключи
 // // тоже самое что и:
-// // let myName = obj.name
+// // let myName = obj.login
 // // let myJob = obj.job
 // console.log(myName, myJob);
 
 //// -------- или так --------
 // const {
-//     name: myName,
+//     login: myName,
 //     job : myJob,
 //     car = "BWM", //// => по дефолту если нет такого ключа
 //     adress: {city: homeTown, country} // => city присваеваем в переменную
@@ -28,8 +28,8 @@
 // console.log(myName, myJob, car, homeTown, country);
 
 //// ----------- или через ...rest
-// const {name, ...other} = obj;
-// console.log(name, other)
+// const {login, ...other} = obj;
+// console.log(login, other)
 // console.log(other.adress)
 
 //// ----------
@@ -38,7 +38,7 @@
 // console.log(a,b)
 
 //// ----------- или так ----------
-// function logPerson( { name: myName, job, car = "VW" } ) {
+// function logPerson( { login: myName, job, car = "VW" } ) {
 //     console.log(myName +" "+ job)
 // }
 // logPerson(obj);

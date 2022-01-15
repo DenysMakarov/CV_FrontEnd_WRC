@@ -82,7 +82,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 
 // ----- POST -----
 // let user = {
-//     name: "Denys",
+//     login: "Denys",
 //     age: 34
 // }
 //

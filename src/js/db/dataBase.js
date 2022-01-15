@@ -162,24 +162,24 @@ export const subMenu = {
     ],
     portfolio: [
         // {
-        //     name: "Game",
+        //     login: "Game",
         //     id: 10,
         //     link: ''
         // }, {
-        //     name: "MagicS",
+        //     login: "MagicS",
         //     id: 11,
         //     link: ''
         // }, {
-        //     name: "Footwear",
+        //     login: "Footwear",
         //     id: 12,
         //     link: ''
         // }, {
-        //     name: "Restaurant",
+        //     login: "Restaurant",
         //     id: 13,
         //     link: ''
         // },
         // {
-        //     name: "React",
+        //     login: "React",
         //     id: 14,
         //     link: ''
         // }

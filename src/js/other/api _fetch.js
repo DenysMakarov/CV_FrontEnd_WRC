@@ -1,7 +1,7 @@
 
 // ------------------- API FETCH ---------------------
 // let obj = {
-//     name: "Jack",
+//     login: "Jack",
 //     email: "J@gmail.com",
 //     job: 'actor'
 // };

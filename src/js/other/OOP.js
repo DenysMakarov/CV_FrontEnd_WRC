@@ -1,13 +1,13 @@
 // //
 // //// Part one  ----------------------- CLASS
 // class Animal {
-//     constructor(name, kind, age) {
-//         this.name = name;
+//     constructor(login, kind, age) {
+//         this.login = login;
 //         this.kind = kind
 //         this.age = age
 //     }
 //     aboutAnimal() {
-//         console.log(`my ${this.kind} called ${this.name}. He is ${this.age} years old`)
+//         console.log(`my ${this.kind} called ${this.login}. He is ${this.age} years old`)
 //     }
 // }
 // let animal = new Animal("Sam", "dog", 3);
@@ -15,8 +15,8 @@
 // animal.aboutAnimal();
 //
 // class Animal2 extends Animal {      ///-------------- => наследуем класс
-//     constructor(name, kind, age, weight) {
-//         super(name, kind, age);     ///-------------- => super - наследуем параметры класса через super
+//     constructor(login, kind, age, weight) {
+//         super(login, kind, age);     ///-------------- => super - наследуем параметры класса через super
 //         this.weight = weight
 //     }
 // }
@@ -129,25 +129,25 @@
 // class User {
 //     constructor() {}
 //
-//     set name(name){
-//         this._name = name.trim().toUpperCase()
+//     set login(login){
+//         this._name = login.trim().toUpperCase()
 //     }
-//     get name(){
+//     get login(){
 //         return this._name
 //     }
 //     // b = "bbb"
 // }
 //
 // let stu = new User();
-// stu.name = " Denys";
-// console.log(stu.name);
+// stu.login = " Denys";
+// console.log(stu.login);
 
 // // --------------------------- static method -----------------------
 // // ----  статические методы доступны из класса
 // class User {
 //
-//     constructor(name) {
-//         this.name = name;
+//     constructor(login) {
+//         this.login = login;
 //     }
 //
 //     static getRole() {
@@ -165,8 +165,8 @@
 // // console.log(User.test)
 //
 // class User2 extends User {
-//     constructor(name) {
-//         super(name);
+//     constructor(login) {
+//         super(login);
 //     }
 // }
 //
@@ -280,7 +280,7 @@
 
 /// ==========  Object ======== ///
 // let obj = {
-//     name: "Jack",
+//     login: "Jack",
 //     email: "J@gmail.com",
 //     job: 'actor'
 // };
@@ -289,8 +289,8 @@
 // x.__proto__ = obj
 // x.company = "VW"
 // console.log(x.hasOwnProperty('company'))  // true
-// console.log(x.hasOwnProperty('name'))     // false
-// delete x.name // останется от прототипа || удалить свойство которое унаследованно прототипом просто так нельзя
+// console.log(x.hasOwnProperty('login'))     // false
+// delete x.login // останется от прототипа || удалить свойство которое унаследованно прототипом просто так нельзя
 
 
 
