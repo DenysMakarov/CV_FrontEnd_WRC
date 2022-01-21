@@ -2,63 +2,70 @@ import React from 'react';
 import {useEffect, useRef, useState} from "react";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
-import {LOGIN, LOGOUT} from "../../types";
+import {ADD_USER, LOGIN, LOGOUT, REMOVE_USER} from "../../types";
+import {isAuthUser} from "../../redux/reducers/isAuthUser";
 
 
 const LoginForm = () => {
     const [auth, setAuth] = useState({login: '', password: ''});
+    // const [user, setUser] = useState({
+    //     login: '',
+    //     username: '',
+    //     email: '',
+    //     // password: '',
+    //     phoneNumber: '',
+    //     roles: '',
+    //     birthDate: '',
+    //     tickets: []
+    // })
     const dispatch = useDispatch();
     const isAuth = useSelector(state => state.loginReducer.login)
+    const userDetails = useSelector(state => state.isAuthUser.userDetails)
+    // console.log(userDetails)
 
     useEffect(() => {
-        if(localStorage.getItem('token')) {
-            dispatch({type: LOGIN})
+        const token = localStorage.getItem('token');
+        if (token) {
+            getUserDetails(token)
         }
     }, [])
 
+    useEffect(() => {
+        console.log(userDetails)
+    }, [userDetails])
+
     let logout = () => {
-        dispatch({type: LOGOUT})
-        localStorage.removeItem('token')
+        dispatch({type: LOGOUT});
+        localStorage.removeItem('token');
+        dispatch({type: REMOVE_USER})
     };
 
-    const getValueInput = (e) => {
-        e.preventDefault()
-        // const {name, value} = e.target
-        // // this.setState({
-        // //     [name]: value
-        // // })
-        setLogin(value)
-        setPassword(value)
-    }
 
     const logIn = async (e) => {
         e.preventDefault()
-        const base64decoder = btoa(auth.login + ':' + auth.password)
-        console.log(`Basic ${base64decoder}`)
+        const base64decoder = 'Basic ' + btoa(auth.login + ':' + auth.password)
+        await getUserDetails(base64decoder)
+    }
 
-        await fetch("http://localhost:8080/login", {
+    const getUserDetails = async (base64decoder) => {
+        return await fetch("http://localhost:8080/login", {
             method: 'post',
             headers: {
-                'Authorization': 'Basic ' + base64decoder,
+                'Authorization': base64decoder,
                 'Content-Type': 'application/json;charset=utf-8',
             },
         })
             .then(data => {
-                console.log(data.status)
-                    if (data.status == 200) {
-                        dispatch({type: LOGIN})
-                        localStorage.setItem('token', `Basic ${base64decoder}`)
-                    } else {
-                        dispatch({type: LOGOUT})
-                    }
-                })
-
-
-        const user = localStorage.getItem('auth')
-        console.log(user)
-        console.log(isAuth)
+                if (data.status != 200) {
+                    dispatch({type: LOGOUT})
+                    return
+                }
+                dispatch({type: LOGIN})
+                localStorage.setItem('token', `${base64decoder}`)
+                return data.json()
+            })
+            .then((data) => dispatch({type: ADD_USER, payload: Object.assign({}, {...data})}))
     }
-
 
     return (
         <form className="registration_block login_panel">
@@ -80,9 +87,15 @@ const LoginForm = () => {
                                 className="btn_form btn_login ">LOGIN
                         </button>
                     </React.Fragment>
-                    : <button onClick={logout} id="btnLogin"
-                              className="btn_form btn_login ">LOGOUT
-                    </button>
+                    : <React.Fragment>
+                    <h1>{userDetails.username}</h1>
+                    <p>{userDetails.roles}</p>
+                    <p>{userDetails.email}</p>
+                        <button onClick={logout} id="btnLogin"
+                                className="btn_form btn_login ">LOGOUT
+                        </button>
+                    </React.Fragment>
+
             }
         </form>
     )

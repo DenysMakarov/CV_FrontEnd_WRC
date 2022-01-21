@@ -80,7 +80,7 @@
 /// =-----------------------
 // let x = 5;
 // console.log((x + 5).toString())
-// console.log(String(true))
+// console.log(const(true))
 
 
 

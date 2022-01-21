@@ -2,32 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/redux/reducers/isAuthUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/db/dataBase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/DB/db2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/DB/db2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/OOP.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/OOP.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/RegEx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/RegEx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/other/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/api _fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/api _fetch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/other/challenge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/challenge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/destructor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/destructor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/get_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/get_post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/authenticatedUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/types.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,11 +69,22 @@
       <updated>1642264223698</updated>
       <workItem from="1642264226417" duration="3000" />
       <workItem from="1642264250078" duration="10010000" />
-      <workItem from="1642753179077" duration="18608000" />
+      <workItem from="1642753179077" duration="26333000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

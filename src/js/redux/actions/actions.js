@@ -8,7 +8,7 @@ import {
     REMOVE_TICKET,
     NEXT_SLIDE,
     PREV_SLIDE,
-    SET_SLIDE,
+    SET_SLIDE, REMOVE_USER, ADD_USER,
 
 } from "../../types"
 
@@ -73,3 +73,18 @@ export function addTicket(ticket) {
         payload: ticket
     }
 }
+
+export function addUser(user) {
+    return {
+        type: ADD_USER,
+        payload: user
+    }
+}
+export function removeUser() {
+    return {
+        type: REMOVE_USER,
+        payload: {}
+    }
+}
+
+

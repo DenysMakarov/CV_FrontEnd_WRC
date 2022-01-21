@@ -338,7 +338,7 @@
 /// =-----------------------
 // let x = 5;
 // console.log((x + 5).toString())
-// console.log(String(true))
+// console.log(const(true))
 
 //// ---------- совпадения обьектов в массиве
 // var a = [{"id":1, "item": 213}];

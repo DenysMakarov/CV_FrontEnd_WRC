@@ -13,6 +13,8 @@ export const LOGOUT = "LOGOUT"
 export const NUMBER_OF_SLIDE = "NUMBER_OF_SLIDE"
 export const ADD_TICKET = "ADD_TICKET"
 export const REMOVE_TICKET = "REMOVE_TICKET"
+export const ADD_USER = "ADD_USER"
+export const REMOVE_USER = "REMOVE_USER"
 
 
 
