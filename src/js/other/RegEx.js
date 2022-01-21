@@ -27,11 +27,11 @@
 //// ========== поиск по объекту через regexp ========= ////
 // let arr = [
 //     {
-//         login: "BMW",
+//         name: "BMW",
 //         email: "bmw@gmail.com",
 //         job: 'plant'
 //     },{
-//         login: "VW",
+//         name: "VW",
 //         email: "vw@gmail.com",
 //         job: 'plant'
 //     }
@@ -43,7 +43,7 @@
 // }
 //
 // for(let i=0; i<arr.length; i++){
-//     if (is(arr[i].login)){
+//     if (is(arr[i].name)){
 //         console.log("true")
 //     }else {
 //         console.log("false")

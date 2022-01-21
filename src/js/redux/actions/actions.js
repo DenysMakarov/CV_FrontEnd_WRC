@@ -8,7 +8,8 @@ import {
     REMOVE_TICKET,
     NEXT_SLIDE,
     PREV_SLIDE,
-    SET_SLIDE
+    SET_SLIDE,
+
 } from "../../types"
 
 export function showHideMenu(typeText) {

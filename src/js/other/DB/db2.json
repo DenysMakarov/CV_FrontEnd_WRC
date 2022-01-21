@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "login": "Leanne Graham",
+    "name": "Leanne Graham",
     "username": "Bret",
     "email": "Sincere@april.biz",
     "address": {
@@ -17,14 +17,14 @@
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
     "company": {
-      "login": "Romaguera-Crona",
+      "name": "Romaguera-Crona",
       "catchPhrase": "Multi-layered client-server neural-net",
       "bs": "harness real-time e-markets"
     }
   },
   {
     "id": 2,
-    "login": "Ervin Howell",
+    "name": "Ervin Howell",
     "username": "Antonette",
     "email": "Shanna@melissa.tv",
     "address": {
@@ -40,14 +40,14 @@
     "phone": "010-692-6593 x09125",
     "website": "anastasia.net",
     "company": {
-      "login": "Deckow-Crist",
+      "name": "Deckow-Crist",
       "catchPhrase": "Proactive didactic contingency",
       "bs": "synergize scalable supply-chains"
     }
   },
   {
     "id": 3,
-    "login": "Clementine Bauch",
+    "name": "Clementine Bauch",
     "username": "Samantha",
     "email": "Nathan@yesenia.net",
     "address": {
@@ -63,14 +63,14 @@
     "phone": "1-463-123-4447",
     "website": "ramiro.info",
     "company": {
-      "login": "Romaguera-Jacobson",
+      "name": "Romaguera-Jacobson",
       "catchPhrase": "Face to face bifurcated interface",
       "bs": "e-enable strategic applications"
     }
   },
   {
     "id": 4,
-    "login": "Patricia Lebsack",
+    "name": "Patricia Lebsack",
     "username": "Karianne",
     "email": "Julianne.OConner@kory.org",
     "address": {
@@ -86,14 +86,14 @@
     "phone": "493-170-9623 x156",
     "website": "kale.biz",
     "company": {
-      "login": "Robel-Corkery",
+      "name": "Robel-Corkery",
       "catchPhrase": "Multi-tiered zero tolerance productivity",
       "bs": "transition cutting-edge web services"
     }
   },
   {
     "id": 5,
-    "login": "Chelsey Dietrich",
+    "name": "Chelsey Dietrich",
     "username": "Kamren",
     "email": "Lucio_Hettinger@annie.ca",
     "address": {
@@ -109,14 +109,14 @@
     "phone": "(254)954-1289",
     "website": "demarco.info",
     "company": {
-      "login": "Keebler LLC",
+      "name": "Keebler LLC",
       "catchPhrase": "User-centric fault-tolerant solution",
       "bs": "revolutionize end-to-end systems"
     }
   },
   {
     "id": 6,
-    "login": "Mrs. Dennis Schulist",
+    "name": "Mrs. Dennis Schulist",
     "username": "Leopoldo_Corkery",
     "email": "Karley_Dach@jasper.info",
     "address": {
@@ -132,14 +132,14 @@
     "phone": "1-477-935-8478 x6430",
     "website": "ola.org",
     "company": {
-      "login": "Considine-Lockman",
+      "name": "Considine-Lockman",
       "catchPhrase": "Synchronised bottom-line interface",
       "bs": "e-enable innovative applications"
     }
   },
   {
     "id": 7,
-    "login": "Kurtis Weissnat",
+    "name": "Kurtis Weissnat",
     "username": "Elwyn.Skiles",
     "email": "Telly.Hoeger@billy.biz",
     "address": {
@@ -155,14 +155,14 @@
     "phone": "210.067.6132",
     "website": "elvis.io",
     "company": {
-      "login": "Johns Group",
+      "name": "Johns Group",
       "catchPhrase": "Configurable multimedia task-force",
       "bs": "generate enterprise e-tailers"
     }
   },
   {
     "id": 8,
-    "login": "Nicholas Runolfsdottir V",
+    "name": "Nicholas Runolfsdottir V",
     "username": "Maxime_Nienow",
     "email": "Sherwood@rosamond.me",
     "address": {
@@ -178,14 +178,14 @@
     "phone": "586.493.6943 x140",
     "website": "jacynthe.com",
     "company": {
-      "login": "Abernathy Group",
+      "name": "Abernathy Group",
       "catchPhrase": "Implemented secondary concept",
       "bs": "e-enable extensible e-tailers"
     }
   },
   {
     "id": 9,
-    "login": "Glenna Reichert",
+    "name": "Glenna Reichert",
     "username": "Delphine",
     "email": "Chaim_McDermott@dana.io",
     "address": {
@@ -201,14 +201,14 @@
     "phone": "(775)976-6794 x41206",
     "website": "conrad.com",
     "company": {
-      "login": "Yost and Sons",
+      "name": "Yost and Sons",
       "catchPhrase": "Switchable contextually-based project",
       "bs": "aggregate real-time technologies"
     }
   },
   {
     "id": 10,
-    "login": "Clementina DuBuque",
+    "name": "Clementina DuBuque",
     "username": "Moriah.Stanton",
     "email": "Rey.Padberg@karina.biz",
     "address": {
@@ -224,7 +224,7 @@
     "phone": "024-648-3804",
     "website": "ambrose.net",
     "company": {
-      "login": "Hoeger LLC",
+      "name": "Hoeger LLC",
       "catchPhrase": "Centralized empowering task-force",
       "bs": "target end-to-end models"
     }

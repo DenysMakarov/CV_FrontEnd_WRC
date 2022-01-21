@@ -82,7 +82,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 
 // ----- POST -----
 // let user = {
-//     login: "Denys",
+//     name: "Denys",
 //     age: 34
 // }
 //
@@ -106,7 +106,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 //
 //     })
 // }
-//     sendRequestPOST("post", url, user).then((data)=>{console.log(data)});
+//     sendRequestPOST("postUserToDb", url, user).then((data)=>{console.log(data)});
 //
 
 // const url_1 = "https://jsonplaceholder.typicode.com/users";

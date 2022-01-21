@@ -57,7 +57,7 @@
 
 //     let user = JSON.stringify(obj)
 //     let xhttp = new XMLHttpRequest();
-//     xhttp.open("post", url);
+//     xhttp.open("postUserToDb", url);
 //     xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
 //     xhttp.send(user); // => при POST нужно указать что мы собираемся отправить
 //
@@ -74,7 +74,7 @@
 // }, {"once": true})
 
 //// !!!!!!! ============== передача через new formData =======
-//// в форме в импутах должны быть login = ""
+//// в форме в импутах должны быть name = ""
 //// имена бывают email | text | file - для передачи файлов
 //     let form = document.getElementById("form")
 //
@@ -130,7 +130,7 @@
 //     let request = await fetch(url3)// => обращаемся к база данных на сервере
 //         .then(dataReq => dataReq.json()) // => получаем данные
 //         .then((dataReq) => {
-//             let result = dataReq.filter(el=> el.login == dataHost.login || el.email == dataHost.email); // => находим совпадения в базе с нашим обьектом
+//             let result = dataReq.filter(el=> el.name == dataHost.name || el.email == dataHost.email); // => находим совпадения в базе с нашим обьектом
 //             (result.length == 0)? result = true : result = false;
 //             return  result
 //         }).then((result)=>{ // передаем результат совпадения в след then
@@ -138,7 +138,7 @@
 //                 console.log("sorry we have alredy exist")
 //             } else {   // записываем в базу dataHost
 //                  fetch(url3, {
-//                     method: "post",
+//                     method: "postUserToDb",
 //                     headers : {"Content-type":"application/json"},
 //                     mode: "cors",
 //                     body: JSON.stringify(dataHost)
@@ -237,7 +237,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 
 // ----- POST -----
 // let user = {
-//     login: "Denys",
+//     name: "Denys",
 //     age: 34
 // }
 //
@@ -261,7 +261,7 @@ const url2 = "https://jsonplaceholder.typicode.com/users";
 //
 //     })
 // }
-//     sendRequestPOST("post", url, user).then((data)=>{console.log(data)});
+//     sendRequestPOST("postUserToDb", url, user).then((data)=>{console.log(data)});
 //
 
 // const url_1 = "https://jsonplaceholder.typicode.com/users";

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/db/dataBase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/DB/db2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/DB/db2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/OOP.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/OOP.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/RegEx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/RegEx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/api _fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/api _fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/challenge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/challenge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/destructor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/destructor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/get_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/get_post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/BodyInfo.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/ContactsBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/Events.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/MyInput.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="23k3ODmn8no3ARmnKaKXfNj5tzT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="" />
+      <created>1642264223698</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642264223698</updated>
+      <workItem from="1642264226417" duration="3000" />
+      <workItem from="1642264250078" duration="10010000" />
+      <workItem from="1642753179077" duration="18608000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

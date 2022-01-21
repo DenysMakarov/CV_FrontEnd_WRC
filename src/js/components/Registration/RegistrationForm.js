@@ -40,7 +40,8 @@ class RegistrationForm extends React.Component {
             },
             users: "",
             foundEmailInToDB: false,
-            conflictAddUser: true
+            conflictAddUser: true,
+            loading: false
         }
     }
 
@@ -192,21 +193,35 @@ class RegistrationForm extends React.Component {
     informPageAppear = () => {
         const informPage = document.getElementById("informPage_cover");
         const informPageText = document.getElementById("informPageText");
+
+        // let informText = (!this.state.conflictAddUser) ?
+        //     this.state.nameInfoWindow + "Thank you for registration!"
+        //     : "User " + this.state.nameInfoWindow + " has already done. Please, choose another login"
         let informText = (!this.state.conflictAddUser) ?
-            this.state.registration.login + ", Thank you for registration!"
-            : "User " + this.state.registration.login + " has already done. Please, choose another login"
+            "Thank you for registration!"
+            : "User has already registered. Please, choose another login"
+
+
         informPageText.innerText = informText;
         informPage.style.display = "flex"
     }
 
-    addUser = () => {
+    informPageAppear2 = () => {
+        const informPage = document.getElementById("informPage_cover");
+        const informPageText = document.getElementById("informPageText");
+
+        informPageText.innerText = "LOADING";
+        informPage.style.display = "flex"
+    }
+
+    addUser = async () => {
         const {validation} = this.props.validation
         if (validation) {
+
             this.props.setUsers(this.state.registration);
-            this.props.inValidForm();
-            this.post();
-            console.log(this.state.conflictAddUser)
-            this.setState({
+           await this.postUserToDb();
+
+             this.setState({
                 registration: {
                     // id: this.props.users.length + 2,
                     login: "",
@@ -224,21 +239,29 @@ class RegistrationForm extends React.Component {
                 users: "",
                 foundEmailInToDB: false
             });
-
-            console.log(this.state.registration)
-            // this.informPageAppear()
         }
     }
 
 
-    createNewAccount = (e) => {
+
+    createNewAccount = async (e) => {
         e.preventDefault()
-        this.validationForm()
-        this.addUser()
+        await this.setState({
+            loading: true
+        })
+        await this.validationForm()
+        await this.addUser()
+
+        // setTimeout(() => {
+        //     this.setState({
+        //         loading: false
+        //     })
+        // }, 1000)
+
     }
 
-    post = () => {
-        fetch("http://localhost:8080/user", {
+    postUserToDb = () => {
+        fetch("http://localhost:8080/registration", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -246,18 +269,12 @@ class RegistrationForm extends React.Component {
             body: JSON.stringify(this.state.registration)
         })
             .then(data => {
-                if (data.status !== 409) {
-                    this.setState({
-                        conflictAddUser: false
-                    })
-                    console.log(this.state.conflictAddUser)
-                } else {
-                    this.setState({
-                        conflictAddUser: true
-                    })
-                }
+                (data.status !== 409)
+                    ? this.setState({conflictAddUser: false})
+                    : this.setState({conflictAddUser: true})
                 this.informPageAppear()
             })
+
     }
 
 
@@ -267,8 +284,12 @@ class RegistrationForm extends React.Component {
                   id="registration_block"
                   className="registration_block registration_panel">
                 <span className="name_of_block">REGISTRATION</span>
-
-                {/*<button onClick={this.post}>PUSH</button>*/}
+                {/*{*/}
+                {/*    this.state.loading ?*/}
+                {/*        <h1>LOADING</h1>*/}
+                {/*        : <h1>OK</h1>*/}
+                {/*}*/}
+                {/*<button onClick={this.postUserToDb}>PUSH</button>*/}
                 {/*<button onClick={this.get}>GET</button>*/}
                 {/*<MyInput*/}
                 {/*    props={this.state.registration}*/}
