@@ -1,27 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {useEffect, useRef, useState} from "react";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
 import {ADD_USER, LOGIN, LOGOUT, REMOVE_USER} from "../../types";
-import {isAuthUser} from "../../redux/reducers/isAuthUser";
+import {AuthContext} from "../../App";
 
 
 const LoginForm = () => {
-    const [auth, setAuth] = useState({login: '', password: ''});
-    // const [user, setUser] = useState({
-    //     login: '',
-    //     username: '',
-    //     email: '',
-    //     // password: '',
-    //     phoneNumber: '',
-    //     roles: '',
-    //     birthDate: '',
-    //     tickets: []
-    // })
     const dispatch = useDispatch();
-    const isAuth = useSelector(state => state.loginReducer.login)
-    const userDetails = useSelector(state => state.isAuthUser.userDetails)
-    // console.log(userDetails)
+    const [auth, setAuth] = useState({login: '', password: ''});
+    const isAuth = useSelector(state => state.isAuthReducer.login)
+    const userDetails = useSelector(state => state.userDetailsReducer.userDetails)
+    const {getPrincipal} = useContext(AuthContext);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -30,35 +20,41 @@ const LoginForm = () => {
         }
     }, [])
 
+    console.log(isAuth)
+
     useEffect(() => {
         console.log(userDetails)
     }, [userDetails])
 
     let logout = () => {
         dispatch({type: LOGOUT});
-        localStorage.removeItem('token');
         dispatch({type: REMOVE_USER})
+        localStorage.removeItem('token');
     };
 
+    const animationTextLoginInform = (color) => {
+        const loginInfoBlock = document.getElementById("logInform");
+        loginInfoBlock.style.animationName = "none";
+        setTimeout(() => {
+            loginInfoBlock.style.animationName = "login_inform_appear";
+            loginInfoBlock.style.color = color;
+            login_inform_text.innerText = 'Something was wrong. Try again later'
+        }, 10)
+    }
 
-    const logIn = async (e) => {
+    const logIn = (e) => {
         e.preventDefault()
-        const base64decoder = 'Basic ' + btoa(auth.login + ':' + auth.password)
-        await getUserDetails(base64decoder)
+        const token = 'Basic ' + btoa(auth.login + ':' + auth.password)
+        return getUserDetails(token)
     }
 
     const getUserDetails = async (base64decoder) => {
-        return await fetch("http://localhost:8080/login", {
-            method: 'post',
-            headers: {
-                'Authorization': base64decoder,
-                'Content-Type': 'application/json;charset=utf-8',
-            },
-        })
+        await getPrincipal(base64decoder)
             .then(data => {
-                if (data.status != 200) {
-                    dispatch({type: LOGOUT})
-                    return
+                if (data.status < 200 || data.status > 299) {
+                    dispatch({type: LOGOUT});
+                    animationTextLoginInform('red');
+                    return;
                 }
                 dispatch({type: LOGIN})
                 localStorage.setItem('token', `${base64decoder}`)
@@ -71,10 +67,12 @@ const LoginForm = () => {
         <form className="registration_block login_panel">
             {
                 (!isAuth)
-                    ? <React.Fragment>
+                    ?
+                    <React.Fragment>
                         <span className="name_of_block">ACCOUNT</span>
                         <label htmlFor="login_email">Email</label>
-                        <input id="login_email" onChange={e => setAuth({...auth, login: e.target.value})} value={auth.login}
+                        <input id="login_email" onChange={e => setAuth({...auth, login: e.target.value})}
+                               value={auth.login}
                                className="input_panel input_login" name="email" type="text"/>
                         <label htmlFor="login_password">Password</label>
                         <input id="login_password" onChange={e => setAuth({...auth, password: e.target.value})}
@@ -87,10 +85,11 @@ const LoginForm = () => {
                                 className="btn_form btn_login ">LOGIN
                         </button>
                     </React.Fragment>
-                    : <React.Fragment>
-                    <h1>{userDetails.username}</h1>
-                    <p>{userDetails.roles}</p>
-                    <p>{userDetails.email}</p>
+                    :
+                    <React.Fragment>
+                        <h1>{userDetails.username}</h1>
+                        <p>{userDetails.roles}</p>
+                        <p>{userDetails.email}</p>
                         <button onClick={logout} id="btnLogin"
                                 className="btn_form btn_login ">LOGOUT
                         </button>
@@ -104,7 +103,7 @@ const LoginForm = () => {
 // const mapStateToProps = (state) => {
 //     return {
 //         users: state.usersReducer.users,
-//         login: state.loginReducer.login
+//         login: state.isAuthReducer.login
 //     }
 // }
 //

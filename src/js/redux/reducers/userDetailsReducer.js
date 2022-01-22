@@ -14,7 +14,7 @@ const initiallyState = {
     }
 }
 
-export const isAuthUser = (state = initiallyState, action) => {
+export const userDetailsReducer = (state = initiallyState, action) => {
     switch (action.type) {
         case ADD_USER : return {...state, userDetails: Object.assign({}, action.payload) }
         case REMOVE_USER : return {...state, userDetails: {}}

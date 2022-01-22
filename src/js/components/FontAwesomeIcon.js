@@ -11,4 +11,4 @@ library.add(
     faArrowRight,
     faPhoneAlt,
     faEnvelope,
-    )
+)

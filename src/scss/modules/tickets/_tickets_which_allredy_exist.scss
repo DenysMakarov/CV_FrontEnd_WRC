@@ -8,12 +8,13 @@
 
 .tickets_which_already_exist_block {
   position: absolute;
-  width: 35%;
+  width: 45%;
   height: 80%;
-  right: 10%;
+  right: 2%;
   top: 10%;
   color: white;
   font-size: 50px;
+  //background: red;
 
   @media all and (max-width: 414px){
     height: 50%;
@@ -23,18 +24,20 @@
 
 
   .your_tickets_array_cover {
-    margin-top: 5%;
-    width: 75%;
+    margin-top: 15%;
+    width: 50%;
     height: 85%;
     position: absolute;
-    left: 10px;
-    transition: .3s;
-
-    animation-name: ticket_animation_appear;
+    //opacity: 0;
+    //display: none;
+    right: 10rem;
+    transition: .3s!important;
+    //animation-fill-mode: both;
+    //animation-name: ticket_animation_appear;
     animation-duration: .5s;
 
     &:hover {
-      margin-top: 0;
+      margin-top: 0!important;
     }
   }
 

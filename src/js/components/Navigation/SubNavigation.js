@@ -13,7 +13,6 @@ class SubNavigation extends React.Component {
     }
 
     render() {
-
         const {home, events, tickets, portfolio, contacts, Login} = subMenu
         return (
                 <div className="nav_elements">

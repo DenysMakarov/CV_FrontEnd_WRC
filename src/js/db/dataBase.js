@@ -119,11 +119,11 @@ export const eventInfo = [
 
 export const subMenu = {
     home: [
-        {
-            name: "",
-            link: '/',
-            id: 1
-        }
+        // {
+        //     name: "",
+        //     link: '/',
+        //     id: 1
+        // }
     ],
     events: [
         {
@@ -138,27 +138,28 @@ export const subMenu = {
             name: "Bamako Rally",
             link: '/events',
             id: 4
-        }, {
-            name: "",
-            link: '',
-            id: 5
-        }, {
-            name: "",
-            link: '',
-            id: 6
         }
+        // , {
+        //     name: "",
+        //     link: '',
+        //     id: 5
+        // }, {
+        //     name: "",
+        //     link: '',
+        //     id: 6
+        // }
 
     ],
     tickets: [
-        {
-            name: "Adult",
-            id: 7,
-            link: '/tickets'
-        }, {
-            name: "Child",
-            id: 8,
-            link: '/tickets'
-        }
+        // {
+        //     name: "Adult",
+        //     id: 7,
+        //     link: '/tickets'
+        // }, {
+        //     name: "Child",
+        //     id: 8,
+        //     link: '/tickets'
+        // }
     ],
     portfolio: [
         // {

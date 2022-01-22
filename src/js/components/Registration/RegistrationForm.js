@@ -269,12 +269,12 @@ class RegistrationForm extends React.Component {
             body: JSON.stringify(this.state.registration)
         })
             .then(data => {
-                (data.status !== 409)
+                console.log(data.status);
+                (data.status > 200 || data.status < 299)
                     ? this.setState({conflictAddUser: false})
                     : this.setState({conflictAddUser: true})
                 this.informPageAppear()
             })
-
     }
 
 
