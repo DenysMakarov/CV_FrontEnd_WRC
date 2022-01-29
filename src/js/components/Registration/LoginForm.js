@@ -20,9 +20,9 @@ const LoginForm = () => {
         }
     }, [])
 
-    console.log(isAuth)
 
     useEffect(() => {
+        console.log(isAuth)
         console.log(userDetails)
     }, [userDetails])
 
@@ -48,8 +48,8 @@ const LoginForm = () => {
         return getUserDetails(token)
     }
 
-    const getUserDetails = async (base64decoder) => {
-        await getPrincipal(base64decoder)
+    const getUserDetails = (base64decoder) => {
+        getPrincipal(base64decoder)
             .then(data => {
                 if (data.status < 200 || data.status > 299) {
                     dispatch({type: LOGOUT});
@@ -61,6 +61,7 @@ const LoginForm = () => {
                 return data.json()
             })
             .then((data) => dispatch({type: ADD_USER, payload: Object.assign({}, {...data})}))
+            .catch(e => e.message)
     }
 
     return (

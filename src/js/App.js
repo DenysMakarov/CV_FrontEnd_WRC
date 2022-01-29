@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"; // хуки позволяющий дипатчить акшины и получать state
 
@@ -9,29 +9,51 @@ import MenuList from "./components/Navigation/MenuList";
 import Routes from "./Routes";
 import {ADD_USER, LOGIN, LOGOUT} from "./types";
 
-export const AuthContext = createContext();
 
-const App = () => {
-    const [pos, setPos] = useState({posX: 0, posY: 0})
-const a = "slksdjld"
-    const moveRound = (e) => {
-        setPos({posX: e.clientX, posY: e.clientY})
-    }
-
-    const getPrincipal = async (base64decoder) => {
-        return await fetch("http://localhost:8080/login", {
+export const AuthContext = createContext({
+    getPrincipal: (base64decoder) => {
+        return fetch("http://localhost:8080/login", {
             method: 'post',
             headers: {
                 'Authorization': base64decoder,
                 'Content-Type': 'application/json;charset=utf-8',
             },
         })
+    },
+    getEvents: () => {
+        return fetch("http://localhost:8080/events/events")
+            .then(data => data.json())
+    }
+});
+
+const App = () => {
+    const [pos, setPos] = useState({posX: 0, posY: 0})
+    const [events, setEvents] = useState([])
+
+    const moveRound = (e) => {
+        setPos({posX: e.clientX, posY: e.clientY})
     }
 
+    // const getPrincipal = (base64decoder) => {
+    //     return fetch("http://localhost:8080/login", {
+    //         method: 'post',
+    //         headers: {
+    //             'Authorization': base64decoder,
+    //             'Content-Type': 'application/json;charset=utf-8',
+    //         },
+    //     })
+    // }
+
+    // const getEvents = () => {
+    //     return fetch("http://localhost:8080/events/events")
+    //         .then(data => data.json())
+    //         .then(data => console.log(data))
+    // }
+
     return (
-        <AuthContext.Provider
-            value={{getPrincipal}}
-        >
+        // <AuthContext.Provider
+        //     value={{getPrincipal}}
+        // >
             <HashRouter>
                 <div onMouseMove={moveRound} className="App">
                     <MenuBtn/>
@@ -42,12 +64,13 @@ const a = "slksdjld"
                     <MenuList/>
                 </div>
             </HashRouter>
-        </AuthContext.Provider>
+        // </AuthContext.Provider>
 
     );
 }
 
 export default App;
+
 
 // class App extends React.Component {
 //     constructor(props) {

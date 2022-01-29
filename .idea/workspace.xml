@@ -4,22 +4,10 @@
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/FontAwesomeIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/FontAwesomeIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/CreateSubMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/CreateSubMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/SubNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/SubNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/YourTickets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/db/dataBase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/isAuthUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/loginReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/isAuthReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/ticketsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/ticketsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +56,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunManager">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/js/components/Tickets">
@@ -90,7 +79,9 @@
       <workItem from="1642264226417" duration="3000" />
       <workItem from="1642264250078" duration="10010000" />
       <workItem from="1642753179077" duration="34193000" />
-      <workItem from="1642856942459" duration="14031000" />
+      <workItem from="1642856942459" duration="15000000" />
+      <workItem from="1643129186473" duration="4907000" />
+      <workItem from="1643362258526" duration="11987000" />
     </task>
     <servers />
   </component>
