@@ -1,24 +1,26 @@
 import React, {Fragment} from 'react';
-import {connect} from "react-redux";
-import {nextSlide, prevSlide} from "../../redux/actions/actions";
+import {connect, useDispatch} from "react-redux";
+import {nextSlide, prevSlide, setSlide} from "../../redux/actions/actions";
 import {eventInfo} from "../../db/dataBase";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types"
+import {SET_SLIDE} from "../../types";
 
 
 
 const mapStateToProps = (state) => {
     return {
-        numberOfSlide: state.numberOfSlideReducer.numberOfSlide
+        numberOfSlide: state.numberOfSlideReducer.numberOfSlide,
+        eventInfo: state.numberOfSlideReducer.sliderInfo
     }
 }
 
 const mapDispatchToProps = {
-    nextSlide: nextSlide,
-    prevSlide: prevSlide
+    nextSlide,
+    prevSlide,
+    setSlide
 }
-
 
 
 export const changeAnimationSlide = () => {
@@ -45,7 +47,7 @@ class Arrows extends React.Component {
 
         this.state = {
             slideNumber: 0,
-            sliderInfo: eventInfo
+            // sliderInfo: eventInfo
         }
     }
 
@@ -57,6 +59,13 @@ class Arrows extends React.Component {
     nextSlide = () => {
         this.props.nextSlide()
         changeAnimationSlide()
+    }
+
+    setSlider = () => {
+        this.props.setSlide(3)
+
+        // this.props.setSlide(e.target.dataset.id - 1)
+        // changeAnimationSlide()
     }
 
     render() {

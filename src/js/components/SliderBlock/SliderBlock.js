@@ -1,40 +1,35 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {connect, useSelector} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import Arrows from "./ArrowsBlock";
 import {eventInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
 import RoundAnimation from "./RoundAnimation";
 import {AuthContext} from "../../App";
-
+import {SET_SLIDE, SET_SLIDES} from "../../types";
 
 const SliderBlock = () => {
-    // constructor(props) {
-    //     super(props);
-    //
-    //     this.state = {
-    //         posX: 500,
-    //         posY: 500,
-    //     }
-    // }
+    const dispatch = useDispatch();
 
     const [pos, setPos] = useState({posX: 500, posY: 500})
     const [events, setEvents] = useState({})
     const [loading, setLoading] = useState(true)
     const [img, setImg] = useState("url(img/f1_maclaren_2.jpg)")
-
+    const {numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
+    const {sliderInfo} = useSelector(state => state.numberOfSlideReducer)
     const {getEvents} = useContext(AuthContext)
 
     useEffect(() => {
         getEvents()
-            .then(data => setEvents(data))
-            .then(() => setLoading(false))
+            .then(data => {
+                setEvents(data)
+                setLoading(false)
+                return data
+            })
+            .then(data => dispatch({type: SET_SLIDES, payload: data}))
     }, [])
 
-    // console.log(events)
-    const {numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
-    const {sliderInfo} = useSelector(state => state.numberOfSlideReducer)
-
+    console.log(events)
 
     const setRoundPos = (e) => {
         const round = document.getElementById("round_animation");
@@ -74,36 +69,33 @@ const SliderBlock = () => {
         }
     }
 
-    // render() {
-    //     const {numberOfSlide} = this.props.state.numberOfSlideReducer
-    // const {title, date, imgPath, place, titleDesc, price} = events
-    let appearancePrevSlide = eventInfo.length - 1;
-    numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == eventInfo.length ? appearancePrevSlide = 0 : appearancePrevSlide
+    const setSld = () => {
+        dispatch({type: SET_SLIDE, payload: 3})
+    }
 
-    // console.log("old -> " + eventInfo[numberOfSlide].imgPath)
-
-    // for (let i=0; i<events.length; i++){
-    //    console.log(events[4])
-    // }
-
-    // if (loading) {
-    //     // console.log("loading")
-    //     // setImg(events[numberOfSlide]['imgPath'])
-    // } else {
-    //     setImg(events[numberOfSlide]['imgPath'])
-    // }
+    let appearancePrevSlide = events.length - 1;
+    numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == events.length ? appearancePrevSlide = 0 : appearancePrevSlide
 
     return (
         <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">
             <RoundAnimation posX={pos.posX} posY={pos.posY}/>
+
             <div className="right_pixel_decoration"/>
+            {
+                (loading)
+                    ?
+                    <h1 id="main_slide" className="main_slide">LOADING</h1>
+                    :
+                    <React.Fragment>
+                        <div id="main_slide" className="main_slide"
+                             style={{backgroundImage: events[numberOfSlide].imgPath}}/>
 
-            <div id="main_slide" className="main_slide"
-                 style={{backgroundImage: eventInfo[numberOfSlide].imgPath}}/>
-
-            <div id="slide_before" className="slide_before"
-                 style={{backgroundImage: eventInfo[appearancePrevSlide].imgPath}}>
-            </div>
+                        <div id="slide_before" className="slide_before"
+                             style={{backgroundImage: events[appearancePrevSlide].imgPath}}>
+                        </div>
+                    </React.Fragment>
+            }
+            <button onClick={setSld} style={{marginTop: '800px', zIndex: "10000"}}>CLICK</button>
 
             <TextDesc/>
             <SlidePagination/>
@@ -114,7 +106,6 @@ const SliderBlock = () => {
 }
 export default SliderBlock;
 // export default connect(mapStateToProps, null)(SliderBlock)
-
 
 
 //------------------------------------------------------------------------
