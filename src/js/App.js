@@ -7,7 +7,7 @@ import Nav from "./components/Navigation/Nav"
 import MenuBtn from "./components/Navigation/MenuBTN";
 import MenuList from "./components/Navigation/MenuList";
 import Routes from "./Routes";
-import {ADD_USER, LOGIN, LOGOUT} from "./types";
+import {ADD_USER, LOGIN, LOGOUT, SET_EVENTS} from "./types";
 
 
 export const AuthContext = createContext({
@@ -20,35 +20,31 @@ export const AuthContext = createContext({
             },
         })
     },
-    getEvents: () => {
-        return fetch("http://localhost:8080/events/events")
-            .then(data => data.json())
-    }
+
+    // getEvents: () => {
+    //     return fetch("http://localhost:8080/events/events")
+    //         .then(data => data.json())
+    // }
 });
 
 const App = () => {
     const [pos, setPos] = useState({posX: 0, posY: 0})
-    const [events, setEvents] = useState([])
+    // const [isLoadingEvents, setIsLoadingEvents] = useState(true)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getEvents().then(data => dispatch({type: SET_EVENTS, payload: data}))
+    }, [])
 
     const moveRound = (e) => {
         setPos({posX: e.clientX, posY: e.clientY})
     }
 
-    // const getPrincipal = (base64decoder) => {
-    //     return fetch("http://localhost:8080/login", {
-    //         method: 'post',
-    //         headers: {
-    //             'Authorization': base64decoder,
-    //             'Content-Type': 'application/json;charset=utf-8',
-    //         },
-    //     })
-    // }
 
-    // const getEvents = () => {
-    //     return fetch("http://localhost:8080/events/events")
-    //         .then(data => data.json())
-    //         .then(data => console.log(data))
-    // }
+    const getEvents = () => {
+        return fetch("http://localhost:8080/events/events")
+            .then(data => data.json())
+    }
 
     return (
         // <AuthContext.Provider
@@ -59,7 +55,7 @@ const App = () => {
                     <MenuBtn/>
                     <div className="main_container">
                         <Nav/>
-                        <Routes/>
+                        <Routes />
                     </div>
                     <MenuList/>
                 </div>

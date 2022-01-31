@@ -8,7 +8,7 @@ import {
     REMOVE_TICKET,
     NEXT_SLIDE,
     PREV_SLIDE,
-    SET_SLIDE, REMOVE_USER, ADD_USER, SET_SLIDES,
+    SET_SLIDE, REMOVE_USER, ADD_USER, SET_EVENTS,
 
 } from "../../types"
 
@@ -37,9 +37,9 @@ export function setSlide(num) {
     }
 }
 
-export function setSlides(arr) {
+export function dispatchEvents(arr) {
     return {
-        type: SET_SLIDES,
+        type: SET_EVENTS,
         payload: arr
     }
 }

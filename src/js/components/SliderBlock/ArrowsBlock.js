@@ -12,7 +12,7 @@ import {SET_SLIDE} from "../../types";
 const mapStateToProps = (state) => {
     return {
         numberOfSlide: state.numberOfSlideReducer.numberOfSlide,
-        eventInfo: state.numberOfSlideReducer.sliderInfo
+        listEvents: state.numberOfSlideReducer.listEvents
     }
 }
 
@@ -47,7 +47,7 @@ class Arrows extends React.Component {
 
         this.state = {
             slideNumber: 0,
-            // sliderInfo: eventInfo
+            // listEvents: listEvents
         }
     }
 

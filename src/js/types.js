@@ -15,7 +15,7 @@ export const ADD_TICKET = "ADD_TICKET"
 export const REMOVE_TICKET = "REMOVE_TICKET"
 export const ADD_USER = "ADD_USER"
 export const REMOVE_USER = "REMOVE_USER"
-export const SET_SLIDES = "SET_SLIDES"
+export const SET_EVENTS = "SET_EVENTS"
 
 
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {connect, useDispatch, useSelector} from "react-redux";
-// import {eventInfo} from "../../db/dataBase";
+// import {listEvents} from "../../db/dataBase";
 import {setSlide} from "../../redux/actions/actions";
 import {changeAnimationSlide} from "./ArrowsBlock"
 import PropTypes from "prop-types"
@@ -40,16 +40,16 @@ const mapDispatchToProps = {
 //     }
 //
 //     render() {
-//         console.log(this.props.eventInfo)
+//         console.log(this.props.listEvents)
 //         return (
 //             <div>
 //                 <ul className="slide_pagination_panel">
-//                     {/*{this.props.eventInfo.map((el) => (*/}
+//                     {/*{this.props.listEvents.map((el) => (*/}
 //                     {/*    <li*/}
 //                     {/*        key={el.numberId}*/}
 //                     {/*        data-id={el.numberId}*/}
 //                     {/*        onClick={this.setSlider}*/}
-//                     {/*        style={{height: 100 / this.props.eventInfo.length + "%"}}*/}
+//                     {/*        style={{height: 100 / this.props.listEvents.length + "%"}}*/}
 //                     {/*        className="pagination_panel_number">{"0" + el.numberId}*/}
 //                     {/*    </li>*/}
 //                     {/*))}*/}
@@ -70,15 +70,14 @@ const mapDispatchToProps = {
 //  =================  USES FUNCTION WITH HOOKS ================= //
 
 export default () => {
-    const number = useSelector(state => state.numberOfSlideReducer.numberOfSlide)
-    const sliderInfo = useSelector(state => state.numberOfSlideReducer.sliderInfo)
+    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
     const setSlideDispatch = useDispatch()
 
     useEffect(() => {
-        if (sliderInfo.length > 0) {
+        if (listEvents.length > 0) {
             setAnimation()
         }
-    }, [number])
+    }, [numberOfSlide])
 
     const setSlider = (e) => {
         setSlideDispatch(setSlide(e.target.dataset.id - 1))
@@ -87,22 +86,22 @@ export default () => {
     const setAnimation = () => {
         const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
         arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
-        arrPag[number].classList.add("pagination_panel_number_active")
+        arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
     }
 
     return (
         <div>
             <ul className="slide_pagination_panel">
                 {
-                    (!sliderInfo.length) ?
+                    (!listEvents.length) ?
                         <h1></h1>
                         :
-                        sliderInfo.map((el, index) => (
+                        listEvents.map((el, index) => (
                             <li
                                 key={index}
                                 onClick={setSlider}
                                 data-id={index + 1}
-                                style={{height: 100 / sliderInfo.length + "%"}}
+                                style={{height: 100 / listEvents.length + "%"}}
                                 className="pagination_panel_number">{"0" + (index + 1)}</li>
                         ))
                 }

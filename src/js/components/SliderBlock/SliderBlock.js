@@ -1,35 +1,32 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {connect, useDispatch, useSelector} from "react-redux";
 import Arrows from "./ArrowsBlock";
-import {eventInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
 import RoundAnimation from "./RoundAnimation";
 import {AuthContext} from "../../App";
-import {SET_SLIDE, SET_SLIDES} from "../../types";
+import {SET_SLIDE, SET_EVENTS} from "../../types";
 
 const SliderBlock = () => {
-    const dispatch = useDispatch();
-
     const [pos, setPos] = useState({posX: 500, posY: 500})
-    const [events, setEvents] = useState({})
     const [loading, setLoading] = useState(true)
     const [img, setImg] = useState("url(img/f1_maclaren_2.jpg)")
-    const {numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
-    const {sliderInfo} = useSelector(state => state.numberOfSlideReducer)
-    const {getEvents} = useContext(AuthContext)
+    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    // const {getEvents} = useContext(AuthContext)
+
+    // useEffect(() => {
+    //     getEvents()
+    //         .then(data => {
+    //             setEvents(data)
+    //             setLoading(false)
+    //             return data
+    //         })
+    //         .then(data => dispatch({type: SET_EVENTS, payload: data}))
+    // }, [])
 
     useEffect(() => {
-        getEvents()
-            .then(data => {
-                setEvents(data)
-                setLoading(false)
-                return data
-            })
-            .then(data => dispatch({type: SET_SLIDES, payload: data}))
-    }, [])
-
-    console.log(events)
+       (listEvents.length) ? setLoading(false) : setLoading(true);
+    }, [listEvents])
 
     const setRoundPos = (e) => {
         const round = document.getElementById("round_animation");
@@ -52,29 +49,23 @@ const SliderBlock = () => {
         }
 
         if (e.target.id === "arrow_left_cover") {
-            setPos({
-                // here to change set round relatively arrow
-                posX: arrowLeft.getBoundingClientRect().left + 15,
-                posY: arrowLeft.getBoundingClientRect().top + 15,
-            })
-            round.style.width = arrowLeft.getBoundingClientRect().width + 4 + "px";
-            round.style.height = arrowLeft.getBoundingClientRect().height + 4 + "px";
+            setPosition(arrowLeft, round)
         } else if (e.target.id === "arrow_right_cover") {
-            setPos({
-                posX: arrowRight.getBoundingClientRect().left + 15,
-                posY: arrowRight.getBoundingClientRect().top + 15,
-            })
-            round.style.width = arrowRight.getBoundingClientRect().width + 4 + "px";
-            round.style.height = arrowRight.getBoundingClientRect().height + 4 + "px";
+            setPosition(arrowRight, round)
         }
     }
 
-    const setSld = () => {
-        dispatch({type: SET_SLIDE, payload: 3})
+    const setPosition = (arrow, round) => {
+        setPos({
+            posX: arrow.getBoundingClientRect().left + 15,
+            posY: arrow.getBoundingClientRect().top + 15,
+        })
+        round.style.width = arrow.getBoundingClientRect().width + 4 + "px";
+        round.style.height = arrow.getBoundingClientRect().height + 4 + "px";
     }
 
-    let appearancePrevSlide = events.length - 1;
-    numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == events.length ? appearancePrevSlide = 0 : appearancePrevSlide
+    let appearancePrevSlide = listEvents.length - 1;
+    numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == listEvents.length ? appearancePrevSlide = 0 : appearancePrevSlide
 
     return (
         <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">
@@ -88,15 +79,13 @@ const SliderBlock = () => {
                     :
                     <React.Fragment>
                         <div id="main_slide" className="main_slide"
-                             style={{backgroundImage: events[numberOfSlide].imgPath}}/>
+                             style={{backgroundImage: listEvents[numberOfSlide].imgPath}}/>
 
                         <div id="slide_before" className="slide_before"
-                             style={{backgroundImage: events[appearancePrevSlide].imgPath}}>
+                             style={{backgroundImage: listEvents[appearancePrevSlide].imgPath}}>
                         </div>
                     </React.Fragment>
             }
-            <button onClick={setSld} style={{marginTop: '800px', zIndex: "10000"}}>CLICK</button>
-
             <TextDesc/>
             <SlidePagination/>
             <Arrows/>
@@ -105,7 +94,7 @@ const SliderBlock = () => {
     // }
 }
 export default SliderBlock;
-// export default connect(mapStateToProps, null)(SliderBlock)
+
 
 
 //------------------------------------------------------------------------
@@ -168,8 +157,8 @@ export default SliderBlock;
 //
 //     render() {
 //         const {numberOfSlide} = this.props.state.numberOfSlideReducer
-//         let appearancePrevSlide = eventInfo.length - 1;
-//         numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == eventInfo.length ? appearancePrevSlide = 0 : appearancePrevSlide
+//         let appearancePrevSlide = listEvents.length - 1;
+//         numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == listEvents.length ? appearancePrevSlide = 0 : appearancePrevSlide
 //
 //         return (
 //             <div id="slider_block" onMouseMove={this.setRoundPos} className="slider_block">
@@ -177,10 +166,10 @@ export default SliderBlock;
 //                 <div className="right_pixel_decoration"/>
 //
 //                 <div id="main_slide" className="main_slide"
-//                      style={{backgroundImage: eventInfo[numberOfSlide].imgPath}}/>
+//                      style={{backgroundImage: listEvents[numberOfSlide].imgPath}}/>
 //
 //                 <div id="slide_before" className="slide_before"
-//                      style={{backgroundImage: eventInfo[appearancePrevSlide].imgPath}}>
+//                      style={{backgroundImage: listEvents[appearancePrevSlide].imgPath}}>
 //                 </div>
 //                 <TextDesc/>
 //                 <SlidePagination/>

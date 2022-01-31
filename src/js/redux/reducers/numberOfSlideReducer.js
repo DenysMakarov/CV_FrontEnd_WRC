@@ -1,4 +1,4 @@
-import {NEXT_SLIDE, SET_SLIDES} from "../../types";
+import {NEXT_SLIDE, SET_EVENTS} from "../../types";
 import {PREV_SLIDE} from "../../types";
 import {SET_SLIDE} from "../../types";
 import {NUMBER_OF_SLIDE} from "../../types"
@@ -7,8 +7,8 @@ import {eventInfo} from "../../db/dataBase";
 
 const initiallyState = {
     numberOfSlide: 0,
-    sliderInfo: []
-    // sliderInfo: fetch("http://localhost:8080/events/events")
+    listEvents: []
+    // listEvents: fetch("http://localhost:8080/events/events")
     //     .then(data => data.json())
     //     .then((data) => {
     //         // console.log(data)
@@ -17,10 +17,10 @@ const initiallyState = {
 }
 
 export const numberOfSlideReducer = (state = initiallyState, action) => {
-    console.log(state.numberOfSlide)
+    // console.log(state.numberOfSlide)
     switch (action.type) {
         case NEXT_SLIDE :
-            if (state.numberOfSlide < state.sliderInfo.length - 1) {
+            if (state.numberOfSlide < state.listEvents.length - 1) {
                 return {
                     ...state, numberOfSlide: state.numberOfSlide + 1
                 };
@@ -37,16 +37,16 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
                 };
             } else {
                 return {
-                    ...state, numberOfSlide: state.sliderInfo.length - 1
+                    ...state, numberOfSlide: state.listEvents.length - 1
                 };
             }
         case SET_SLIDE :
             return {
                 ...state, numberOfSlide: action.payload
             }
-        case SET_SLIDES :
+        case SET_EVENTS :
             return {
-                ...state, sliderInfo: action.payload
+                ...state, listEvents: action.payload
             }
         default :
             return state
@@ -56,13 +56,13 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
 //
 // const initiallyState = {
 //     numberOfSlide: 0,
-//     sliderInfo: eventInfo
+//     listEvents: listEvents
 // }
 //
 // export const numberOfSlideReducer = (state = initiallyState, action) => {
 //     switch (action.type) {
 //         case NEXT_SLIDE :
-//             if (state.numberOfSlide < eventInfo.length - 1){
+//             if (state.numberOfSlide < listEvents.length - 1){
 //                 return {
 //                     ...state, numberOfSlide : state.numberOfSlide + 1
 //                 };
@@ -79,7 +79,7 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
 //                 };
 //             } else {
 //                 return {
-//                     ...state, numberOfSlide : eventInfo.length - 1
+//                     ...state, numberOfSlide : listEvents.length - 1
 //                 };
 //             }
 //         case SET_SLIDE :

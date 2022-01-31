@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/types.js" afterDir="false" />
@@ -83,7 +85,8 @@
       <workItem from="1642856942459" duration="15000000" />
       <workItem from="1643129186473" duration="4907000" />
       <workItem from="1643362258526" duration="18841000" />
-      <workItem from="1643565607004" duration="8243000" />
+      <workItem from="1643565607004" duration="8424000" />
+      <workItem from="1643644919509" duration="4965000" />
     </task>
     <servers />
   </component>
