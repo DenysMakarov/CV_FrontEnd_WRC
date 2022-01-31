@@ -7,6 +7,7 @@ import {numberOfSlideReducer} from "../../redux/reducers/numberOfSlideReducer";
 
 const TextDesc = () => {
     const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    const [date, setDate] = useState(new Date())
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -18,11 +19,13 @@ const TextDesc = () => {
                 el.style.animationName = "text_slider_appear"
             })
         }, 10)
+
+        if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
     }, [numberOfSlide])
 
-    // useEffect(() => {
-    //     (listEvents.length) ? setLoading(false) : setLoading(true)
-    // }, [listEvents.length])
+    useEffect(() => {
+        if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
+    }, [listEvents.length])
 
 
     return (
@@ -32,8 +35,8 @@ const TextDesc = () => {
             <div className="text_description_block">
                 <h5 className="text_description_slide text_description_slide_top">{listEvents[numberOfSlide].titleDesc}</h5>
                 <h5 className="text_description_slide text_description_slide_center">Strategy decision <br/>
-                    {/*{dateNew.getDate()} <span style={{color: "red"}}> / </span> {dateNew.getMonth() + 1} <span*/}
-                    {/*    style={{color: "red"}}> / </span> {dateNew.getFullYear()} <br/>*/}
+                    {date.getDate()} <span style={{color: "red"}}> / </span> {date.getMonth() + 1} <span
+                        style={{color: "red"}}> / </span> {date.getFullYear()} <br/>
                 </h5>
                 <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
             </div>
