@@ -6,27 +6,13 @@ import TextDesc from "./TextDesc";
 import RoundAnimation from "./RoundAnimation";
 import {AuthContext} from "../../App";
 import {SET_SLIDE, SET_EVENTS} from "../../types";
+import IsLoadingEventsReducer from "../../redux/reducers/isLoadingEventsReducer";
 
 const SliderBlock = () => {
     const [pos, setPos] = useState({posX: 500, posY: 500})
-    const [loading, setLoading] = useState(true)
-    const [img, setImg] = useState("url(img/f1_maclaren_2.jpg)")
     const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
-    // const {getEvents} = useContext(AuthContext)
+    const {loading} = useSelector(state => state.IsLoadingEventsReducer)
 
-    // useEffect(() => {
-    //     getEvents()
-    //         .then(data => {
-    //             setEvents(data)
-    //             setLoading(false)
-    //             return data
-    //         })
-    //         .then(data => dispatch({type: SET_EVENTS, payload: data}))
-    // }, [])
-
-    useEffect(() => {
-       (listEvents.length) ? setLoading(false) : setLoading(true);
-    }, [listEvents])
 
     const setRoundPos = (e) => {
         const round = document.getElementById("round_animation");
@@ -53,6 +39,14 @@ const SliderBlock = () => {
         } else if (e.target.id === "arrow_right_cover") {
             setPosition(arrowRight, round)
         }
+    }
+
+    const clearTextDescAnimationBeforeRender = () => {
+        const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
+        arrTextSlide.map(el => {
+            el.style.animationName = "none"
+        })
+        return arrTextSlide;
     }
 
     const setPosition = (arrow, round) => {
@@ -86,9 +80,9 @@ const SliderBlock = () => {
                         </div>
                     </React.Fragment>
             }
-            <TextDesc/>
-            <SlidePagination/>
-            <Arrows/>
+            <TextDesc clearAnimation={clearTextDescAnimationBeforeRender}/>
+            <SlidePagination clearAnimation={clearTextDescAnimationBeforeRender}/>
+            <Arrows clearAnimation={clearTextDescAnimationBeforeRender}/>
         </div>
     )
     // }

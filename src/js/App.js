@@ -7,7 +7,7 @@ import Nav from "./components/Navigation/Nav"
 import MenuBtn from "./components/Navigation/MenuBTN";
 import MenuList from "./components/Navigation/MenuList";
 import Routes from "./Routes";
-import {ADD_USER, LOGIN, LOGOUT, SET_EVENTS} from "./types";
+import {ADD_USER, LOADING_EVENTS_DONE, LOGIN, LOGOUT, SET_EVENTS} from "./types";
 
 
 export const AuthContext = createContext({
@@ -33,7 +33,10 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getEvents().then(data => dispatch({type: SET_EVENTS, payload: data}))
+        getEvents().then(data => {
+            dispatch({type: SET_EVENTS, payload: data})
+            dispatch({type: LOADING_EVENTS_DONE})
+        })
     }, [])
 
     const moveRound = (e) => {

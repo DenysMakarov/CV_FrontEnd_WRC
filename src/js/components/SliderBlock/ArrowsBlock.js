@@ -1,12 +1,9 @@
 import React, {Fragment} from 'react';
-import {connect, useDispatch} from "react-redux";
-import {nextSlide, prevSlide, setSlide} from "../../redux/actions/actions";
-import {eventInfo} from "../../db/dataBase";
+import {connect} from "react-redux";
+import {nextSlide, prevSlide} from "../../redux/actions/actions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types"
-import {SET_SLIDE} from "../../types";
-
 
 
 const mapStateToProps = (state) => {
@@ -19,59 +16,46 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     nextSlide,
     prevSlide,
-    setSlide
-}
-
-
-export const changeAnimationSlide = () => {
-    let getMainSlide = document.getElementById("main_slide")
-    let getBeforeSlide = document.getElementById("slide_before")
-
-    getMainSlide.style.animationName = "none"
-    getBeforeSlide.classList.remove("slider_before_appear")
-    getBeforeSlide.classList.add("slider_block_hide")
-    getMainSlide.classList.remove("slider_block_appear")
-    getMainSlide.classList.add("slider_block_hide")
-
-    setTimeout(() => {
-        getBeforeSlide.classList.remove("slider_block_hide")
-        getBeforeSlide.classList.add("slider_before_appear")
-        getMainSlide.classList.remove("slider_block_hide")
-        getMainSlide.classList.add("slider_block_appear")
-    }, 200)
 }
 
 class Arrows extends React.Component {
     constructor(props) {
         super(props);
+    }
 
-        this.state = {
-            slideNumber: 0,
-            // listEvents: listEvents
-        }
+    changeAnimationSlide = () => {
+        let getMainSlide = document.getElementById("main_slide")
+        let getBeforeSlide = document.getElementById("slide_before")
+
+        this.props.clearAnimation()
+        getMainSlide.style.animationName = "none"
+        getBeforeSlide.classList.remove("slider_before_appear")
+        getBeforeSlide.classList.add("slider_block_hide")
+        getMainSlide.classList.remove("slider_block_appear")
+        getMainSlide.classList.add("slider_block_hide")
+
+        setTimeout(() => {
+            getBeforeSlide.classList.remove("slider_block_hide")
+            getBeforeSlide.classList.add("slider_before_appear")
+            getMainSlide.classList.remove("slider_block_hide")
+            getMainSlide.classList.add("slider_block_appear")
+        }, 200)
     }
 
     prevSlide = () => {
         this.props.prevSlide()
-        changeAnimationSlide()
+        this.changeAnimationSlide()
     }
 
     nextSlide = () => {
         this.props.nextSlide()
-        changeAnimationSlide()
-    }
-
-    setSlider = () => {
-        this.props.setSlide(3)
-
-        // this.props.setSlide(e.target.dataset.id - 1)
-        // changeAnimationSlide()
+        this.changeAnimationSlide()
     }
 
     render() {
         return (
             <Fragment>
-                <div id="arrow_left"  className="arrow arrow_left">
+                <div id="arrow_left" className="arrow arrow_left">
                     <div onClick={this.prevSlide} id="arrow_left_cover" className="arrow_left_cover"/>
                     <FontAwesomeIcon icon={faArrowLeft}/>
                 </div>
@@ -85,9 +69,9 @@ class Arrows extends React.Component {
 }
 
 Arrows.propTypes = {
-    numberOfSlide : PropTypes.number,
-    nextSlide : PropTypes.func,
-    prevSlide : PropTypes.func
+    numberOfSlide: PropTypes.number,
+    nextSlide: PropTypes.func,
+    prevSlide: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Arrows)

@@ -5,46 +5,53 @@ import PropTypes from "prop-types"
 import {numberOfSlideReducer} from "../../redux/reducers/numberOfSlideReducer";
 
 
-const TextDesc = () => {
+const TextDesc = ({clearAnimation}) => {
     const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
     const [date, setDate] = useState(new Date())
-    const [loading, setLoading] = useState(true)
+    const {loading} = useSelector(state => state.IsLoadingEventsReducer)
 
     useEffect(() => {
-        const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
-        arrTextSlide.map(el => el.style.animationName = " none")
+        // const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
+        // arrTextSlide.map(el => {
+        //     el.style.animationName = "none"
+        // })
+        const arrTextSlide = clearAnimation()
         setTimeout(() => {
             arrTextSlide.map((el) => {
+                el.style.display = "block"
                 el.style.animationDelay = "0 !important"
                 el.style.animationName = "text_slider_appear"
             })
-        }, 10)
+        }, 50)
 
-        if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
+        // if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
     }, [numberOfSlide])
 
-    useEffect(() => {
-        if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
-    }, [listEvents.length])
+    // useEffect(() => {
+    //     if (listEvents.length) setDate(new Date(listEvents[numberOfSlide].date))
+    // }, [listEvents.length])
 
 
     return (
-        (listEvents.length)
-        ?
-        <Fragment>
-            <div className="text_description_block">
-                <h5 className="text_description_slide text_description_slide_top">{listEvents[numberOfSlide].titleDesc}</h5>
-                <h5 className="text_description_slide text_description_slide_center">Strategy decision <br/>
-                    {date.getDate()} <span style={{color: "red"}}> / </span> {date.getMonth() + 1} <span
-                        style={{color: "red"}}> / </span> {date.getFullYear()} <br/>
-                </h5>
-                <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
-            </div>
-            <h1 id="text_description_slide_behind"
-                className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>
-        </Fragment>
-        :
-        <h1>LOADING</h1>
+        (loading)
+            ?
+            <h1>LOADING</h1>
+            :
+            <Fragment>
+                <div className="text_description_block">
+                    <h5 className="text_description_slide text_description_slide_top">{listEvents[numberOfSlide].titleDesc}</h5>
+                    <h5 className="text_description_slide text_description_slide_center">Strategy decision <br/>
+                        {new Date(listEvents[numberOfSlide].date).getDate()} <span
+                            style={{color: "red"}}> / </span> {new Date(listEvents[numberOfSlide].date).getMonth() + 1}
+                        <span
+                            style={{color: "red"}}> / </span> {new Date(listEvents[numberOfSlide].date).getFullYear()}
+                        <br/>
+                    </h5>
+                    <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
+                </div>
+                <h1 id="text_description_slide_behind"
+                    className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>
+            </Fragment>
     )
 }
 

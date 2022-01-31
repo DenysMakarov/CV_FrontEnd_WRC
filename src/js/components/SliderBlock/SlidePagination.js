@@ -1,23 +1,69 @@
-import React, {useEffect, useState} from 'react';
-import {connect, useDispatch, useSelector} from "react-redux";
-// import {listEvents} from "../../db/dataBase";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import {setSlide} from "../../redux/actions/actions";
-import {changeAnimationSlide} from "./ArrowsBlock"
-import PropTypes from "prop-types"
 
 
-const mapPropsToState = (state) => {
-    return {
-        num: state.numberOfSlideReducer.numberOfSlide,
-        eventInfo: state.numberOfSlideReducer.sliderInfo
+
+
+//  =================  USES FUNCTION WITH HOOKS ================= //
+
+export default ({clearAnimation}) => {
+    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    const setSlideDispatch = useDispatch()
+
+    useEffect(() => {
+        if (listEvents.length > 0) {
+            setAnimation()
+        }
+    }, [numberOfSlide])
+
+    const setSlider = (e) => {
+        const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
+        arrTextSlide.map(el => {
+            el.style.animationName = "none"
+        })
+        setSlideDispatch(setSlide(e.target.dataset.id - 1))
     }
+
+    const setAnimation = () => {
+        clearAnimation()
+        const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
+        arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
+        arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
+    }
+
+    return (
+        <div>
+            <ul className="slide_pagination_panel">
+                {
+                    (!listEvents.length) ?
+                        <h1></h1>
+                        :
+                        listEvents.map((el, index) => (
+                            <li
+                                key={index}
+                                onClick={setSlider}
+                                data-id={index + 1}
+                                style={{height: 100 / listEvents.length + "%"}}
+                                className="pagination_panel_number">{"0" + (index + 1)}</li>
+                        ))
+                }
+            </ul>
+        </div>
+    )
 }
 
-const mapDispatchToProps = {
-    setSlide
-}
 
-
+// const mapPropsToState = (state) => {
+//     return {
+//         num: state.numberOfSlideReducer.numberOfSlide,
+//         eventInfo: state.numberOfSlideReducer.sliderInfo
+//     }
+// }
+//
+// const mapDispatchToProps = {
+//     setSlide
+// }
 // class SlidePagination extends React.Component {
 //     constructor(props) {
 //         super(props);
@@ -66,47 +112,3 @@ const mapDispatchToProps = {
 //
 // export default connect(mapPropsToState, mapDispatchToProps)(SlidePagination)
 //
-
-//  =================  USES FUNCTION WITH HOOKS ================= //
-
-export default () => {
-    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
-    const setSlideDispatch = useDispatch()
-
-    useEffect(() => {
-        if (listEvents.length > 0) {
-            setAnimation()
-        }
-    }, [numberOfSlide])
-
-    const setSlider = (e) => {
-        setSlideDispatch(setSlide(e.target.dataset.id - 1))
-    }
-
-    const setAnimation = () => {
-        const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
-        arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
-        arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
-    }
-
-    return (
-        <div>
-            <ul className="slide_pagination_panel">
-                {
-                    (!listEvents.length) ?
-                        <h1></h1>
-                        :
-                        listEvents.map((el, index) => (
-                            <li
-                                key={index}
-                                onClick={setSlider}
-                                data-id={index + 1}
-                                style={{height: 100 / listEvents.length + "%"}}
-                                className="pagination_panel_number">{"0" + (index + 1)}</li>
-                        ))
-                }
-            </ul>
-        </div>
-    )
-}
-
