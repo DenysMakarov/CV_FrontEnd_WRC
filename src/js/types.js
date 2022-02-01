@@ -18,5 +18,6 @@ export const REMOVE_USER = "REMOVE_USER"
 export const SET_EVENTS = "SET_EVENTS"
 export const LOADING_EVENTS = "LOADING_EVENTS"
 export const LOADING_EVENTS_DONE = "LOADING_EVENTS_DONE"
-
+export const IS_ERROR_TRUE = "IS_ERROR_TRUE"
+export const IS_ERROR_FALSE = "IS_ERROR_FALSE"
 

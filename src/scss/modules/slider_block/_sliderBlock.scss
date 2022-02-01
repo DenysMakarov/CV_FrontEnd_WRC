@@ -144,7 +144,14 @@
   @media all and (max-width: 1024px) {
     width: 420px;
   }
+}
 
+.text-error {
+  text-align: end;
+  right: 2%;
+  top: 2%;
+  color: antiquewhite;
+  position: absolute;
 }
 
 .text_description_slide {

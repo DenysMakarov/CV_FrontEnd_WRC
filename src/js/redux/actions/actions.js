@@ -8,7 +8,15 @@ import {
     REMOVE_TICKET,
     NEXT_SLIDE,
     PREV_SLIDE,
-    SET_SLIDE, REMOVE_USER, ADD_USER, SET_EVENTS,
+    SET_SLIDE,
+    REMOVE_USER,
+    ADD_USER,
+    SET_EVENTS,
+    IS_ERROR,
+    IS_ERROR_TRUE,
+    IS_ERROR_FALSE,
+    LOADING_EVENTS,
+    LOADING_EVENTS_DONE,
 
 } from "../../types"
 
@@ -44,14 +52,37 @@ export function dispatchEvents(arr) {
     }
 }
 
+export function isErrorTrue(){
+    return {
+        type: IS_ERROR_TRUE
+    }
+}
+export function isErrorFalse(){
+    return {
+        type: IS_ERROR_FALSE
+    }
+}
+
+export function loadingEvents(){
+    return {
+        type: LOADING_EVENTS
+    }
+}
+
+export function loadingEventsDone(){
+    return {
+        type: LOADING_EVENTS_DONE
+    }
+}
+
 export function validForm() {
     return {
-        type: VALID,
+        type: VALID
     }
 }
 export function inValidForm() {
     return {
-        type: INVALID,
+        type: INVALID
     }
 }
 

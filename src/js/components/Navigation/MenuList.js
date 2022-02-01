@@ -10,7 +10,7 @@ class MenuList extends React.Component {
     render() {
         const {home, events, tickets, portfolio, contacts} = subMenu
         return (
-            <div className={`menu_list`} id="menu_list">
+            <div className='menu_list' id="menu_list">
 
                 <div className="menu_list_block">
 

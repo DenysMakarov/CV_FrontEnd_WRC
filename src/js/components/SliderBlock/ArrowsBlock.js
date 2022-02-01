@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react';
 import {connect} from "react-redux";
 import {nextSlide, prevSlide} from "../../redux/actions/actions";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types"
+import Arrow from "./Arrow";
 
 
 const mapStateToProps = (state) => {
@@ -21,6 +21,10 @@ const mapDispatchToProps = {
 class Arrows extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.changeAnimationSlide()
     }
 
     changeAnimationSlide = () => {
@@ -55,14 +59,8 @@ class Arrows extends React.Component {
     render() {
         return (
             <Fragment>
-                <div id="arrow_left" className="arrow arrow_left">
-                    <div onClick={this.prevSlide} id="arrow_left_cover" className="arrow_left_cover"/>
-                    <FontAwesomeIcon icon={faArrowLeft}/>
-                </div>
-                <div id="arrow_right" className="arrow arrow_right">
-                    <div onClick={this.nextSlide} id="arrow_right_cover" className="arrow_right_cover"/>
-                    <FontAwesomeIcon icon={faArrowRight}/>
-                </div>
+                <Arrow changeSlide={this.prevSlide} icon={faArrowLeft} id="arrow_left" classN="arrow arrow_left" childId="arrow_left_cover" childClass="arrow_left_cover"/>
+                <Arrow changeSlide={this.nextSlide} icon={faArrowRight} id="arrow_right" classN="arrow arrow_right" childId="arrow_right_cover" childClass="arrow_right_cover"/>
             </Fragment>
         )
     }

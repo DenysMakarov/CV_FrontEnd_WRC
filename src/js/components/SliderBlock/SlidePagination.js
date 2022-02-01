@@ -8,37 +8,34 @@ import {setSlide} from "../../redux/actions/actions";
 //  =================  USES FUNCTION WITH HOOKS ================= //
 
 export default ({clearAnimation}) => {
-    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    const {numberOfSlide, listEvents, loading} = useSelector(state => state.numberOfSlideReducer)
     const setSlideDispatch = useDispatch()
 
-    useEffect(() => {
-        if (listEvents.length > 0) {
-            setAnimation()
-        }
-    }, [numberOfSlide])
+    // useEffect(() => {
+    //     if (loading) {
+    //         setAnimation()
+    //     }
+    // }, [numberOfSlide])
 
     const setSlider = (e) => {
-        const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
-        arrTextSlide.map(el => {
+        Array.from(document.getElementsByClassName("text_description_slide"))
+        .map(el => {
             el.style.animationName = "none"
         })
         setSlideDispatch(setSlide(e.target.dataset.id - 1))
     }
 
-    const setAnimation = () => {
-        clearAnimation()
-        const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
-        arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
-        arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
-    }
+    // const setAnimation = () => {
+    //     clearAnimation()
+    //     const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
+    //     arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
+    //     arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
+    // }
 
     return (
         <div>
             <ul className="slide_pagination_panel">
-                {
-                    (!listEvents.length) ?
-                        <h1></h1>
-                        :
+                { !loading &&
                         listEvents.map((el, index) => (
                             <li
                                 key={index}

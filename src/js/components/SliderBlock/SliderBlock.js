@@ -7,10 +7,11 @@ import RoundAnimation from "./RoundAnimation";
 import {AuthContext} from "../../App";
 import {SET_SLIDE, SET_EVENTS} from "../../types";
 import IsLoadingEventsReducer from "../../redux/reducers/isLoadingEventsReducer";
+import Slides from "./Slides";
 
 const SliderBlock = () => {
     const [pos, setPos] = useState({posX: 500, posY: 500})
-    const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    const {numberOfSlide, listEvents, error} = useSelector(state => state.numberOfSlideReducer)
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
 
 
@@ -64,22 +65,14 @@ const SliderBlock = () => {
     return (
         <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">
             <RoundAnimation posX={pos.posX} posY={pos.posY}/>
-
             <div className="right_pixel_decoration"/>
-            {
-                (loading)
-                    ?
-                    <h1 id="main_slide" className="main_slide">LOADING</h1>
-                    :
-                    <React.Fragment>
-                        <div id="main_slide" className="main_slide"
-                             style={{backgroundImage: listEvents[numberOfSlide].imgPath}}/>
 
-                        <div id="slide_before" className="slide_before"
-                             style={{backgroundImage: listEvents[appearancePrevSlide].imgPath}}>
-                        </div>
-                    </React.Fragment>
+            {
+                (loading) ? <Slides path="url(../../img/loading.png)"/>
+                    : (error) ? <Slides path="url(../../img/error.png)"/>
+                        : <Slides path={listEvents[numberOfSlide].imgPath}/>
             }
+
             <TextDesc clearAnimation={clearTextDescAnimationBeforeRender}/>
             <SlidePagination clearAnimation={clearTextDescAnimationBeforeRender}/>
             <Arrows clearAnimation={clearTextDescAnimationBeforeRender}/>
@@ -88,7 +81,6 @@ const SliderBlock = () => {
     // }
 }
 export default SliderBlock;
-
 
 
 //------------------------------------------------------------------------

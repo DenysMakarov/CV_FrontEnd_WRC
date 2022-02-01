@@ -16,6 +16,8 @@ const YourTicketsBlock = () => {
     const {getPrincipal} = useContext(AuthContext);
     const isAuth = useSelector(state => state.isAuthReducer.login)
 
+
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -56,10 +58,11 @@ const YourTicketsBlock = () => {
         const arrTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
         const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
         arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
-        arrTickets.map((el) => el.classList.remove("your_tickets_active"))
+        arrTickets.map(el => el.classList.remove("your_tickets_active"))
         console.log(arrTickets[e.target.dataset.id])
-        // arrTickets[e.target.dataset.id].classList.add("your_tickets_active")
-        // arrButtonClose[e.target.dataset.id].classList.add("hide_ticket_button_active")
+        console.log(e.currentTarget)
+        arrTickets[e.target.dataset.id].classList.add("your_tickets_active")
+        arrButtonClose[e.target.dataset.id].classList.add("hide_ticket_button_active")
     }
 
     const hideTicket = () => {
@@ -80,29 +83,30 @@ const YourTicketsBlock = () => {
             <div className="cover"/>
         </div>
     )
-    // your_tickets_array
+    // console.log(userDetails)
     return (
         <div className="tickets_which_already_exist_block">
             {
                 (isAuth) ?
-                    userDetails.tickets.map((el) => (
+                    userDetails.tickets.map((el, index) => (
                         <div key={el.id}
                              className="your_tickets_array_cover"
                              onClick={showTicket}
+                             data-id={index-1}
                         >
                             <div className="your_tickets_array">
-                                <h5 className="your_tickets your_tickets_firstName">{el.firstName}</h5>
-                                <h5 className="your_tickets your_tickets_dateOfEvent">{el.dateOfEvent}</h5>
-                                <h5 className="your_tickets your_tickets_secondName">{el.secondName}</h5>
-                                <h5 className="your_tickets your_tickets_placeOfEvent">{el.placeOfEvent}</h5>
-                                <h5 className="your_tickets your_tickets_nameTicket">{el.nameTicket}</h5>
-                                <h5 className="your_tickets your_tickets_price">{el.price}</h5>
-                                <div className="your_tickets qr_code"><p>{el.phoneNumber}</p></div>
-                                <button className="hide_ticket_button" data-id={el.id} onClick={hideTicket}> Close
+                                <h5 className="your_tickets your_tickets_firstName">{userDetails.firstName}</h5>
+                                <h5 className="your_tickets your_tickets_dateOfEvent">{el.date}</h5>
+                                <h5 className="your_tickets your_tickets_secondName">{userDetails.secondName}</h5>
+                                <h5 className="your_tickets your_tickets_placeOfEvent">{el.place}</h5>
+                                <h5 className="your_tickets your_tickets_nameTicket">{el.title}</h5>
+                                <h5 className="your_tickets your_tickets_price">{'$' + el.price}</h5>
+                                <div className="your_tickets qr_code"><p>{el.id}</p></div>
+                                <button className="hide_ticket_button" data-id={index} onClick={hideTicket}> Close
                                 </button>
                                 {/*{dateOfToDay.getMonth() > el.month && dateOfToDay.getFullYear() == el.year && <PassedCover/>}*/}
                                 {/*{dateOfToDay.getFullYear() > el.year && <PassedCover/>}*/}
-                                <div data-id={el.id} className="cover"/>
+                                <div data-id={index} className="cover"/>
                             </div>
                         </div>
                     ))

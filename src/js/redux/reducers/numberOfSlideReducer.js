@@ -1,4 +1,4 @@
-import {NEXT_SLIDE, SET_EVENTS} from "../../types";
+import {IS_ERROR_FALSE, IS_ERROR_TRUE, NEXT_SLIDE, SET_EVENTS} from "../../types";
 import {PREV_SLIDE} from "../../types";
 import {SET_SLIDE} from "../../types";
 import {NUMBER_OF_SLIDE} from "../../types"
@@ -7,13 +7,8 @@ import {eventInfo} from "../../db/dataBase";
 
 const initiallyState = {
     numberOfSlide: 0,
-    listEvents: []
-    // listEvents: fetch("http://localhost:8080/events/events")
-    //     .then(data => data.json())
-    //     .then((data) => {
-    //         // console.log(data)
-    //         return data
-    //     })
+    listEvents: [],
+    error: true
 }
 
 export const numberOfSlideReducer = (state = initiallyState, action) => {
@@ -48,6 +43,15 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
             return {
                 ...state, listEvents: action.payload
             }
+        case IS_ERROR_TRUE :
+            return {
+                ...state, error: true
+            }
+        case IS_ERROR_FALSE :
+            return {
+                ...state, error: false
+            }
+
         default :
             return state
 

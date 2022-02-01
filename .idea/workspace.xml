@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/redux/reducers/isLoadingEventsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Arrow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Slides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuBTN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuBTN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_ticket_options.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_ticket_options.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +72,23 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/js/components/Tickets">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.UserTiketsBlock.js" />
       </list>
     </recent_temporary>
@@ -86,7 +108,8 @@
       <workItem from="1643129186473" duration="4907000" />
       <workItem from="1643362258526" duration="18841000" />
       <workItem from="1643565607004" duration="8424000" />
-      <workItem from="1643644919509" duration="10945000" />
+      <workItem from="1643644919509" duration="11723000" />
+      <workItem from="1643725123714" duration="16248000" />
     </task>
     <servers />
   </component>
