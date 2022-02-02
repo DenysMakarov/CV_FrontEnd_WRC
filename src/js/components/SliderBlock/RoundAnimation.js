@@ -1,21 +1,15 @@
-import React from "react"
+import React, {useState} from "react"
 
 
-class RoundAnimation extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
+const RoundAnimation = ({posX, posY}) => {
         return (
             <div
                 id="round_animation"
                 className="round_animation"
-                style={{left: this.props.posX - 17.5 + "px", top: this.props.posY - 17.5 + "px"}}
+                style={{left: posX - 17.5 + "px", top: posY - 17.5 + "px"}}
             >
             </div>
         )
-    }
 }
 
 export default RoundAnimation

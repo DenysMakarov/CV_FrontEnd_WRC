@@ -4,9 +4,6 @@ import Arrows from "./ArrowsBlock";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
 import RoundAnimation from "./RoundAnimation";
-import {AuthContext} from "../../App";
-import {SET_SLIDE, SET_EVENTS} from "../../types";
-import IsLoadingEventsReducer from "../../redux/reducers/isLoadingEventsReducer";
 import Slides from "./Slides";
 
 const SliderBlock = () => {
@@ -16,8 +13,6 @@ const SliderBlock = () => {
 
     useEffect(() => {
         changeAnimationSlide()
-        clearTextDescAnimationBeforeRender()
-
     }, [numberOfSlide])
 
 
@@ -84,8 +79,8 @@ const SliderBlock = () => {
     }
 
 
-    let appearancePrevSlide = listEvents.length - 1;
-    numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == listEvents.length ? appearancePrevSlide = 0 : appearancePrevSlide
+    // let appearancePrevSlide = listEvents.length - 1;
+    // numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == listEvents.length ? appearancePrevSlide = 0 : appearancePrevSlide
 
     return (
         <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">

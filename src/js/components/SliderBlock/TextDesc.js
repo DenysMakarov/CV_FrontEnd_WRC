@@ -11,14 +11,7 @@ const TextDesc = ({clearAnimation}) => {
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
 
     useEffect(() => {
-        const arrTextSlide = clearAnimation()
-        setTimeout(() => {
-            arrTextSlide.map((el) => {
-                el.style.display = "block"
-                el.style.animationDelay = "0 !important"
-                el.style.animationName = "text_slider_appear"
-            })
-        }, 50)
+        clearAnimation().map(el => el.style.animationName = "text_slider_appear")
     }, [numberOfSlide])
 
     return (
@@ -35,8 +28,7 @@ const TextDesc = ({clearAnimation}) => {
                     </h5>
                     <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
                 </div>
-                <h1 id="text_description_slide_behind"
-                    className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>
+                <h1 id="text_description_slide_behind" className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>
             </Fragment>
     )
 }

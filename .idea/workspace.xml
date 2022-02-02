@@ -4,15 +4,10 @@
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/OOP.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/OOP.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/challenge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/challenge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/get_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/get_post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +97,7 @@
       <workItem from="1643644919509" duration="11723000" />
       <workItem from="1643725123714" duration="16362000" />
       <workItem from="1643789306767" duration="4000" />
-      <workItem from="1643814884788" duration="11597000" />
+      <workItem from="1643814884788" duration="13128000" />
     </task>
     <servers />
   </component>

@@ -8,15 +8,12 @@ export default ({clearAnimation}) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (listEvents.length) {
-            setActivePag()
-            clearAnimation()
-        }
+        if (listEvents.length) setActivePag()
     }, [numberOfSlide, listEvents.length])
 
 
     const setSlider = (e) => {
-        if (+e.target.dataset.id !== numberOfSlide ){
+        if (+e.target.dataset.id !== numberOfSlide) {
             dispatch(setSlide(+e.target.dataset.id))
             clearAnimation()
         }
