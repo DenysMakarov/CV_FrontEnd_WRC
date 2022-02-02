@@ -23,7 +23,7 @@
   }
 
 
-  .your_tickets_array_cover {
+  .wrapper-ticket {
     margin-top: 15%;
     width: 50%;
     height: 85%;
@@ -81,7 +81,7 @@
     transform: perspective(0) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0) translateY(0) translateZ(0) !important;
   }
 
-  .your_tickets_array {
+  .ticket-item {
     width: 100%;
     height: 100%;
     background: url("../img/ticketBg.jpg");
@@ -109,7 +109,7 @@
   }
 }
 
-.your_tickets {
+.ticket-desc {
   color: $main-bg;
   width: 50%;
   float: left;

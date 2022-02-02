@@ -3,12 +3,10 @@ import {connect, useDispatch, useSelector} from "react-redux";
 import PropTypes from "prop-types"
 import {ADD_USER, LOGIN, LOGOUT} from "../../types";
 import {AuthContext} from "../../App";
+import {addUser, logIn} from "../../redux/actions/actions";
+import Ticket from "./Ticket";
 
-// const mapStateToProps = (state) => {
-//     return {
-//         tickets: state.ticketsReducer
-//     }
-// }
+
 
 const YourTicketsBlock = () => {
     const dispatch = useDispatch();
@@ -26,19 +24,16 @@ const YourTicketsBlock = () => {
                     if (data.status < 200 || data.status > 299) return;
                     return data.json();
                 })
-                .then(data => dispatch({type: ADD_USER, payload: Object.assign({}, {...data})}))
-                .then(() => dispatch({type: LOGIN}))
-                .then(() => {
+                .then(data => {
+                    dispatch(addUser(data))
+                    dispatch(logIn())
                     animationOfTickets()
                 })
         }
-
-
     }, [])
 
-
     const animationOfTickets = () => {
-        let arrOfTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
+        let arrOfTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
         let scaleElem = 0.7
         for (let i = 0; i < arrOfTickets.length; i++) {
             arrOfTickets[i].style.opacity = '0'
@@ -54,61 +49,55 @@ const YourTicketsBlock = () => {
         }
     }
 
-    const showTicket = (e) => {
-        const arrTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
-        const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
-        arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
-        arrTickets.map(el => el.classList.remove("your_tickets_active"))
-        console.log(arrTickets[e.target.dataset.id])
-        console.log(e.currentTarget)
-        arrTickets[e.target.dataset.id].classList.add("your_tickets_active")
-        arrButtonClose[e.target.dataset.id].classList.add("hide_ticket_button_active")
-    }
-
-    const hideTicket = () => {
-        const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
-        const arrTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
-        setTimeout(() => {
-            for (let i = 0; i < arrTickets.length; i++) {
-                arrTickets[i].classList.remove("your_tickets_active")
-                arrButtonClose[i].classList.remove("hide_ticket_button_active")
-            }
-        }, 0)
-    }
-
-
-    const PassedCover = () => (
-        <div className="passed_cover">
-            <p>PASSED</p>
-            <div className="cover"/>
-        </div>
-    )
-    // console.log(userDetails)
+    // const showTicket = (e) => {
+    //     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
+    //     const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
+    //     arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
+    //     arrTickets.map(el => el.classList.remove("your_tickets_active"))
+    //     arrTickets[e.currentTarget.dataset.id].classList.add("your_tickets_active")
+    //     arrButtonClose[e.currentTarget.dataset.id].classList.add("hide_ticket_button_active")
+    // }
+    // const hideTicket = (e) => {
+    //     const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
+    //     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
+    //     setTimeout(() => {
+    //         // for (let i = 0; i < arrTickets.length; i++) {
+    //         arrTickets[e.target.dataset.id].classList.remove("your_tickets_active")
+    //         arrButtonClose[e.target.dataset.id].classList.remove("hide_ticket_button_active")
+    //         // }
+    //     }, 0)
+    //     e.target.classList.remove("hide_ticket_button_active")
+    //     console.log(arrTickets[e.target.dataset.id])
+    // }
     return (
         <div className="tickets_which_already_exist_block">
             {
                 (isAuth) ?
                     userDetails.tickets.map((el, index) => (
-                        <div key={el.id}
-                             className="your_tickets_array_cover"
-                             onClick={showTicket}
-                             data-id={index-1}
-                        >
-                            <div className="your_tickets_array">
-                                <h5 className="your_tickets your_tickets_firstName">{userDetails.firstName}</h5>
-                                <h5 className="your_tickets your_tickets_dateOfEvent">{el.date}</h5>
-                                <h5 className="your_tickets your_tickets_secondName">{userDetails.secondName}</h5>
-                                <h5 className="your_tickets your_tickets_placeOfEvent">{el.place}</h5>
-                                <h5 className="your_tickets your_tickets_nameTicket">{el.title}</h5>
-                                <h5 className="your_tickets your_tickets_price">{'$' + el.price}</h5>
-                                <div className="your_tickets qr_code"><p>{el.id}</p></div>
-                                <button className="hide_ticket_button" data-id={index} onClick={hideTicket}> Close
-                                </button>
-                                {/*{dateOfToDay.getMonth() > el.month && dateOfToDay.getFullYear() == el.year && <PassedCover/>}*/}
-                                {/*{dateOfToDay.getFullYear() > el.year && <PassedCover/>}*/}
-                                <div data-id={index} className="cover"/>
-                            </div>
-                        </div>
+                        <Ticket
+                            key={el.id}
+                            // showTicket={showTicket}
+                            dataId={index}
+                            userDetails={userDetails}
+                            el={el}
+                        />
+                        // <div key={el.id}
+                        //      className="your_tickets_array_cover"
+                        //      onClick={showTicket}
+                        //      data-id={index-1}
+                        // >
+                        //     <div className="ticket-item">
+                        //         <h5 className="your_tickets your_tickets_firstName">{userDetails.firstName}</h5>
+                        //         <h5 className="your_tickets your_tickets_dateOfEvent">{el.date}</h5>
+                        //         <h5 className="your_tickets your_tickets_secondName">{userDetails.secondName}</h5>
+                        //         <h5 className="your_tickets your_tickets_placeOfEvent">{el.place}</h5>
+                        //         <h5 className="your_tickets your_tickets_nameTicket">{el.title}</h5>
+                        //         <h5 className="your_tickets your_tickets_price">{'$' + el.price}</h5>
+                        //         <div className="your_tickets qr_code"><p>{el.id}</p></div>
+                        //         <button className="hide_ticket_button" data-id={index} onClick={hideTicket}> Close</button>
+                        //         <div data-id={index} className="cover"/>
+                        //     </div>
+                        // </div>
                     ))
                     :
                     <h1>Loading...</h1>

@@ -120,8 +120,7 @@ export function addUser(user) {
 }
 export function removeUser() {
     return {
-        type: REMOVE_USER,
-        payload: {}
+        type: REMOVE_USER
     }
 }
 
