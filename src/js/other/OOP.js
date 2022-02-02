@@ -205,10 +205,10 @@
 //
 // btn.onclick = test;
 //
-// function test(color, num) {
+// function test(color, numberOfSlide) {
 //     console.log(this);
 //     console.log(color);
-//     console.log(num)
+//     console.log(numberOfSlide)
 //     this.style.backgroundColor = color
 // }
 

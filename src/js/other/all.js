@@ -303,11 +303,11 @@
 // console.log(arr2)
 
 // ============== ФИБОНАЧИ РЕКУРСИЯ =====================
-// function fib(num) {
-//     if (num <=1) {
-//         return num;
+// function fib(numberOfSlide) {
+//     if (numberOfSlide <=1) {
+//         return numberOfSlide;
 //     } else {
-//         return fib(num - 1) + fib(num - 2)
+//         return fib(numberOfSlide - 1) + fib(numberOfSlide - 2)
 //     }
 // }
 // console.log(fib(6));

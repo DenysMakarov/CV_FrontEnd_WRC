@@ -14,6 +14,12 @@ const SliderBlock = () => {
     const {numberOfSlide, listEvents, error} = useSelector(state => state.numberOfSlideReducer)
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
 
+    useEffect(() => {
+        changeAnimationSlide()
+        clearTextDescAnimationBeforeRender()
+
+    }, [numberOfSlide])
+
 
     const setRoundPos = (e) => {
         const round = document.getElementById("round_animation");
@@ -41,6 +47,14 @@ const SliderBlock = () => {
             setPosition(arrowRight, round)
         }
     }
+    const setPosition = (arrow, round) => {
+        setPos({
+            posX: arrow.getBoundingClientRect().left + 15,
+            posY: arrow.getBoundingClientRect().top + 15,
+        })
+        round.style.width = arrow.getBoundingClientRect().width + 4 + "px";
+        round.style.height = arrow.getBoundingClientRect().height + 4 + "px";
+    }
 
     const clearTextDescAnimationBeforeRender = () => {
         const arrTextSlide = Array.from(document.getElementsByClassName("text_description_slide"))
@@ -50,14 +64,25 @@ const SliderBlock = () => {
         return arrTextSlide;
     }
 
-    const setPosition = (arrow, round) => {
-        setPos({
-            posX: arrow.getBoundingClientRect().left + 15,
-            posY: arrow.getBoundingClientRect().top + 15,
-        })
-        round.style.width = arrow.getBoundingClientRect().width + 4 + "px";
-        round.style.height = arrow.getBoundingClientRect().height + 4 + "px";
+    const changeAnimationSlide = () => {
+        let getMainSlide = document.getElementById("main_slide")
+        let getBeforeSlide = document.getElementById("slide_before")
+
+
+        getMainSlide.style.animationName = "none"
+        getBeforeSlide.classList.remove("slider_before_appear")
+        getBeforeSlide.classList.add("slider_block_hide")
+        getMainSlide.classList.remove("slider_block_appear")
+        getMainSlide.classList.add("slider_block_hide")
+
+        setTimeout(() => {
+            getBeforeSlide.classList.remove("slider_block_hide")
+            getBeforeSlide.classList.add("slider_before_appear")
+            getMainSlide.classList.remove("slider_block_hide")
+            getMainSlide.classList.add("slider_block_appear")
+        }, 200)
     }
+
 
     let appearancePrevSlide = listEvents.length - 1;
     numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == listEvents.length ? appearancePrevSlide = 0 : appearancePrevSlide

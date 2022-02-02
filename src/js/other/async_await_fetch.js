@@ -38,7 +38,7 @@
 // let urlJ = "https://jpegshare.net/images/fd/62/fd6229b90295fea63a266a017fd3e3fb.jpg"
 // let urlA = "https://jpegshare.net/images/da/3f/da3f6469e2bc0b634fc480f9bebd4809.jpg"
 //
-// function loadImg(url, num) {
+// function loadImg(url, numberOfSlide) {
 //     return new Promise((response, reject)=>{
 //         let img = new  Image();
 //         img.height = 500;
@@ -46,11 +46,11 @@
 //         img.src = url
 //         document.body.append(img);
 //         img.addEventListener("load", () => {
-//             console.log(`----${num}---`)
+//             console.log(`----${numberOfSlide}---`)
 //             response()
 //         })
 // img.addEventListener("error", () => {
-//             console.log(`--rejected--${num}--rejected--`)
+//             console.log(`--rejected--${numberOfSlide}--rejected--`)
 //             reject()
 //         })
 //     })

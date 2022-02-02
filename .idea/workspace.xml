@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Arrow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Slides.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuBTN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuBTN.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_ticket_options.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_ticket_options.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/OOP.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/OOP.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/challenge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/challenge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/other/get_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/other/get_post.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,16 +38,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/BodyInfo.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/ContactsBlock.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Events/Events.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/MyInput.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/BodyInfo.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/MyInput.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/Events.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="23k3ODmn8no3ARmnKaKXfNj5tzT" />
   <component name="ProjectViewState">
@@ -109,7 +100,9 @@
       <workItem from="1643362258526" duration="18841000" />
       <workItem from="1643565607004" duration="8424000" />
       <workItem from="1643644919509" duration="11723000" />
-      <workItem from="1643725123714" duration="16248000" />
+      <workItem from="1643725123714" duration="16362000" />
+      <workItem from="1643789306767" duration="4000" />
+      <workItem from="1643814884788" duration="11597000" />
     </task>
     <servers />
   </component>

@@ -78,7 +78,6 @@ class TicketsBlock extends React.Component {
 
     createTicket = (e) => {
         e.preventDefault()
-        // console.log(this.props.events)
         console.log(this.state)
         // const {firstName, nameTicket, secondName, phoneNumber} = this.state
         // const ticketInfo = {
