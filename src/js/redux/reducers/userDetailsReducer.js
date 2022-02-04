@@ -2,16 +2,7 @@ import {ADD_USER, REMOVE_USER} from "../../types";
 
 
 const initiallyState = {
-    userDetails: {
-        // login: '',
-        // username: '',
-        // email: '',
-        // password: '',
-        // phoneNumber: '',
-        // roles: '',
-        // birthDate: '',
-        // tickets: []
-    }
+    userDetails: {}
 }
 
 export const userDetailsReducer = (state = initiallyState, action) => {

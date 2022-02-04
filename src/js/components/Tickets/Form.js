@@ -6,19 +6,29 @@ import {useSelector} from "react-redux";
 import Events from "../Events/Events";
 import EventDesc from "./EventDesc";
 
-const Form = ({firstName, secondName, phoneNumber, getValueFromInput, createTicket}) => {
+const Form = ({firstName, secondName, phoneNumber, getValueFromInput, byTicketFun, handleValidation}) => {
     return (
         <form id="ticket_form" className="ticket_form" action="">
-            <Input getValueFromInput={getValueFromInput} valueOfData={firstName} textLabel='First name'/>
-            <Input getValueFromInput={getValueFromInput} valueOfData={secondName} textLabel='Second name'/>
-            <Input getValueFromInput={getValueFromInput} valueOfData={phoneNumber} textLabel='Phone number'/>
+            <Input  getValueFromInput={getValueFromInput} valueOfData={firstName} name="firstName" textLabel='First name'/>
+            <Input  getValueFromInput={getValueFromInput} valueOfData={secondName} name="secondName" textLabel='Second name'/>
+            <Input  getValueFromInput={getValueFromInput} valueOfData={phoneNumber} name="phoneNumber" textLabel='Phone number'/>
             <EventDesc/>
-            <Btn createTicket={createTicket}/>
+            <Btn handleValidation={handleValidation} byTicketFun={byTicketFun}/>
         </form>
     );
 };
 
 export default Form;
+
+
+
+
+
+
+
+
+
+
 
 
 {/*<label htmlFor="firstName">First Name</label>*/

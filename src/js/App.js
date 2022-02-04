@@ -15,7 +15,9 @@ import {
     LOGOUT,
     SET_EVENTS
 } from "./types";
-import {isErrorFalse, isErrorTrue, loadingEvents, loadingEventsDone} from "./redux/actions/actions";
+import {addUser, isErrorFalse, isErrorTrue, loadingEvents, loadingEventsDone, logIn} from "./redux/actions/actions";
+import {userDetailsReducer} from "./redux/reducers/userDetailsReducer";
+import {isAuthReducer} from "./redux/reducers/isAuthReducer";
 
 
 export const AuthContext = createContext({
@@ -35,26 +37,44 @@ const App = () => {
     // const [error, setError] = useState(false)
     // const [isLoadingEvents, setIsLoadingEvents] = useState(true)
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
-    const {error} = useSelector(state => state.numberOfSlideReducer)
+    const {error, listEvents} = useSelector(state => state.numberOfSlideReducer)
+    const {userDetails} = useSelector(state => state.userDetailsReducer)
+    const {login} = useSelector(state => state.isAuthReducer)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
+        isAuth()
         getEvents()
             .then(data => {
                 setErrorFalse(dispatch)
-                // dispatch({type: IS_ERROR_FALSE})
                 dispatch({type: SET_EVENTS, payload: data})
                 isLoadingFalse(dispatch)
             })
             .catch((e) => {
                 setErrorTrue(dispatch)
-                // dispatch({type: IS_ERROR_TRUE})
                 isLoadingFalse(dispatch)
             })
-    }, [])
+    }, [login])
 
     const moveRound = (e) => {
         setPos({posX: e.clientX, posY: e.clientY})
+    }
+
+    const isAuth = () => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            fetch("http://localhost:8080/login", {
+                method: 'post',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json;charset=utf-8',
+                },
+            })
+                .then(data => data.json())
+                .then(data => dispatch(addUser(data)))
+                .then(() => dispatch(logIn()))
+        }
     }
 
     // const isLoadingTrue = (dispatch) => {
@@ -87,7 +107,7 @@ const App = () => {
                 <div className="main_container">
                     {(error) ?
                         <Fragment>
-                            <h1 className='text-error' >ERROR</h1>
+                            <h1 className='text-error'>ERROR</h1>
                             <Routes/>
                         </Fragment>
                         :

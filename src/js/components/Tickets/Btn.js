@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Btn = ({createTicket}) => {
+const Btn = ({byTicketFun}) => {
     return (
         <button
-            onClick={createTicket}
+            onClick={byTicketFun}
             type="submit"
             id="btn_ticket_form"
             className="btn_ticket_form">Buy Ticket
