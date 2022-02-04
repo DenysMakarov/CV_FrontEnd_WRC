@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Btn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Btn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,7 @@
       <workItem from="1643725123714" duration="16362000" />
       <workItem from="1643789306767" duration="4000" />
       <workItem from="1643814884788" duration="18288000" />
-      <workItem from="1643966929671" duration="23118000" />
+      <workItem from="1643966929671" duration="32817000" />
     </task>
     <servers />
   </component>

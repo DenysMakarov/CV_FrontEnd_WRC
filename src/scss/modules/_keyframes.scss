@@ -158,8 +158,9 @@
 
 @keyframes ticket_animation_appear {
   0% {
-    margin-top: -15%;
     opacity: 0;
+    margin-top: -15%;
+    transition: .5s;
   }
   100%{
     opacity: 1;

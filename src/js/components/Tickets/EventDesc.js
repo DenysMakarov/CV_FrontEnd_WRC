@@ -4,10 +4,10 @@ import {setSlide} from "../../redux/actions/actions";
 
 const EventDesc = () => {
     const {listEvents, numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
-    const [styleEventsAppear, setStyleEventsAppear] = useState({
-        animationName: 'ticket_slide_appear',
-        backgroundImage: 'url(../img/Dakar_kamaz_1.jpg)'
-    })
+    const [styleEventsAppear, setStyleEventsAppear] = useState({animationName: 'ticket_slide_appear'})
+    const [styleTitleAppear, setStyleTitleAppear] = useState({animationName: 'ticket_form_title_appear'})
+    const [styleDescAppear, setStyleDescAppear] = useState({animationName: 'ticket_date_appear'})
+
 
     useEffect(() => {
         if (listEvents.length) animation()
@@ -15,11 +15,16 @@ const EventDesc = () => {
 
     const animation = () => {
         setStyleEventsAppear({...styleEventsAppear, animationName: 'none'})
+        setStyleTitleAppear({...styleTitleAppear, animationName: 'none'})
+        setStyleDescAppear({...styleDescAppear, animationName: 'none'})
+
         setTimeout(() => {
             setStyleEventsAppear({
                 animationName: 'ticket_slide_appear',
                 backgroundImage: listEvents[numberOfSlide]['imgPath']
             })
+            setStyleTitleAppear({...styleTitleAppear, animationName: 'ticket_form_title_appear'})
+            setStyleDescAppear({...styleDescAppear, animationName: 'ticket_date_appear'})
         }, 100)
     }
 
@@ -27,10 +32,10 @@ const EventDesc = () => {
         (listEvents.length)
             ?
             <Fragment>
-                <h3 id="date_of_event" className="date_of_event">{listEvents[numberOfSlide].date}
+                <h3 id="date_of_event" style={styleDescAppear} className="date_of_event">{listEvents[numberOfSlide].date}
                     <br/> {listEvents[numberOfSlide].place}</h3>
                 <div id="inform_img " className="inform_img" style={styleEventsAppear}/>
-                <h1 id="ticket_form_title" className="ticket_form_title">{listEvents[numberOfSlide].title}</h1>
+                <h1 id="ticket_form_title" style={styleTitleAppear} className="ticket_form_title">{listEvents[numberOfSlide].title}</h1>
             </Fragment>
 
             : <h1 style={{color: 'white'}}>LOADING...</h1>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {connect, useDispatch, useSelector} from "react-redux";
 import PropTypes from "prop-types"
 import {ADD_USER, LOGIN, LOGOUT} from "../../types";
@@ -9,45 +9,34 @@ import Ticket from "./Ticket";
 
 
 const YourTicketsBlock = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+    // const {getPrincipal} = useContext(AuthContext);
     const userDetails = useSelector(state => state.userDetailsReducer.userDetails)
-    const {getPrincipal} = useContext(AuthContext);
     const isAuth = useSelector(state => state.isAuthReducer.login)
 
 
-
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            getPrincipal(token)
-                .then(data => {
-                    if (data.status < 200 || data.status > 299) return;
-                    return data.json();
-                })
-                .then(data => {
-                    dispatch(addUser(data))
-                    dispatch(logIn())
-                    animationOfTickets()
-                })
-        }
-    }, [])
+        if(isAuth){}
 
-    const animationOfTickets = () => {
-        let arrOfTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
-        let scaleElem = 0.7
-        for (let i = 0; i < arrOfTickets.length; i++) {
-            arrOfTickets[i].style.opacity = '0'
-            arrOfTickets[i].style.animationName = 'ticket_animation_appear'
-            arrOfTickets[i].style.right = (1 + i) * 80 + 'px'
-            arrOfTickets[i].style.transform = `scale(${scaleElem})`
-            arrOfTickets[i].style.animationDelay = i / 6 + "s"
-            setTimeout(()=>{
-                arrOfTickets[i].style.opacity = '1'
-            }, 500)
-            scaleElem = scaleElem + 0.1
-            arrOfTickets[i].style.transition = 0.3 + 's'
-        }
-    }
+        // animationOfTickets()
+    }, [isAuth])
+
+    // const animationOfTickets = () => {
+    //     let arrOfTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
+    //     let scaleElem = 0.7
+    //     for (let i = 0; i < arrOfTickets.length; i++) {
+    //         arrOfTickets[i].style.opacity = '0'
+    //         arrOfTickets[i].style.animationName = 'ticket_animation_appear'
+    //         arrOfTickets[i].style.right = (1 + i) * 80 + 'px'
+    //         arrOfTickets[i].style.transform = `scale(${scaleElem})`
+    //         arrOfTickets[i].style.animationDelay = i / 6 + "s"
+    //         setTimeout(()=>{
+    //             arrOfTickets[i].style.opacity = '1'
+    //         }, 500)
+    //         scaleElem = scaleElem + 0.1
+    //         arrOfTickets[i].style.transition = 0.3 + 's'
+    //     }
+    // }
 
     // const showTicket = (e) => {
     //     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
@@ -70,38 +59,24 @@ const YourTicketsBlock = () => {
     //     console.log(arrTickets[e.target.dataset.id])
     // }
     return (
-        <div className="tickets_which_already_exist_block">
-            {
-                (isAuth) ?
-                    userDetails.tickets.map((el, index) => (
-                        <Ticket
-                            key={el.id}
-                            // showTicket={showTicket}
-                            dataId={index}
-                            userDetails={userDetails}
-                            el={el}
-                        />
-                        // <div key={el.id}
-                        //      className="your_tickets_array_cover"
-                        //      onClick={showTicket}
-                        //      data-id={index-1}
-                        // >
-                        //     <div className="ticket-item">
-                        //         <h5 className="your_tickets your_tickets_firstName">{userDetails.firstName}</h5>
-                        //         <h5 className="your_tickets your_tickets_dateOfEvent">{el.date}</h5>
-                        //         <h5 className="your_tickets your_tickets_secondName">{userDetails.secondName}</h5>
-                        //         <h5 className="your_tickets your_tickets_placeOfEvent">{el.place}</h5>
-                        //         <h5 className="your_tickets your_tickets_nameTicket">{el.title}</h5>
-                        //         <h5 className="your_tickets your_tickets_price">{'$' + el.price}</h5>
-                        //         <div className="your_tickets qr_code"><p>{el.id}</p></div>
-                        //         <button className="hide_ticket_button" data-id={index} onClick={hideTicket}> Close</button>
-                        //         <div data-id={index} className="cover"/>
-                        //     </div>
-                        // </div>
-                    ))
-                    :
-                    <h1>Loading...</h1>
-            }
+        <div className="wrapper-user-tickets-block_mod">
+            <div className="user-tickets-block_mod">
+                {
+                    (isAuth) ?
+                        userDetails.tickets.map((el, index) => (
+                            <Ticket
+                                key={el.id}
+                                // showTicket={showTicket}
+                                dataId={index}
+                                userDetails={userDetails}
+                                el={el}
+                                index={index}
+                            />
+                        ))
+                        :
+                        <h1>Loading...</h1>
+                }
+            </div>
         </div>
     )
 }
@@ -112,7 +87,13 @@ YourTicketsBlock.propTypes = {
 export default YourTicketsBlock;
 
 
-// export default connect(mapStateToProps, null)(YourTicketsBlock)
+
+
+
+
+
+
+
 
 
 // const mapStateToProps = (state) => {

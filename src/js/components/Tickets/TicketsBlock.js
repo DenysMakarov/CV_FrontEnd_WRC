@@ -137,7 +137,7 @@ class TicketsBlock extends React.Component {
                           events={this.props.events}
                           byTicketFun={this.buyTicket}
                     />
-                    <button onClick={this.handleValidation}>CLICK</button>
+                    {/*<button onClick={this.handleValidation}>CLICK</button>*/}
 
                     <YourTicketsBlock arrTickets={this.props.tickets.arrTickets}/>
                 </div>
