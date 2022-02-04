@@ -1,15 +1,16 @@
 import React from 'react';
 
-const EventNavigation = ({events, setAnimation}) => {
+const EventNavigation = ({events, setAnimation, createTicket}) => {
     return (
         <div className="tickets_events">
             {events.map((el, index) => (
                 <div data-name={el.title} key={el.id} className="tickets_option_cover">
                     <div className="tickets_option">
-                        <h5 onClick={setAnimation} data-number={el.id}
-                            className="tickets_option_text">{el.title}</h5>
+                        <p onClick={createTicket} data-id={el.id}
+                            className="tickets_option_text">{el.title}
+                        </p>
                     </div>
-                    <p data-number={el.id} className="tickets_option_title">{el.title}</p>
+                    <p data-id={el.id} className="tickets_option_title">{el.title}</p>
                 </div>
             ))}
         </div>

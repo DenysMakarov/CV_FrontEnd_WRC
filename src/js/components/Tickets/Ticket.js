@@ -50,7 +50,7 @@ const Ticket = ({dataId, userDetails, el}) => {
              data-id={dataId}
         >
             <div className="ticket-item">
-                <h5 className="ticket-desc your_tickets_firstName">{userDetails.firstName}</h5>
+                <p className="ticket-desc your_tickets_firstName">{userDetails.firstName}</p>
                 <h5 className="ticket-desc your_tickets_dateOfEvent">{el.date}</h5>
                 <h5 className="ticket-desc your_tickets_secondName">{userDetails.secondName}</h5>
                 <h5 className="ticket-desc your_tickets_placeOfEvent">{el.place}</h5>
