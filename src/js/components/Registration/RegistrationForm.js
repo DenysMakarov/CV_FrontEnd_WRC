@@ -81,7 +81,7 @@ class RegistrationForm extends React.Component {
             .then(() => {
                 this.validationForm()
             })
-            .catch((err) => console.error(err))
+            // .catch((err) => console.error(err))
     };
 
     // check it out the same email in to db (local storage in this project / redux)
@@ -104,7 +104,7 @@ class RegistrationForm extends React.Component {
 
     validationForm = () => {
         const {login, username, email, password, repeatPassword} = this.state.registration
-        const nameInput = document.getElementById("login")
+        const nameInput = document.getElementById("isAuth")
         const usernameInput = document.getElementById("username")
         const nameError = document.getElementById("nameError")
         const usernameError = document.getElementById("usernameError")
@@ -130,7 +130,7 @@ class RegistrationForm extends React.Component {
         }
 
         if (login === "") {
-            nameError.innerText = "Please write your`s login"
+            nameError.innerText = "Please write your`s isAuth"
             nameInput.style.border = styleError.border
         } else {
             nameError.innerText = ""
@@ -138,7 +138,7 @@ class RegistrationForm extends React.Component {
         }
 
         if (username === "") {
-            usernameError.innerText = "Please write your`s second login"
+            usernameError.innerText = "Please write your`s second isAuth"
             usernameInput.style.border = styleError.border
         } else {
             usernameError.innerText = ""
@@ -196,10 +196,10 @@ class RegistrationForm extends React.Component {
 
         // let informText = (!this.state.conflictAddUser) ?
         //     this.state.nameInfoWindow + "Thank you for registration!"
-        //     : "User " + this.state.nameInfoWindow + " has already done. Please, choose another login"
+        //     : "User " + this.state.nameInfoWindow + " has already done. Please, choose another isAuth"
         let informText = (!this.state.conflictAddUser) ?
             "Thank you for registration!"
-            : "User has already registered. Please, choose another login"
+            : "User has already registered. Please, choose another isAuth"
 
 
         informPageText.innerText = informText;
@@ -294,7 +294,7 @@ class RegistrationForm extends React.Component {
                 {/*<MyInput*/}
                 {/*    props={this.state.registration}*/}
                 {/*    fun={this.changeValue}*/}
-                {/*    nameId={"login"}*/}
+                {/*    nameId={"isAuth"}*/}
                 {/*></MyInput>*/}
 
                 <label htmlFor="login">

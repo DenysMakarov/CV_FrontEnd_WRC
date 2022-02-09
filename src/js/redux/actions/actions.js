@@ -112,6 +112,13 @@ export function addTicket(ticket) {
     }
 }
 
+export function removeTicket(ticket) {
+    return {
+        type: REMOVE_TICKET,
+        payload: ticket
+    }
+}
+
 export function addUser(user) {
     return {
         type: ADD_USER,

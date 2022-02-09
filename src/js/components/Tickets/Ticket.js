@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
+const showTicked = {
+    transform: 'scale(1.4)'
+}
+const hideTicked = {
+    transform: 'scale(1)'
+}
+
 const Ticket = ({dataId, userDetails, el, index}) => {
     const [isHide, setHide] = useState(false)
     const [className, setClassName] = useState('')
@@ -12,44 +19,31 @@ const Ticket = ({dataId, userDetails, el, index}) => {
         // animationDelay: index / 6 + "s",
         // zIndex: index+10,
         // transition: .3 +'s',
+
+
     })
 
     const showTicket = () => {
-        setHide(false)
+        setHide(true)
     }
 
     const hideTicket = () => {
-        setHide(true)
+        setHide(false)
     }
 
     useEffect(() => {
         if (isHide) {
-            setClassName("your_tickets_active")
-            setClassNameBtn("hide_ticket_button_active")
+            setAnimation(showTicked)
+            // setClassName("your_tickets_active")
+            // setClassNameBtn("hide_ticket_button_active")
         } else {
-            setClassName("")
-            setClassNameBtn("")
+            setAnimation(hideTicked)
+            // setClassName("")
+            // setClassNameBtn("")
         }
     }, [isHide])
 
     // your_tickets_active
-
-    // const hideTicket = (e) => {
-    //     const arrButtonClose = document.getElementsByClassName("hide_ticket_button")
-    //     const arrTickets = document.getElementsByClassName("wrapper-ticket")
-    //
-    //     e.target.classList.remove("hide_ticket_button_active")
-    //     console.log(arrTickets[e.target.dataset.id])
-    // }
-
-    const showTicketA = (e) => {
-        const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
-        const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
-        arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
-        arrTickets.map(el => el.classList.remove("your_tickets_active"))
-        arrTickets[e.currentTarget.dataset.id].classList.add("your_tickets_active")
-        arrButtonClose[e.currentTarget.dataset.id].classList.add("hide_ticket_button_active")
-    }
 
     return (
         <div className={`wrapper-ticket_mod ${className}`}
@@ -60,16 +54,14 @@ const Ticket = ({dataId, userDetails, el, index}) => {
         >
             <div className="wrapper-item_mod">
                 <div className="ticket-item_mod">
-                    {/*<p className="ticket-desc your_tickets_firstName">{userDetails.firstName}</p>*/}
                     <h5 className="ticket-desc_mod your_tickets_dateOfEvent">{el.date}</h5>
-                    {/*<h5 className="ticket-desc your_tickets_secondName">{userDetails.secondName}</h5>*/}
                     <h5 className="ticket-desc_mod your_tickets_placeOfEvent">{el.place}</h5>
                     <h5 className="ticket-desc_mod your_tickets_nameTicket_mod">{el.title}</h5>
-                    {/*<h5 className="ticket-desc your_tickets_price">{'$' + el.price}</h5>*/}
                     <div className="ticket-desc_mod qr_code_mod"><p>{el.id}</p></div>
-                    {/*<button onClick={hideTicket} className={`hide_ticket_button ${classNameBtn}`} data-id={dataId}> Close*/}
-                    {/*</button>*/}
-                    <div data-id={dataId} className="cover"/>
+                    <button onClick={hideTicket} className={`hide_ticket_button ${classNameBtn}`} data-id={dataId}> Close
+                    </button>
+                    <div data-id={dataId} className
+                        ="cover"/>
                 </div>
             </div>
 
@@ -102,3 +94,19 @@ export default Ticket;
 //         <div data-id={dataId} className="cover"/>
 //     </div>
 // </div>
+
+// const showTicketA = (e) => {
+//     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
+//     const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
+//     arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
+//     arrTickets.map(el => el.classList.remove("your_tickets_active"))
+//     arrTickets[e.currentTarget.dataset.id].classList.add("your_tickets_active")
+//     arrButtonClose[e.currentTarget.dataset.id].classList.add("hide_ticket_button_active")
+// }
+// const hideTicket = (e) => {
+//     const arrButtonClose = document.getElementsByClassName("hide_ticket_button")
+//     const arrTickets = document.getElementsByClassName("wrapper-ticket")
+//
+//     e.target.classList.remove("hide_ticket_button_active")
+//     console.log(arrTickets[e.target.dataset.id])
+// }

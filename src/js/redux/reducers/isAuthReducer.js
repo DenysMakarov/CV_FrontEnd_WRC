@@ -2,15 +2,15 @@ import {LOGIN, LOGOUT} from "../../types";
 
 
 const initiallyState = {
-    login: false
+    isAuth: false
 }
 
 export const isAuthReducer = (state = initiallyState, action) => {
     switch (action.type) {
         case LOGIN :
-            return {...state, login: true}
+            return {...state, isAuth: true}
         case LOGOUT :
-            return {...state, login: false}
+            return {...state, isAuth: false}
         default :
             return state
     }

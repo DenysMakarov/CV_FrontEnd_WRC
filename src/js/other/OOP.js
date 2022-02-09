@@ -106,7 +106,7 @@
 // -----------------------------
 
 // let user = {
-//     "login": "",
+//     "isAuth": "",
 //     "password": "",
 //     "validatePassword": function () {
 //         // (this.password.length > 6) ? true : false

@@ -39,12 +39,12 @@ const App = () => {
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
     const {error, listEvents} = useSelector(state => state.numberOfSlideReducer)
     const {userDetails} = useSelector(state => state.userDetailsReducer)
-    const {login} = useSelector(state => state.isAuthReducer)
+    const {isAuth} = useSelector(state => state.isAuthReducer)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        isAuth()
+        isAuthentication()
         getEvents()
             .then(data => {
                 setErrorFalse(dispatch)
@@ -55,13 +55,13 @@ const App = () => {
                 setErrorTrue(dispatch)
                 isLoadingFalse(dispatch)
             })
-    }, [login])
+    }, [isAuth])
 
     const moveRound = (e) => {
         setPos({posX: e.clientX, posY: e.clientY})
     }
 
-    const isAuth = () => {
+    const isAuthentication = () => {
         const token = localStorage.getItem('token')
         if (token) {
             fetch("http://localhost:8080/login", {

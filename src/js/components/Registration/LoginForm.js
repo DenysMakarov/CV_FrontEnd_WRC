@@ -9,8 +9,8 @@ import {AuthContext} from "../../App";
 const LoginForm = () => {
     const dispatch = useDispatch();
     const [auth, setAuth] = useState({login: '', password: ''});
-    const isAuth = useSelector(state => state.isAuthReducer.login)
-    const userDetails = useSelector(state => state.userDetailsReducer.userDetails)
+    const {isAuth} = useSelector(state => state.isAuthReducer)
+    const {userDetails} = useSelector(state => state.userDetailsReducer)
     const {getPrincipal} = useContext(AuthContext);
 
     useEffect(() => {
@@ -104,7 +104,7 @@ const LoginForm = () => {
 // const mapStateToProps = (state) => {
 //     return {
 //         users: state.usersReducer.users,
-//         login: state.isAuthReducer.login
+//         isAuth: state.isAuthReducer.isAuth
 //     }
 // }
 //
@@ -121,14 +121,14 @@ const LoginForm = () => {
 //         this.state = {
 //             email: "",
 //             password: "",
-//             login: ""
+//             isAuth: ""
 //         }
 //     }
 //
 //
 //     componentDidUpdate(prevProps, prevState, snapshot) {
 //         const loginBtn = document.getElementById("btnLogin");
-//         (this.props.login === false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
+//         (this.props.isAuth === false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
 //     }
 //
 //     animationTextLoginInform = (color) => {
@@ -149,11 +149,11 @@ const LoginForm = () => {
 //     }
 //
 //     loginBack = async () => {
-//         let login = {
-//             login: this.state.email,
+//         let isAuth = {
+//             isAuth: this.state.email,
 //             password: this.state.password
 //         }
-//         const base64decoder = btoa(login.login + ':' + login.password)
+//         const base64decoder = btoa(isAuth.isAuth + ':' + isAuth.password)
 //         console.log(`Basic ${base64decoder}`)
 //
 //         fetch("http://localhost:8080/login", {
@@ -182,7 +182,7 @@ const LoginForm = () => {
 //     //     const {users} = this.props
 //     //     const loginInformText = document.getElementById("login_inform_text")
 //     //
-//     //     if (this.props.login === false && this.state.email !== "" && this.state.password !== "") {
+//     //     if (this.props.isAuth === false && this.state.email !== "" && this.state.password !== "") {
 //     //
 //     //         // check email and password in db
 //     //         for (let i = 0; i < users.length; i++) {
@@ -213,7 +213,7 @@ const LoginForm = () => {
 //     //                 Array.from(document.getElementsByClassName("input_login")).map(el => el.style.border = "2px solid red")
 //     //             }
 //     //         }
-//     //     } else if (this.props.login === true) {
+//     //     } else if (this.props.isAuth === true) {
 //     //         this.animationTextLoginInform("white")
 //     //
 //     //         this.props.logOut()

@@ -7,57 +7,18 @@ import {addUser, logIn} from "../../redux/actions/actions";
 import Ticket from "./Ticket";
 
 
-
-const YourTicketsBlock = () => {
-    // const dispatch = useDispatch();
-    // const {getPrincipal} = useContext(AuthContext);
-    const userDetails = useSelector(state => state.userDetailsReducer.userDetails)
-    const isAuth = useSelector(state => state.isAuthReducer.login)
-
+const UserTicketsBlock = () => {
+    const {userDetails} = useSelector(state => state.userDetailsReducer)
+    const {isAuth} = useSelector(state => state.isAuthReducer)
 
     useEffect(() => {
-        if(isAuth){}
+        if (isAuth) {
+            console.log(userDetails.tickets)
+        }
+        console.log(userDetails.tickets)
 
-        // animationOfTickets()
-    }, [isAuth])
+    }, [userDetails])
 
-    // const animationOfTickets = () => {
-    //     let arrOfTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
-    //     let scaleElem = 0.7
-    //     for (let i = 0; i < arrOfTickets.length; i++) {
-    //         arrOfTickets[i].style.opacity = '0'
-    //         arrOfTickets[i].style.animationName = 'ticket_animation_appear'
-    //         arrOfTickets[i].style.right = (1 + i) * 80 + 'px'
-    //         arrOfTickets[i].style.transform = `scale(${scaleElem})`
-    //         arrOfTickets[i].style.animationDelay = i / 6 + "s"
-    //         setTimeout(()=>{
-    //             arrOfTickets[i].style.opacity = '1'
-    //         }, 500)
-    //         scaleElem = scaleElem + 0.1
-    //         arrOfTickets[i].style.transition = 0.3 + 's'
-    //     }
-    // }
-
-    // const showTicket = (e) => {
-    //     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
-    //     const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
-    //     arrButtonClose.map(el => el.classList.remove("hide_ticket_button_active"))
-    //     arrTickets.map(el => el.classList.remove("your_tickets_active"))
-    //     arrTickets[e.currentTarget.dataset.id].classList.add("your_tickets_active")
-    //     arrButtonClose[e.currentTarget.dataset.id].classList.add("hide_ticket_button_active")
-    // }
-    // const hideTicket = (e) => {
-    //     const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
-    //     const arrTickets = Array.from(document.getElementsByClassName("wrapper-ticket"))
-    //     setTimeout(() => {
-    //         // for (let i = 0; i < arrTickets.length; i++) {
-    //         arrTickets[e.target.dataset.id].classList.remove("your_tickets_active")
-    //         arrButtonClose[e.target.dataset.id].classList.remove("hide_ticket_button_active")
-    //         // }
-    //     }, 0)
-    //     e.target.classList.remove("hide_ticket_button_active")
-    //     console.log(arrTickets[e.target.dataset.id])
-    // }
     return (
         <div className="wrapper-user-tickets-block_mod">
             <div className="user-tickets-block_mod">
@@ -81,19 +42,10 @@ const YourTicketsBlock = () => {
     )
 }
 
-YourTicketsBlock.propTypes = {
+UserTicketsBlock.propTypes = {
     arrTickets: PropTypes.array
 }
-export default YourTicketsBlock;
-
-
-
-
-
-
-
-
-
+export default UserTicketsBlock;
 
 
 // const mapStateToProps = (state) => {
@@ -102,7 +54,7 @@ export default YourTicketsBlock;
 //     }
 // }
 //
-// class YourTicketsBlock extends React.Component {
+// class UserTicketsBlock extends React.Component {
 //     constructor(props) {
 //         super(props);
 //     }
@@ -193,8 +145,8 @@ export default YourTicketsBlock;
 //     }
 // }
 //
-// YourTicketsBlock.propTypes = {
+// UserTicketsBlock.propTypes = {
 //     arrTickets : PropTypes.array
 // }
 //
-// export default connect(mapStateToProps, null)(YourTicketsBlock)
+// export default connect(mapStateToProps, null)(UserTicketsBlock)

@@ -1,150 +1,121 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {eventInfo} from "../../db/dataBase";
 import {connect, useDispatch, useSelector} from "react-redux";
 import {addTicket, setSlide} from "../../redux/actions/actions";
-import YourTicketsBlock from "./UserTiketsBlock";
+import UserTicketsBlock from "./UserTiketsBlock";
 import PropTypes from "prop-types"
 import {numberOfSlideReducer} from "../../redux/reducers/numberOfSlideReducer";
 import EventNavigation from "./EventNavigation";
 import Form from "./Form";
+import {ADD_TICKET, SET_EVENTS} from "../../types";
 
 
-const mapStateToProps = (state) => {
-    return {
-        tickets: state.ticketsReducer,
-        events: state.numberOfSlideReducer.listEvents,
-        userDetails: state.userDetailsReducer.userDetails,
-        num: state.numberOfSlideReducer.numberOfSlide,
-    }
-}
 
+// const mapDispatchToProps = {
+//     addTicket,
+//     setSlide,
+// }
 
-const mapDispatchToProps = {
-    addTicket,
-    setSlide
-}
+const TicketsBlock = () => {
+    const [event, setEvent] = useState(null)
+    const [eventsId, setEventId] = useState(0)
+    const [owner, setOwner] = useState({
+        firstName: "",
+        secondName: "",
+        phoneNumber: "",
+    })
+    const [validation, setValidation] = useState(false)
+    const [tickets, setTickets] = useState([])
 
-class TicketsBlock extends React.Component {
-    constructor(props) {
-        super(props);
+    const {userDetails} = useSelector(state => state.userDetailsReducer)
+    const {listEvents, numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
+    const {isAuth} = useSelector(state => state.isAuthReducer)
 
-        this.state = {
-            numberOfSlide: 1,
-            firstName: "",
-            secondName: "",
-            phoneNumber: "",
-            event: null,
-            eventsId: 0,
-            validation: false,
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (isAuth){
+            console.log(userDetails)
         }
-    }
+        // console.log(userDetails)
+        // console.log(isAuth)
+    }, [userDetails, isAuth])
 
-
-    getValueFromInput = (e) => {
+    const getValueFromInput = (e) => {
         e.preventDefault()
         const {name, value} = e.target
-        this.setState({
+        setOwner({
+            ...owner,
             [name]: value
         })
     }
 
-    setAnimationAndGetInformOfTicket = (e) => {
-        this.setState({
-            nameTicket: e.target.innerText,
-            numberOfSlide: e.target.dataset.id,
-        })
 
-        const informImg = document.getElementById("inform_img")
-        const dateOfEvent = document.getElementById("date_of_event")
-        const ticketFormTitle = document.getElementById("ticket_form_title")
-        const arrOptionTitleText = Array.from(document.getElementsByClassName("tickets_option_title"))
-
-        for (let i = 0; i < arrOptionTitleText.length; i++) {
-            (arrOptionTitleText[i].dataset.id === e.target.dataset.id) ? arrOptionTitleText[i].style.color = "red" : arrOptionTitleText[i].style.color = "#ffffff"
-        }
-
-
-        informImg.style.animationName = "none"
-        dateOfEvent.style.animationName = "none"
-        ticketFormTitle.style.animationName = "none"
-
-        setTimeout(() => {
-            informImg.style.animationName = "ticket_slide_appear"
-            dateOfEvent.style.animationName = "ticket_date_appear"
-            ticketFormTitle.style.animationName = "ticket_form_title_appear"
-        }, 100)
-
-        ticketFormTitle.style.color = "white"
+    const handleValidation = () => {
+        const {firstName, secondName, phoneNumber} = owner;
+        setValidation((!(!firstName || !secondName || !phoneNumber || event == null)))
     }
 
-    handleValidation = () => {
-        const {firstName, secondName, phoneNumber, event} = this.state
-        this.setState({
-            validation: (!(!firstName || !secondName || !phoneNumber || event == null))
-        })
-
-    }
-    // ticket_slide_appear
-
-    createTicket = (e) => {
+const user = userDetails
+    const createTicket = (e) => {
         e.preventDefault()
-        this.props.setSlide(e.currentTarget.dataset.id-1)
+        e.stopPropagation()
+        dispatch(setSlide(e.currentTarget.dataset.id - 1))
+        setEvent(listEvents[e.currentTarget.dataset.id - 1])
+        setEventId(listEvents[e.currentTarget.dataset.id - 1].id)
+    }
 
+    const buyTicket = async (e) => {
+        e.preventDefault();
+        handleValidation(e);
+        // if(!validation) return;
 
-        fetch(`http://localhost:8080/event/${e.currentTarget.dataset.id}`)
+        const token = localStorage.getItem('token')
+        if (event == null) return;
+        await fetch(`http://localhost:8080/user/tickets/${userDetails.username}/${event['id']}`, {
+            method: 'put',
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json;charset=utf-8'
+            }
+        })
             .then(data => data.json())
-            .then(data => this.setState({
-                    event: data,
-                    eventsId: data.id
-                })
-            )
+            .then((data) => {
+                let tickets = [...userDetails.tickets, data]
+                dispatch({type: ADD_TICKET, payload: tickets})
+                console.log("asdads")
+            })
+            .then(() => {
+                // console.log(userDetails)
+            })
             .catch(e => e.message)
     }
 
-    buyTicket = async (e) => {
-        e.preventDefault();
-        await this.handleValidation(e);
-        await (this.state.validation) ? console.log(this.state.validation) : console.log(this.state.validation);
+    // console.log(this.props.tickets)
+    return (
+        <div className="tickets_block_cover ">
+            <div className="tickets_block">
+                <div className="left_pixel_decoration"/>
 
+                {!listEvents.length && <h1>Loading</h1>}
 
-        // const token = localStorage.getItem('token')
-        // if (this.state.event == null) return;
-        // fetch(`http://localhost:8080/user/tickets/${this.props.userDetails.username}/${this.state.event['id']}`, {
-        //     method: 'put',
-        //     headers: {
-        //         'Authorization': token,
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //     }
-        // })
-        //     .then(data => console.log(data))
-        //     .catch(e => e.message)
-    }
+                <EventNavigation events={listEvents} createTicket={createTicket}/>
 
-    render() {
-        return (
-            <div className="tickets_block_cover ">
-                <div className="tickets_block">
-                    <div className="left_pixel_decoration"/>
+                <Form firstName={owner.firstName}
+                      secondName={owner.secondName}
+                      phoneNumber={owner.phoneNumber}
+                      getValueFromInput={getValueFromInput}
+                      events={listEvents}
+                      byTicketFun={buyTicket}
+                />
+                {/*<button onClick={this.handleValidation}>CLICK</button>*/}
 
-                    {!this.props.events.length && <h1>Loading</h1>}
-
-                    <EventNavigation events={this.props.events} createTicket={this.createTicket}/>
-
-                    <Form firstName={this.state.firstName}
-                          secondName={this.state.secondName}
-                          phoneNumber={this.state.phoneNumber}
-                          getValueFromInput={this.getValueFromInput}
-                          events={this.props.events}
-                          byTicketFun={this.buyTicket}
-                    />
-                    {/*<button onClick={this.handleValidation}>CLICK</button>*/}
-
-                    <YourTicketsBlock arrTickets={this.props.tickets.arrTickets}/>
-                </div>
+                <UserTicketsBlock/>
             </div>
-        )
-    }
+        </div>
+    )
 }
+export default TicketsBlock
 
 TicketsBlock.propTypes = {
     tickets: PropTypes.shape({
@@ -152,9 +123,6 @@ TicketsBlock.propTypes = {
     }),
     addTicket: PropTypes.func
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(TicketsBlock)
-
 
 {/*<form id="ticket_form" className="ticket_form" action="">*/
 }
@@ -275,3 +243,142 @@ export default connect(mapStateToProps, mapDispatchToProps)(TicketsBlock)
 //         )
 //         .catch(e => e.message)
 // }
+
+// setAnimationAndGetInformOfTicket = (e) => {
+//     this.setState({
+//         nameTicket: e.target.innerText,
+//         numberOfSlide: e.target.dataset.id,
+//     })
+//
+//     const informImg = document.getElementById("inform_img")
+//     const dateOfEvent = document.getElementById("date_of_event")
+//     const ticketFormTitle = document.getElementById("ticket_form_title")
+//     const arrOptionTitleText = Array.from(document.getElementsByClassName("tickets_option_title"))
+//
+//     for (let i = 0; i < arrOptionTitleText.length; i++) {
+//         (arrOptionTitleText[i].dataset.id === e.target.dataset.id) ? arrOptionTitleText[i].style.color = "red" : arrOptionTitleText[i].style.color = "#ffffff"
+//     }
+//
+//
+//     informImg.style.animationName = "none"
+//     dateOfEvent.style.animationName = "none"
+//     ticketFormTitle.style.animationName = "none"
+//
+//     setTimeout(() => {
+//         informImg.style.animationName = "ticket_slide_appear"
+//         dateOfEvent.style.animationName = "ticket_date_appear"
+//         ticketFormTitle.style.animationName = "ticket_form_title_appear"
+//     }, 100)
+//
+//     ticketFormTitle.style.color = "white"
+// }
+
+
+///========
+// class TicketsBlock extends React.Component {
+//     constructor(props) {
+//         super(props);
+//
+//         this.state = {
+//             numberOfSlide: 1,
+//             firstName: "",
+//             secondName: "",
+//             phoneNumber: "",
+//             event: null,
+//             eventsId: 0,
+//             validation: false,
+//         }
+//     }
+//
+//
+//     getValueFromInput = (e) => {
+//         e.preventDefault()
+//         const {name, value} = e.target
+//         this.setState({
+//             [name]: value
+//         })
+//     }
+//
+//
+//     handleValidation = () => {
+//         const {firstName, secondName, phoneNumber, event} = this.state
+//         this.setState({
+//             validation: (!(!firstName || !secondName || !phoneNumber || event == null))
+//         })
+//
+//     }
+//     // ticket_slide_appear
+//
+//     createTicket = (e) => {
+//         e.preventDefault()
+//         e.stopPropagation()
+//         // console.log(this.props.events[e.currentTarget.dataset.id - 1])
+//         this.props.setSlide(e.currentTarget.dataset.id - 1)
+//
+//         this.setState({
+//             event: this.props.events[e.currentTarget.dataset.id - 1],
+//             eventsId: this.props.events[e.currentTarget.dataset.id - 1].id
+//         })
+//     }
+//
+//     buyTicket = async (e) => {
+//         e.preventDefault();
+//         await this.handleValidation(e);
+//         await (this.state.validation) ? console.log(this.state.validation) : console.log(this.state.validation);
+//
+//
+//         const token = localStorage.getItem('token')
+//         if (this.state.event == null) return;
+//         await fetch(`http://localhost:8080/user/tickets/${this.props.userDetails.username}/${this.state.event['id']}`, {
+//             method: 'put',
+//             headers: {
+//                 'Authorization': token,
+//                 'Content-Type': 'application/json;charset=utf-8'
+//             }
+//         })
+//             .then(data => data.json())
+//             .then(data => {
+//                 let user = this.props.userDetails
+//                 user.tickets.unshift(data)
+//             })
+//             // .then((data) => {
+//             //
+//             // })
+//             .catch(e => e.message)
+//     }
+//
+//     render() {
+//         // console.log(this.props.tickets)
+//         return (
+//             <div className="tickets_block_cover ">
+//                 <div className="tickets_block">
+//                     <div className="left_pixel_decoration"/>
+//
+//                     {!this.props.events.length && <h1>Loading</h1>}
+//
+//                     <EventNavigation events={this.props.events} createTicket={this.createTicket}/>
+//
+//                     <Form firstName={this.state.firstName}
+//                           secondName={this.state.secondName}
+//                           phoneNumber={this.state.phoneNumber}
+//                           getValueFromInput={this.getValueFromInput}
+//                           events={this.props.events}
+//                           byTicketFun={this.buyTicket}
+//                     />
+//                     {/*<button onClick={this.handleValidation}>CLICK</button>*/}
+//
+//                     <UserTicketsBlock/>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+//
+// TicketsBlock.propTypes = {
+//     tickets: PropTypes.shape({
+//         arrTickets: PropTypes.array
+//     }),
+//     addTicket: PropTypes.func
+// }
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(TicketsBlock)
