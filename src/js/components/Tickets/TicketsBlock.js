@@ -35,7 +35,7 @@ const TicketsBlock = () => {
 
     useEffect(() => {
         if (isAuth){
-            console.log(userDetails)
+            // console.log(userDetails)
         }
         // console.log(userDetails)
         // console.log(isAuth)

@@ -1,14 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-const showTicked = {
-    transform: 'scale(1.4)'
-}
-const hideTicked = {
-    transform: 'scale(1)'
-}
+
 
 const Ticket = ({dataId, userDetails, el, index}) => {
-    const [isHide, setHide] = useState(false)
+    const [isHide, setIsHide] = useState(false)
     const [className, setClassName] = useState('')
     const [classNameBtn, setClassNameBtn] = useState('')
     const [animation, setAnimation] = useState({
@@ -20,50 +15,49 @@ const Ticket = ({dataId, userDetails, el, index}) => {
         // zIndex: index+10,
         // transition: .3 +'s',
 
-
     })
 
+
     const showTicket = () => {
-        setHide(true)
+        setIsHide(true)
     }
 
     const hideTicket = () => {
-        setHide(false)
+        setIsHide(false)
     }
 
     useEffect(() => {
         if (isHide) {
-            setAnimation(showTicked)
-            // setClassName("your_tickets_active")
-            // setClassNameBtn("hide_ticket_button_active")
+            setClassName("ticket-item_mod-active")
+            setClassNameBtn("hide_ticket_button_active")
         } else {
-            setAnimation(hideTicked)
-            // setClassName("")
-            // setClassNameBtn("")
+            setClassName("")
+            setClassNameBtn("")
         }
+        // console.log(isHide)
+
     }, [isHide])
 
     // your_tickets_active
 
     return (
         <div className={`wrapper-ticket_mod ${className}`}
-             style={animation}
-             onClick={showTicket}
-             onMouseOver={(e)=>console.log(e.currentTarget)}
+             // style={animation}
              data-id={dataId}
         >
-            <div className="wrapper-item_mod">
+            <div className="wrapper-item_mod" onClick={showTicket}>
                 <div className="ticket-item_mod">
                     <h5 className="ticket-desc_mod your_tickets_dateOfEvent">{el.date}</h5>
                     <h5 className="ticket-desc_mod your_tickets_placeOfEvent">{el.place}</h5>
                     <h5 className="ticket-desc_mod your_tickets_nameTicket_mod">{el.title}</h5>
                     <div className="ticket-desc_mod qr_code_mod"><p>{el.id}</p></div>
-                    <button onClick={hideTicket} className={`hide_ticket_button ${classNameBtn}`} data-id={dataId}> Close
-                    </button>
+
                     <div data-id={dataId} className
                         ="cover"/>
                 </div>
             </div>
+            <button onClick={hideTicket} className={`btn-close hide_ticket_button ${classNameBtn}`} data-id={dataId}> Close
+            </button>
 
         </div>
     );

@@ -13,9 +13,9 @@ const UserTicketsBlock = () => {
 
     useEffect(() => {
         if (isAuth) {
-            console.log(userDetails.tickets)
+            // console.log(userDetails.tickets)
         }
-        console.log(userDetails.tickets)
+        // console.log(userDetails.tickets)
 
     }, [userDetails])
 

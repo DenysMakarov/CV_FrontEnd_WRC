@@ -76,7 +76,11 @@
     width: 100%;
     height: 100%;
     position: relative;
+  }
 
+  .ticket-item_mod-active{
+    transform: scale(2);
+    z-index: 100;
   }
 
   .wrapper-item_mod{
@@ -152,8 +156,21 @@
         //border: 1px solid red;
       }
     }
-
   }
+  .btn-close{
+    color: red;
+    position: absolute;
+    width: 30%  !important;
+    height: 8% !important;
+    left: 10%;
+    bottom: 8%!important;
+    border: 1px solid red !important;
+    //display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
 
 
 
@@ -206,7 +223,7 @@
   }
 
   .hide_ticket_button_active{
-    display: block;
+    display: flex;
   }
 
   .your_tickets_active {
