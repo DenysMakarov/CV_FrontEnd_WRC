@@ -29,6 +29,7 @@ const UserTicketsBlock = () => {
                                 key={el.id}
                                 // showTicket={showTicket}
                                 dataId={index}
+                                dataNumber={el.id}
                                 userDetails={userDetails}
                                 el={el}
                                 index={index}

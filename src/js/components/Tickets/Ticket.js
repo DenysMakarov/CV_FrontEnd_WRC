@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import {useSelector} from "react-redux";
 
 
-
-const Ticket = ({dataId, userDetails, el, index}) => {
+const Ticket = ({dataId, userDetails, el, index, dataNumber}) => {
     const [isHide, setIsHide] = useState(false)
     const [className, setClassName] = useState('')
     const [classNameBtn, setClassNameBtn] = useState('')
@@ -14,9 +14,7 @@ const Ticket = ({dataId, userDetails, el, index}) => {
         // animationDelay: index / 6 + "s",
         // zIndex: index+10,
         // transition: .3 +'s',
-
     })
-
 
     const showTicket = () => {
         setIsHide(true)
@@ -24,6 +22,24 @@ const Ticket = ({dataId, userDetails, el, index}) => {
 
     const hideTicket = () => {
         setIsHide(false)
+    }
+
+    const removeTicket = (e) => {
+        const login = userDetails.username
+        const ticketId = e.currentTarget.dataset.id
+        const token = localStorage.getItem('token')
+        fetch(`http://localhost:8080/ticket/remove/${login}/${ticketId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token,
+            }
+        })
+            .then(data => {
+                if (data.status == 401) console.log("401 NOT AUTHORIZE -> add functional to method")
+                return data.json
+            })
+            .then(data => console.log(data))
     }
 
     useEffect(() => {
@@ -34,15 +50,13 @@ const Ticket = ({dataId, userDetails, el, index}) => {
             setClassName("")
             setClassNameBtn("")
         }
-        // console.log(isHide)
 
     }, [isHide])
 
-    // your_tickets_active
 
     return (
         <div className={`wrapper-ticket_mod ${className}`}
-             // style={animation}
+            // style={animation}
              data-id={dataId}
         >
             <div className="wrapper-item_mod" onClick={showTicket}>
@@ -56,7 +70,11 @@ const Ticket = ({dataId, userDetails, el, index}) => {
                         ="cover"/>
                 </div>
             </div>
-            <button onClick={hideTicket} className={`btn-close hide_ticket_button ${classNameBtn}`} data-id={dataId}> Close
+            <button onClick={hideTicket} className={`btn-close hide_ticket_button ${classNameBtn}`}
+                    data-id={dataId}> Close
+            </button>
+            <button data-id={dataNumber} onClick={removeTicket}
+                    className={`btn-close btn-rem hide_ticket_button ${classNameBtn}`}>REM
             </button>
 
         </div>
@@ -64,7 +82,6 @@ const Ticket = ({dataId, userDetails, el, index}) => {
 };
 
 export default Ticket;
-
 
 
 //

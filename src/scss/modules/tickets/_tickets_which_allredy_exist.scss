@@ -157,7 +157,7 @@
       }
     }
   }
-  .btn-close{
+  .btn-close, .btn-rem{
     color: red;
     position: absolute;
     width: 30%  !important;
@@ -169,6 +169,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+  .btn-rem{
+    width: 20%  !important;
+    left: 40%;
   }
 
 
