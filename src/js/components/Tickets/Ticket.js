@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {removeTicketFromRedux, removeTicketFromThis} from "../../redux/actions/actions";
 
 
 const Ticket = ({dataId, userDetails, el, index, dataNumber}) => {
@@ -16,12 +17,31 @@ const Ticket = ({dataId, userDetails, el, index, dataNumber}) => {
         // transition: .3 +'s',
     })
 
+    const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        if (isHide) {
+            setClassName("ticket-item_mod-active")
+            setClassNameBtn("hide_ticket_button_active")
+        } else {
+            setClassName("")
+            setClassNameBtn("")
+        }
+        console.log(userDetails)
+
+    }, [isHide])
+
     const showTicket = () => {
         setIsHide(true)
     }
 
     const hideTicket = () => {
         setIsHide(false)
+    }
+
+    const removeTicketFromRedux = (id) => {
+        dispatch(removeTicketFromThis(id))
     }
 
     const removeTicket = (e) => {
@@ -37,21 +57,12 @@ const Ticket = ({dataId, userDetails, el, index, dataNumber}) => {
         })
             .then(data => {
                 if (data.status == 401) console.log("401 NOT AUTHORIZE -> add functional to method")
-                return data.json
+                return data.json()
             })
-            .then(data => console.log(data))
+            .then(data => removeTicketFromRedux(data.id))
     }
 
-    useEffect(() => {
-        if (isHide) {
-            setClassName("ticket-item_mod-active")
-            setClassNameBtn("hide_ticket_button_active")
-        } else {
-            setClassName("")
-            setClassNameBtn("")
-        }
 
-    }, [isHide])
 
 
     return (
@@ -59,6 +70,7 @@ const Ticket = ({dataId, userDetails, el, index, dataNumber}) => {
             // style={animation}
              data-id={dataId}
         >
+
             <div className="wrapper-item_mod" onClick={showTicket}>
                 <div className="ticket-item_mod">
                     <h5 className="ticket-desc_mod your_tickets_dateOfEvent">{el.date}</h5>

@@ -3,7 +3,7 @@ import {connect, useDispatch, useSelector} from "react-redux";
 import PropTypes from "prop-types"
 import {ADD_USER, LOGIN, LOGOUT} from "../../types";
 import {AuthContext} from "../../App";
-import {addUser, logIn} from "../../redux/actions/actions";
+import {addUser, logIn, removeTicketFromThis} from "../../redux/actions/actions";
 import Ticket from "./Ticket";
 
 
@@ -13,14 +13,15 @@ const UserTicketsBlock = () => {
 
     useEffect(() => {
         if (isAuth) {
-            // console.log(userDetails.tickets)
+            // console.log(userDetails)
         }
-        // console.log(userDetails.tickets)
-
     }, [userDetails])
+
+
 
     return (
         <div className="wrapper-user-tickets-block_mod">
+
             <div className="user-tickets-block_mod">
                 {
                     (isAuth) ?

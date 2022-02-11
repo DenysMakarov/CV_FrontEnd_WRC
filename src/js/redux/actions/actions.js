@@ -112,10 +112,10 @@ export function addTicket(ticket) {
     }
 }
 
-export function removeTicket(ticket) {
+export function removeTicketFromThis(id) {
     return {
         type: REMOVE_TICKET,
-        payload: ticket
+        payload: id
     }
 }
 
