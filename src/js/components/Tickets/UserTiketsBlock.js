@@ -10,22 +10,51 @@ import Ticket from "./Ticket";
 const UserTicketsBlock = () => {
     const {userDetails} = useSelector(state => state.userDetailsReducer)
     const {isAuth} = useSelector(state => state.isAuthReducer)
+    const [num, setNum] = useState(0)
+    const [tickets, setTickets] = useState([])
 
     useEffect(() => {
         if (isAuth) {
-            // console.log(userDetails)
+            setTickets([...userDetails.tickets])
         }
-    }, [userDetails])
+    }, [isAuth])
 
+
+
+    const nextSlide = () => {
+        if (num === userDetails.tickets.length - 1) {
+            setNum(0)
+        } else {
+            setNum(num + 1)
+        }
+    }
+    const prevSlide = () => {
+        if (num === 0) {
+            setNum(userDetails.tickets.length - 1)
+        } else {
+            setNum(num - 1)
+        }
+    }
+
+    const active = (index, num) => {
+        if (index === num) return 'wrapper-ticket_mod_slide_active'
+        if ((index === num - 1) || (num === 0 && index === tickets.length - 1)) return 'wrapper-ticket_mod_slide_right'
+        if ((index === num + 1) || (num === tickets.length - 1 && index === 0)) return 'wrapper-ticket_mod_slide_left'
+        else return 'wrapper-ticket_mod_slide_hide'
+    }
+
+    const showBtnClass = (index, num) => {
+        if (index === num) return 'btn-remove-active'
+        else return 'btn-remove-hide'
+    }
 
 
     return (
         <div className="wrapper-user-tickets-block_mod">
-
-            <div className="user-tickets-block_mod">
+            <div className="user-tickets-block_mod user-tickets-block_mod_slide">
                 {
-                    (isAuth) ?
-                        userDetails.tickets.map((el, index) => (
+                    (tickets.length) ?
+                        tickets.map((el, index) => (
                             <Ticket
                                 key={el.id}
                                 // showTicket={showTicket}
@@ -34,12 +63,18 @@ const UserTicketsBlock = () => {
                                 userDetails={userDetails}
                                 el={el}
                                 index={index}
+                                numberOfSlide={num}
+                                cls={active(index, num)}
+                                btnClassActive={showBtnClass(index, num)}
                             />
                         ))
                         :
                         <h1>Loading...</h1>
                 }
             </div>
+            <button onClick={prevSlide}>PREV</button>
+            <button onClick={nextSlide}>NEXT</button>
+
         </div>
     )
 }
@@ -152,3 +187,20 @@ export default UserTicketsBlock;
 // }
 //
 // export default connect(mapStateToProps, null)(UserTicketsBlock)
+
+// const activeSlide = {
+//     // transform: 'scale(1.3)',
+//     marginTop: '50px',
+//     marginLeft: '40%',
+//     // background: 'red',
+// }
+// const leftTicket = {
+//     marginTop: '150px',
+//     marginLeft: '5%',
+//     // background: 'yellow',
+// }
+// const rightTicket = {
+//     marginTop: '150px',
+//     marginLeft: '75%',
+//     // background: 'green',
+// }

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_main_tickets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_main_tickets.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,9 @@
       <workItem from="1644223151974" duration="1419000" />
       <workItem from="1644406856030" duration="16965000" />
       <workItem from="1644483692245" duration="2950000" />
-      <workItem from="1644588051543" duration="2549000" />
+      <workItem from="1644588051543" duration="26681000" />
+      <workItem from="1644655966691" duration="1959000" />
+      <workItem from="1644683178314" duration="5442000" />
     </task>
     <servers />
   </component>

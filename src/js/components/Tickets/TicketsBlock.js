@@ -83,10 +83,6 @@ const user = userDetails
             .then((data) => {
                 let tickets = [...userDetails.tickets, data]
                 dispatch({type: ADD_TICKET, payload: tickets})
-                console.log("asdads")
-            })
-            .then(() => {
-                // console.log(userDetails)
             })
             .catch(e => e.message)
     }

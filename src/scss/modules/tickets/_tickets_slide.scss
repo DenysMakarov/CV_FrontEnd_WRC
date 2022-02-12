@@ -1,0 +1,64 @@
+.wrapper-ticket_mod_slide {
+  position: absolute !important;
+
+  &:hover {
+    transform: scale(1.9) !important;
+  }
+}
+
+.wrapper-ticket_mod_slide_active,{
+  margin-top: 21%;
+  margin-left: 33%;
+  opacity: 1;
+  transform: scale(1.8) !important;
+  z-index: 100;
+}
+
+.wrapper-ticket_mod_slide_left, .wrapper-ticket_mod_slide_right{
+  opacity: 1;
+  transform: scale(1.2) !important;
+  z-index: 50;
+  margin-top: 23%;
+  &:hover {
+    transform: scale(1.3) !important;
+  }
+}
+
+.wrapper-ticket_mod_slide_right{
+  margin-left: 10%
+}
+
+.wrapper-ticket_mod_slide_left{
+  margin-left: 55%
+}
+
+.wrapper-ticket_mod_slide_hide{
+  margin-top: 150px;
+  margin-left: 40%;
+  opacity: 0;
+}
+
+.show-ticket{
+  transform: scale(2.2) !important;
+}
+
+.btn-remove{
+  position: absolute;
+  width: 21%;
+  height: 7%;
+  font-size: .5rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid red;
+  line-height: 15px;
+  bottom: 8%;
+  left: 10%;
+}
+
+.btn-remove-hide{
+  display: none;
+}
+
+.btn-remove-active{
+  display: block;
+}
