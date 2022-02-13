@@ -6,6 +6,10 @@ import {AuthContext} from "../../App";
 import {addUser, logIn, removeTicketFromThis} from "../../redux/actions/actions";
 import Ticket from "./Ticket";
 import NoticeRemoveBlock from "./NoticeRemoveBlock";
+import Arrow from "../SliderBlock/Arrow";
+import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import ArrowsTicketsBlock from "./ArrowsTicketsBlock";
 
 
 const UserTicketsBlock = () => {
@@ -108,8 +112,13 @@ const UserTicketsBlock = () => {
                     }
 
             </div>
-            <button onClick={prevSlide}>PREV</button>
-            <button onClick={nextSlide}>NEXT</button>
+
+            <ArrowsTicketsBlock prevSlide={prevSlide} nextSlide={nextSlide}/>
+            {/*<Arrow icon={faArrowLeft} id="arrow_left" classN="arrow arrow_left" childId="arrow_left_cover" childClass="arrow_left_cover"/>*/}
+            {/*<Arrow icon={faArrowRight} id="arrow_right" classN="arrow arrow_right" childId="arrow_right_cover" childClass="arrow_right_cover"/>*/}
+
+            {/*<button onClick={prevSlide}>PREV</button>*/}
+            {/*<button onClick={nextSlide}>NEXT</button>*/}
 
         </div>
     )
