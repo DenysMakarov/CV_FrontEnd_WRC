@@ -1,66 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {removeTicketFromRedux, removeTicketFromThis} from "../../redux/actions/actions";
 
 
-const Ticket = ({dataId, userDetails, el, index, dataNumber, numberOfSlide, cls, btnClassActive}) => {
+const Ticket = ({dataId, el,  dataNumber, numberOfSlide, cls, btnClassActive, removeTicketNotice}) => {
     const [isHide, setIsHide] = useState(false)
     const [classNameActive, setClassNameActive] = useState('')
-    const [classNameBtn, setClassNameBtn] = useState('')
-    const [animation, setAnimation] = useState({
-        transform: 'scale(1.3) !important',
-        position: 'absolute',
-        top: '25%',
-        left: '25%',
-    })
 
-    const dispatch = useDispatch();
 
     useEffect(() => {
-     if(isHide) {
-         setClassNameActive('show-ticket')
-     }else {
-         setClassNameActive('hide-ticket')
-     }
-
-        console.log(isHide)
+     if(isHide) setClassNameActive('show-ticket')
+     else setClassNameActive('hide-ticket')
     }, [isHide, numberOfSlide])
-
-    const showTicket = () => {
-        console.log("askjfkl")
-    }
-
-    // const hideTicket = () => {
-    //     setIsHide(false)
-    // }
-
-    const removeTicketFromRedux = (id) => {
-        dispatch(removeTicketFromThis(id))
-    }
-
-    const removeTicket = (e) => {
-        const login = userDetails.username
-        const ticketId = e.currentTarget.dataset.id
-        const token = localStorage.getItem('token')
-        fetch(`http://localhost:8080/ticket/remove/${login}/${ticketId}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token,
-            }
-        })
-            .then(data => {
-                if (data.status == 401) console.log("401 NOT AUTHORIZE -> add functional to method")
-                return data.json()
-            })
-            .then(data => removeTicketFromRedux(data.id))
-    }
 
     return (
         <div className={`wrapper-ticket_mod wrapper-ticket_mod_slide ${cls} ${classNameActive}`}
              data-id={dataId}
         >
-            <div className="wrapper-item_mod"  onMouseMove={showTicket}>
+            <div className="wrapper-item_mod" >
                 <div className="ticket-item_mod ticket-item_mod_slide">
                     <h5 className="ticket-desc_mod your_tickets_dateOfEvent">{el.date}</h5>
                     <h5 className="ticket-desc_mod your_tickets_placeOfEvent">{el.place}</h5>
@@ -72,7 +27,7 @@ const Ticket = ({dataId, userDetails, el, index, dataNumber, numberOfSlide, cls,
                 </div>
             </div>
             <button data-id={dataNumber}
-                    // onClick={removeTicket}
+                    onClick={removeTicketNotice}
                     className={`btn-remove ${btnClassActive}`}>REMOVE
             </button>
 

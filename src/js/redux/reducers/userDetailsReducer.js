@@ -13,7 +13,7 @@ export const userDetailsReducer = (state = initiallyState, action) => {
         case REMOVE_TICKET: return {
             userDetails: {
                 ...state.userDetails,
-                tickets: state.userDetails.tickets.filter(e => e.id != action.payload)
+                tickets: state.userDetails.tickets.filter(e => e.id !== action.payload)
             }
         }
         default : return state

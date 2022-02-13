@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/NoticeRemoveBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_notice_block.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_main_tickets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_main_tickets.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,11 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/js/components/Tickets" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/js/components/Tickets">
       <method v="2" />
@@ -108,7 +113,8 @@
       <workItem from="1644483692245" duration="2950000" />
       <workItem from="1644588051543" duration="26681000" />
       <workItem from="1644655966691" duration="1959000" />
-      <workItem from="1644683178314" duration="5442000" />
+      <workItem from="1644683178314" duration="5713000" />
+      <workItem from="1644764124153" duration="5397000" />
     </task>
     <servers />
   </component>

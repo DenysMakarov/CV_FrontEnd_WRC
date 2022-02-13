@@ -5,6 +5,7 @@ import {ADD_USER, LOGIN, LOGOUT} from "../../types";
 import {AuthContext} from "../../App";
 import {addUser, logIn, removeTicketFromThis} from "../../redux/actions/actions";
 import Ticket from "./Ticket";
+import NoticeRemoveBlock from "./NoticeRemoveBlock";
 
 
 const UserTicketsBlock = () => {
@@ -12,28 +13,26 @@ const UserTicketsBlock = () => {
     const {isAuth} = useSelector(state => state.isAuthReducer)
     const [num, setNum] = useState(0)
     const [tickets, setTickets] = useState([])
+    const [removeNotice, setRemoveNotice] = useState(false)
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (isAuth) {
             setTickets([...userDetails.tickets])
         }
-    }, [isAuth])
+    }, [isAuth, userDetails])
 
 
 
     const nextSlide = () => {
-        if (num === userDetails.tickets.length - 1) {
-            setNum(0)
-        } else {
-            setNum(num + 1)
-        }
+        if (num === userDetails.tickets.length - 1) setNum(0)
+        else setNum(num + 1)
+
     }
     const prevSlide = () => {
-        if (num === 0) {
-            setNum(userDetails.tickets.length - 1)
-        } else {
-            setNum(num - 1)
-        }
+        if (num === 0) setNum(userDetails.tickets.length - 1)
+        else setNum(num - 1)
+
     }
 
     const active = (index, num) => {
@@ -48,11 +47,52 @@ const UserTicketsBlock = () => {
         else return 'btn-remove-hide'
     }
 
+    const showRemoveNotice = () => {
+        console.log(tickets[num])
+        setRemoveNotice(true)
+    }
+
+    const hideRemoveNotice = () => {
+        setRemoveNotice(false)
+    }
+
+    const removeTicketFromRedux = (id) => {
+        dispatch(removeTicketFromThis(id))
+    }
+
+    const removeTicket = () => {
+        const login = userDetails.username
+        const ticketId = tickets[num].id
+        const token = localStorage.getItem('token')
+        fetch(`http://localhost:8080/ticket/remove/${login}/${ticketId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token,
+            }
+        })
+            .then(data => {
+                if (data.status == 401) console.log("401 NOT AUTHORIZE -> add functional to method")
+                return data.json()
+            })
+            .then(data => {
+                console.log(num)
+                removeTicketFromRedux(data.id)
+                hideRemoveNotice()
+                setNum(0)
+            })
+    }
 
     return (
         <div className="wrapper-user-tickets-block_mod">
             <div className="user-tickets-block_mod user-tickets-block_mod_slide">
                 {
+                    removeNotice && <NoticeRemoveBlock hideRemoveNotice={hideRemoveNotice} removeTicket={removeTicket}/>
+                }
+
+                {
+                    (!isAuth) ? <h1>Loading...</h1> :
+
                     (tickets.length) ?
                         tickets.map((el, index) => (
                             <Ticket
@@ -66,11 +106,11 @@ const UserTicketsBlock = () => {
                                 numberOfSlide={num}
                                 cls={active(index, num)}
                                 btnClassActive={showBtnClass(index, num)}
+                                removeTicketNotice={showRemoveNotice}
                             />
-                        ))
-                        :
-                        <h1>Loading...</h1>
-                }
+                        )) : <h1>Nothing</h1>
+                    }
+
             </div>
             <button onClick={prevSlide}>PREV</button>
             <button onClick={nextSlide}>NEXT</button>
