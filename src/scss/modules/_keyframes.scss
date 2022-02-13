@@ -15,6 +15,16 @@
   }
 }
 
+@keyframes btnBuyTicketBtn {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
 
 @keyframes first_animate_Slider {
   0% {
