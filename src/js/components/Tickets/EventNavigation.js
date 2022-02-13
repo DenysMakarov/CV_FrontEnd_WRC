@@ -3,7 +3,7 @@ import React from 'react';
 const EventNavigation = ({events, setAnimation, createTicket}) => {
     return (
         <div className="tickets_events">
-            {events.map((el, index) => (
+            {events.map((el) => (
                 <div data-name={el.title} key={el.id} className="tickets_option_cover">
                     <div className="tickets_option">
                         <p onClick={createTicket} data-id={el.id}

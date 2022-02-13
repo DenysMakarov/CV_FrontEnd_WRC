@@ -71,16 +71,12 @@ const UserTicketsBlock = () => {
                 'Authorization': token,
             }
         })
+            .then(data => data.json())
             .then(data => {
-                if (data.status == 401) console.log("401 NOT AUTHORIZE -> add functional to method")
-                return data.json()
-            })
-            .then(data => {
-                console.log(num)
                 removeTicketFromRedux(data.id)
                 hideRemoveNotice()
                 setNum(0)
-            })
+            }).catch(e => e.message)
     }
 
     return (

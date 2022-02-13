@@ -14,9 +14,7 @@ const EventDesc = () => {
     }, [numberOfSlide, listEvents])
 
     const animation = () => {
-        setStyleEventsAppear({...styleEventsAppear, animationName: 'none'})
-        setStyleTitleAppear({...styleTitleAppear, animationName: 'none'})
-        setStyleDescAppear({...styleDescAppear, animationName: 'none'})
+        [setStyleEventsAppear, setStyleTitleAppear, setStyleDescAppear ].map(e => e({...e, animationName: 'none'}))
 
         setTimeout(() => {
             setStyleEventsAppear({

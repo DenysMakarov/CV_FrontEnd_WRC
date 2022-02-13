@@ -10,7 +10,6 @@ import Form from "./Form";
 import {ADD_TICKET, SET_EVENTS} from "../../types";
 
 
-
 // const mapDispatchToProps = {
 //     addTicket,
 //     setSlide,
@@ -34,12 +33,9 @@ const TicketsBlock = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (isAuth){
-            // console.log(userDetails)
-        }
-        // console.log(userDetails)
-        // console.log(isAuth)
-    }, [userDetails, isAuth])
+        setEvent(listEvents[numberOfSlide])
+        // setEventId(listEvents[numberOfSlide].id)
+    }, [])
 
     const getValueFromInput = (e) => {
         e.preventDefault()
@@ -56,7 +52,6 @@ const TicketsBlock = () => {
         setValidation((!(!firstName || !secondName || !phoneNumber || event == null)))
     }
 
-const user = userDetails
     const createTicket = (e) => {
         e.preventDefault()
         e.stopPropagation()
