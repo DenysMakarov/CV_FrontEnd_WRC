@@ -10,6 +10,7 @@ import Arrow from "../SliderBlock/Arrow";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import ArrowsTicketsBlock from "./ArrowsTicketsBlock";
+import {Link} from "react-router-dom";
 
 
 const UserTicketsBlock = () => {
@@ -20,12 +21,17 @@ const UserTicketsBlock = () => {
     const [removeNotice, setRemoveNotice] = useState(false)
     const dispatch = useDispatch();
 
+    const notRegisterTicketsArr = [
+        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'},
+        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'},
+        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'}
+    ]
+
     useEffect(() => {
         if (isAuth) {
             setTickets([...userDetails.tickets])
         }
     }, [isAuth, userDetails])
-
 
 
     const nextSlide = () => {
@@ -91,35 +97,34 @@ const UserTicketsBlock = () => {
                 }
 
                 {
-                    (!isAuth) ? <h1>Loading...</h1> :
+                    (!isAuth) ?
+                        <div className='relocation-block'>
+                            <Link to={'/login'}>Please Login!</Link>
+                        </div> :
 
-                    (tickets.length) ?
-                        tickets.map((el, index) => (
-                            <Ticket
-                                key={el.id}
-                                // showTicket={showTicket}
-                                dataId={index}
-                                dataNumber={el.id}
-                                userDetails={userDetails}
-                                el={el}
-                                index={index}
-                                numberOfSlide={num}
-                                cls={active(index, num)}
-                                btnClassActive={showBtnClass(index, num)}
-                                removeTicketNotice={showRemoveNotice}
-                            />
-                        )) : <h1>Nothing</h1>
-                    }
+                        (tickets.length) ?
+
+                            <div>
+                                {tickets.map((el, index) => (
+                                    <Ticket
+                                        key={el.id}
+                                        dataId={index}
+                                        dataNumber={el.id}
+                                        // userDetails={userDetails}
+                                        el={el}
+                                        index={index}
+                                        numberOfSlide={num}
+                                        cls={active(index, num)}
+                                        btnClassActive={showBtnClass(index, num)}
+                                        removeTicketNotice={showRemoveNotice}
+                                    />
+                                ))}
+                                <ArrowsTicketsBlock prevSlide={prevSlide} nextSlide={nextSlide}/>
+                            </div>
+                            : <h1>Nothing</h1>
+                }
 
             </div>
-
-            <ArrowsTicketsBlock prevSlide={prevSlide} nextSlide={nextSlide}/>
-            {/*<Arrow icon={faArrowLeft} id="arrow_left" classN="arrow arrow_left" childId="arrow_left_cover" childClass="arrow_left_cover"/>*/}
-            {/*<Arrow icon={faArrowRight} id="arrow_right" classN="arrow arrow_right" childId="arrow_right_cover" childClass="arrow_right_cover"/>*/}
-
-            {/*<button onClick={prevSlide}>PREV</button>*/}
-            {/*<button onClick={nextSlide}>NEXT</button>*/}
-
         </div>
     )
 }

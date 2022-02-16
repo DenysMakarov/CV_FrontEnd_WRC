@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/ArrowTicket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/ArrowsTicketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
@@ -112,7 +110,10 @@
       <workItem from="1644588051543" duration="26681000" />
       <workItem from="1644655966691" duration="1959000" />
       <workItem from="1644683178314" duration="5713000" />
-      <workItem from="1644764124153" duration="11107000" />
+      <workItem from="1644764124153" duration="11318000" />
+      <workItem from="1644828310961" duration="1758000" />
+      <workItem from="1644938641827" duration="829000" />
+      <workItem from="1645001954044" duration="4117000" />
     </task>
     <servers />
   </component>
