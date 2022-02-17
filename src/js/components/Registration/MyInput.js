@@ -1,18 +1,19 @@
 import React from 'react';
 
-const MyInput = (props) => {
+const MyInput = ({name, valueInput, onChangeValue, labelText, textError}) => {
+
     return (
         <React.Fragment>
-            <label htmlFor={props.nameId}>
-                <span id="nameError" className="text_error"/>
-                Login
+            <label htmlFor={name}>
+                <span id="nameError" className="text_error">{textError}</span>
+                {labelText}
             </label>
-            <input onChange={props.fun}
-                   id={props.nameId}
-                   className="input_panel"
-                   name={props.nameId}
-                   type="text"
-                   value={props.login}
+            <input
+                onChange={onChangeValue}
+                className="input_panel"
+                name={name}
+                type="text"
+                value={valueInput}
             />
         </React.Fragment>
     );

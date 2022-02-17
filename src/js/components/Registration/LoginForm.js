@@ -14,17 +14,9 @@ const LoginForm = () => {
     const {getPrincipal} = useContext(AuthContext);
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            getUserDetails(token)
-        }
+
     }, [])
 
-
-    useEffect(() => {
-        console.log(isAuth)
-        console.log(userDetails)
-    }, [userDetails])
 
     let logout = () => {
         dispatch({type: LOGOUT});
@@ -100,6 +92,11 @@ const LoginForm = () => {
         </form>
     )
 }
+
+
+
+
+
 
 // const mapStateToProps = (state) => {
 //     return {

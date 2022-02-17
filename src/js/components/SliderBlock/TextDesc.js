@@ -29,7 +29,7 @@ const TextDesc = ({clearAnimation}) => {
                             <span style={{color: "red"}}> / </span> {new Date(listEvents[numberOfSlide].date).getFullYear()}<br/>
                         </h5>
                         <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
-                        <BtnEvent/>
+                        {/*<BtnEvent/>*/}
                     </div>
                     <h1 id="text_description_slide_behind"
                         className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>

@@ -13,19 +13,13 @@ import ArrowsTicketsBlock from "./ArrowsTicketsBlock";
 import {Link} from "react-router-dom";
 
 
-const UserTicketsBlock = () => {
+const UserTicketsBlock = ({animationStyle}) => {
     const {userDetails} = useSelector(state => state.userDetailsReducer)
     const {isAuth} = useSelector(state => state.isAuthReducer)
     const [num, setNum] = useState(0)
     const [tickets, setTickets] = useState([])
     const [removeNotice, setRemoveNotice] = useState(false)
     const dispatch = useDispatch();
-
-    const notRegisterTicketsArr = [
-        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'},
-        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'},
-        {cls: '', data: '', id: '', price: '', title: 'Not Authorized'}
-    ]
 
     useEffect(() => {
         if (isAuth) {
@@ -58,7 +52,6 @@ const UserTicketsBlock = () => {
     }
 
     const showRemoveNotice = () => {
-        console.log(tickets[num])
         setRemoveNotice(true)
     }
 
@@ -98,7 +91,7 @@ const UserTicketsBlock = () => {
 
                 {
                     (!isAuth) ?
-                        <div className='relocation-block'>
+                        <div className='relocation-block' style={{animationName: animationStyle}}>
                             <Link to={'/login'}>Please Login!</Link>
                         </div> :
 
@@ -110,7 +103,6 @@ const UserTicketsBlock = () => {
                                         key={el.id}
                                         dataId={index}
                                         dataNumber={el.id}
-                                        // userDetails={userDetails}
                                         el={el}
                                         index={index}
                                         numberOfSlide={num}

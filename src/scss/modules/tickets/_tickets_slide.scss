@@ -87,7 +87,6 @@
 
 
 .relocation-block{
-
   border: 1px solid red;
   width: 60%;
   margin: auto;
@@ -96,6 +95,8 @@
   line-height: 7rem;
   border-radius: 10px;
   cursor: pointer;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
 
   a {
     color: white;

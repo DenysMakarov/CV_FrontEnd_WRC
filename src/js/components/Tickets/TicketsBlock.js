@@ -25,6 +25,7 @@ const TicketsBlock = () => {
     })
     const [validation, setValidation] = useState(false)
     const [tickets, setTickets] = useState([])
+    const [animationStyle, setAnimationStyle] = useState('clear')
 
     const {userDetails} = useSelector(state => state.userDetailsReducer)
     const {listEvents, numberOfSlide} = useSelector(state => state.numberOfSlideReducer)
@@ -46,10 +47,9 @@ const TicketsBlock = () => {
         })
     }
 
-
     const handleValidation = () => {
         const {firstName, secondName, phoneNumber} = owner;
-        setValidation((!(!firstName || !secondName || !phoneNumber || event == null)))
+        setValidation((!(!firstName || !secondName || !phoneNumber || !event )))
     }
 
     const createTicket = (e) => {
@@ -60,9 +60,20 @@ const TicketsBlock = () => {
         setEventId(listEvents[e.currentTarget.dataset.id - 1].id)
     }
 
+    const changeAnimationBtnLogin = () => {
+        if (!isAuth) {
+            setAnimationStyle('clear')
+            setTimeout(() => {
+                setAnimationStyle('ticket-btn-login')
+            }, 100)
+        }
+    }
+
     const buyTicket = async (e) => {
         e.preventDefault();
         handleValidation(e);
+        changeAnimationBtnLogin()
+        if (!isAuth) return
         // if(!validation) return;
 
         const token = localStorage.getItem('token')
@@ -82,7 +93,6 @@ const TicketsBlock = () => {
             .catch(e => e.message)
     }
 
-    // console.log(this.props.tickets)
     return (
         <div className="tickets_block_cover ">
             <div className="tickets_block">
@@ -101,7 +111,7 @@ const TicketsBlock = () => {
                 />
                 {/*<button onClick={this.handleValidation}>CLICK</button>*/}
 
-                <UserTicketsBlock/>
+                <UserTicketsBlock animationStyle={animationStyle}/>
             </div>
         </div>
     )
@@ -114,6 +124,16 @@ TicketsBlock.propTypes = {
     }),
     addTicket: PropTypes.func
 }
+
+
+
+
+
+
+
+
+
+
 
 {/*<form id="ticket_form" className="ticket_form" action="">*/
 }
