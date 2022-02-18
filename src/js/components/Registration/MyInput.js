@@ -1,11 +1,10 @@
 import React from 'react';
 
-const MyInput = ({name, valueInput, onChangeValue, labelText, textError}) => {
-
+const MyInput = ({name, valueInput, onChangeValue, labelText, textError, animation}) => {
     return (
         <React.Fragment>
             <label htmlFor={name}>
-                <span id="nameError" className="text_error">{textError}</span>
+                <span style={{animationName: animation}}  className="text_error">{textError}</span>
                 {labelText}
             </label>
             <input

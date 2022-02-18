@@ -4,48 +4,36 @@ import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
 import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
 import MyInput from "./MyInput";
 import {test} from "npm/lib/utils/module-name";
+import CongratulationsBlock from "./CongratulationsBlock";
 
 
 const RegistrationForm = () => {
-    const fieldForm = ['login', 'username', 'email', 'password', 'repeatPassword']
+
     const [user, setUser] = useState(
         {
-            login: {name: 'login', text: 'Login', textError: 'wrong login', valueInput: ''},
-            username: {name: 'username', text: 'Name', textError: 'wrong username', valueInput: ''},
-            email: {name: 'email', text: 'Email', textError: 'wrong email', valueInput: ''},
-            password: {name: 'password', text: 'Password', textError: 'wrong password', valueInput: ''},
-            repeatPassword: {name: 'repeatPassword', text: 'Repeat password', textError: 'not the same password', valueInput: ''},
+            login: {name: 'login', text: 'Login', textError: '', valueInput: ''},
+            username: {name: 'username', text: 'Name', textError: '', valueInput: ''},
+            email: {name: 'email', text: 'Email', textError: '', valueInput: ''},
+            password: {name: 'password', text: 'Password', textError: '', valueInput: ''},
+            repeatPassword: {name: 'repeatPassword', text: 'Repeat password', textError: '', valueInput: ''},
+            phoneNumber: {name: 'phoneNumber', text: 'Phone number', textError: '', valueInput: ''},
+            country: {name: 'country', text: 'Country', textError: '', valueInput: ''},
+            city: {name: 'city', text: 'City', textError: '', valueInput: ''},
+            street: {name: 'street', text: 'Street', textError: '', valueInput: ''},
         }
     )
-    // const [isValid, setIsValid] = useState(false)
-
-    const [loginError, setLoginError] = useState('')
-    const [nameError, setNameError] = useState('')
-    const [emailError, setEmailError] = useState('')
-    const [passError, setPassError] = useState('')
-    const [repeatPassError, setRepeatPassError] = useState('')
+    const [animation, setAnimation] = useState('clear')
+    const [styleBlockCongratulations, setStyleBlockCongratulations] = useState('')
+    const [textDesc, setTextDesc] = useState('')
 
     useEffect(() => {
-        // console.log(user)
-    }, [user])
 
-    //
-    // postUserToDb = () => {
-    //     fetch("http://localhost:8080/registration", {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json;charset=utf-8'
-    //         },
-    //         body: JSON.stringify(this.state.registration)
-    //     })
-    //         .then(data => {
-    //             console.log(data.status);
-    //             (data.status > 200 || data.status < 299)
-    //                 ? this.setState({conflictAddUser: false})
-    //                 : this.setState({conflictAddUser: true})
-    //             this.informPageAppear()
-    //         })
-    // }
+    }, [])
+
+    const fieldForm = []
+    for (let key in user) {
+        fieldForm.push(key)
+    }
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -55,45 +43,95 @@ const RegistrationForm = () => {
         })
     }
 
+
+    const postUser = (user) => {
+        fetch("http://localhost:8080/registration", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(data => {
+                if(data.status >= 200 && data.status <= 299){
+                    setTextDesc(`Congratulations! Now you can enter in your account.`)
+                    setStyleBlockCongratulations('congratulations-block-appear')
+                } else {
+                    setTextDesc(`Sorry! Probably account has already exist.`)
+                    setStyleBlockCongratulations('congratulations-block-appear')
+                }
+                setTimeout(() => {
+                    setConflictUser(false)
+                }, 2000)
+            })
+    }
+
+    const hideCongratulationsBlock = () => {
+        setStyleBlockCongratulations('congratulations-block-hide')
+    }
+
     const createUser = (e) => {
         e.preventDefault()
-        const userAccount = {
-            login: user['login'].valueInput,
-            username: user['username'].valueInput,
-            email: user['email'].valueInput,
-            password: user['password'].valueInput,
-            repeatPassword: user['repeatPassword'].valueInput
+
+        const errors = {
+            loginError: !(user.login.valueInput) ? 'login error' : '',
+            userError: !(user.username.valueInput) ? 'name error' : '',
+            emailError: !(user.email.valueInput) ? 'email error' : '',
+            passError: !(user.password.valueInput) ? 'pass error' : '',
+            repeatPassError: !(user.repeatPassword.valueInput) ? 'pass not the same' : ''
         }
 
-        !(userAccount.login) ? setLoginError('login error') : setLoginError('')
-        !(userAccount.username) ? setNameError('name error') : setNameError('')
-        // !(userAccount.login) ? setUser({...user, login: {...user.login, textError: 'wrong login'}}) : setUser({...user, login: {...user.login, textError: ''}})
-        // !(userAccount.username) ? setUser({...user, username: {...user.username, textError: 'wrong username'}}) : setUser({...user, username: {...user.username, textError: ''}})
-        // !(userAccount.email) ? setUser({...user, email: {...user.email, textError: 'wrong username'}}) : setUser({...user, email: {...user.email, textError: ''}})
+        setUser({
+            ...user,
+            login: {...user.login, textError: errors.loginError},
+            username: {...user.username, textError: errors.userError},
+            email: {...user.email, textError: errors.emailError},
+            password: {...user.password, textError: errors.passError},
+            repeatPassword: {...user.repeatPassword, textError: errors.repeatPassError},
+        })
+
+        if (errors.loginError || errors.userError || errors.emailError || errors.passError || errors.repeatPassError) {
+            setAnimation('error-text-registration')
+            return;
+        }
+
+        const userAccount = {
+            login: user.login.valueInput,
+            username: user.username.valueInput,
+            email: user.email.valueInput,
+            password: user.password.valueInput,
+            phoneNumber: user.phoneNumber.valueInput,
+            address: {
+                country: user.country.valueInput,
+                city: user.city.valueInput,
+                street: user.street.valueInput,
+            }
+        }
+        postUser(userAccount)
 
     }
 
     return (
         <form className="registration_block registration_panel">
             <span className="name_of_block">REGISTRATION</span>
-            <MyInput onChangeValue={handleChange} name='login' labelText='Login' valueInput={user['login'].valueInput} textError={loginError}/>
-            <MyInput onChangeValue={handleChange} name='username' labelText='Name' valueInput={user['username'].valueInput} textError={nameError}/>
-            {/*<MyInput onChangeValue={handleChange} name='email' labelText='Email' valueInput={user['email'].valueInput} textError={emailError}/>*/}
-            {/*<MyInput onChangeValue={handleChange} name='password' labelText='Password' valueInput={user['password'].valueInput} textError={passError}/>*/}
-            {/*<MyInput onChangeValue={handleChange} name='repeatPassword' labelText='Repeat Password' valueInput={user['repeatPassword'].valueInput} textError={repeatPassError}/>*/}
-
-            {/*{*/}
-            {/*    fieldForm.map((el) => {*/}
-            {/*        return <MyInput*/}
-            {/*            onChangeValue={handleChange}*/}
-            {/*            key={el}*/}
-            {/*            name={el}*/}
-            {/*            labelText={user[el].text}*/}
-            {/*            valueInput={user[el].valueInput}*/}
-            {/*            textError={user[el].textError}*/}
-            {/*        />*/}
-            {/*    })*/}
-            {/*}*/}
+            {
+                fieldForm.map((el) => {
+                    return <MyInput
+                        onChangeValue={handleChange}
+                        key={el}
+                        name={el}
+                        labelText={user[el].text}
+                        valueInput={user[el].valueInput}
+                        textError={user[el].textError}
+                        animation={animation}
+                    />
+                })
+            }
+                <CongratulationsBlock
+                    textDesc={textDesc}
+                    styleBlockCongratulations={styleBlockCongratulations}
+                    hideCongratulationsBlock={hideCongratulationsBlock}
+                />
             <button onClick={createUser} className="btn_form btn_registration">REGISTRATION</button>
         </form>
     )
@@ -101,6 +139,16 @@ const RegistrationForm = () => {
 
 export default RegistrationForm
 
+// conflictUser &&
+// <p className='conflict-registration'>
+//     CONFLICT<br/>
+//     Perhaps account with the same login has already created.
+// </p>
+//     <CongratulationsBlock
+//         styleBlockCongratulations={styleBlockCongratulations}
+//         hideCongratulationsBlock={hideCongratulationsBlock}
+//     />
+// }
 
 // ========================================= //
 

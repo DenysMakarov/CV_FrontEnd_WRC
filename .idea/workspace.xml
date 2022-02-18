@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/MyInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/MyInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/BtnEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/BtnEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,7 @@
       <workItem from="1645001954044" duration="8931000" />
       <workItem from="1645023578613" duration="8787000" />
       <workItem from="1645111054082" duration="6803000" />
-      <workItem from="1645124696511" duration="2981000" />
+      <workItem from="1645124696511" duration="13169000" />
     </task>
     <servers />
   </component>

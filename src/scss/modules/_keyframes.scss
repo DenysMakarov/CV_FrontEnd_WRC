@@ -26,6 +26,41 @@
   }
 }
 
+@keyframes error-text-registration {
+  0%{
+    left: 5%;
+  }
+  100%{
+    left: 12%;
+  }
+}
+
+@keyframes congratulations-block-appear {
+  0%{
+    z-index: 0;
+    opacity: 0;
+    top: 45%;
+  }
+  100%{
+    opacity: 1;
+    top: 35%;
+    z-index: 100;
+  }
+}
+
+@keyframes congratulations-block-hide {
+  0%{
+    top: 35%;
+    opacity: 1;
+    z-index: 100;
+  }
+  100%{
+    top: 25%;
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
 @keyframes ticket-btn-login {
   0%{
     transform: rotate(0deg);
