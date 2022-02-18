@@ -13,6 +13,8 @@ const EventDesc = () => {
         if (listEvents.length) animation()
     }, [numberOfSlide, listEvents])
 
+
+    // just animation
     const animation = () => {
         [setStyleEventsAppear, setStyleTitleAppear, setStyleDescAppear ].map(e => e({...e, animationName: 'none'}))
 
@@ -30,10 +32,10 @@ const EventDesc = () => {
         (listEvents.length)
             ?
             <Fragment>
-                <h3 id="date_of_event" style={styleDescAppear} className="date_of_event">{listEvents[numberOfSlide].date}
+                <h3 style={styleDescAppear} className="date_of_event">{listEvents[numberOfSlide].date}
                     <br/> {listEvents[numberOfSlide].place}</h3>
-                <div id="inform_img " className="inform_img" style={styleEventsAppear}/>
-                <h1 id="ticket_form_title" style={styleTitleAppear} className="ticket_form_title">{listEvents[numberOfSlide].title}</h1>
+                <div className="inform_img" style={styleEventsAppear}/>
+                <h1 style={styleTitleAppear} className="ticket_form_title">{listEvents[numberOfSlide].title}</h1>
             </Fragment>
 
             : <h1 style={{color: 'white'}}>LOADING...</h1>

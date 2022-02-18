@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenuBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenuBtn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/Tickets/TickedDesc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuBTN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/ArrowTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/ArrowTicket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/ArrowsTicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/ArrowsTicketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Btn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Btn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventNavigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +128,7 @@
       <workItem from="1645001954044" duration="8931000" />
       <workItem from="1645023578613" duration="8787000" />
       <workItem from="1645111054082" duration="6803000" />
-      <workItem from="1645124696511" duration="30796000" />
+      <workItem from="1645124696511" duration="33385000" />
     </task>
     <servers />
   </component>

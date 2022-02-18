@@ -5,7 +5,6 @@ const Btn = ({byTicketFun}) => {
         <button
             onClick={byTicketFun}
             type="submit"
-            id="btn_ticket_form"
             className="btn_ticket_form">Buy Ticket
         </button>
     );

@@ -7,7 +7,7 @@ const NavBtn = ({title, path, num,  setActiveBtn, location}) => {
     const [cls, setCls] = useState('nav-btn-active')
 
     useEffect(() => {
-        (location.pathname == path) ? setCls('nav-btn-active') : setCls('')
+        (location.pathname === path) ? setCls('nav-btn-active') : setCls('')
     }, [location])
 
     return (

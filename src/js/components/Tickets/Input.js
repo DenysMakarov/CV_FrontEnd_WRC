@@ -17,7 +17,7 @@ const Input = ({getValueFromInput, valueOfData, textLabel, name}) => {
     return (
         <Fragment>
             <label htmlFor="firstName">{textLabel}</label>
-            <input id="input_ticket_first_name"
+            <input
                    className="input_ticket input_ticket_first_name"
                    onChange={getValueFromInput}
                    name={name}

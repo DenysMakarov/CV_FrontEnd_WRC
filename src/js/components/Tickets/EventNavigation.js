@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventNavigation = ({events, setAnimation, createTicket}) => {
+const EventNavigation = ({events, createTicket}) => {
     return (
         <div className="tickets_events">
             {events.map((el) => (

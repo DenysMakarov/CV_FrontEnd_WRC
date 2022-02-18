@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const ArrowTicket = ({changeTicket, icon, classN}) => {
+const ArrowTicket = ({changeTicket, icon}) => {
     return (
         <div className='arrow-tickets' onClick={changeTicket}>
             <FontAwesomeIcon icon={icon}/>
