@@ -1,17 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {buttonsNav} from "../../utils/constants";
 import {Link} from "react-router-dom";
+import LeftMenuBlock from "./LeftMenuBlock";
+import LeftMenuBtn from "./LeftMenuBtn";
 
-const MenuBtn = () => {
+const LeftMenu = () => {
 
     const [isChecked, setIsChecked] = useState(false)
     const [menuAppear, setMenuAppear] = useState({animationName: ''})
     const [liAppear, setLiAppear] = useState('')
 
-    useEffect(()=>{
-        if (isChecked){
+    useEffect(() => {
+        if (isChecked) {
             setMenuAppear({animationName: 'submenu-cover-appear'})
-            setLiAppear( 'sub-menu-appear')
+            setLiAppear('sub-menu-appear')
         } else {
             setMenuAppear({animationName: 'submenu-cover-hide'})
             setLiAppear('sub-menu-hide')
@@ -33,49 +35,27 @@ const MenuBtn = () => {
     }
 
 
-    const operatorMenu = () => {
+    const showHideLeftMenu = () => {
         (isChecked) ? setIsChecked(false) : setIsChecked(true)
     }
 
 
     return (
         <div className='menu-block-wrapper'>
-            <div className='menu-block'>
-                <div className="btn_menu_block" style={{zIndex: '1000'}}>
-                    <div onClick={operatorMenu} className='btn_menu_block-cover'>
-                        <div style={animationBtn(45)} className={`menu-btn-line-left menu-btn-line`}/>
-                        <div style={animationBtn(-45)} className={`menu-btn-line-right menu-btn-line`}/>
-                    </div>
-                </div>
-            </div>
-            {
-                // isChecked &&
-                <div style={menuAppear} className='submenu-cover'>
-                        <ul className='sub-ul-nav'>{
-                            buttonsNav.map((el, index) => (
-                                <li
-                                    style={{animationDelay: `.${index}s`, animationName: liAppear}}
-                                    key={index+el.title}
-                                >
-                                    <Link to={el.path}>{el.title}</Link>
-                                </li>
-                            ))
-                        }</ul>
-                </div>
-            }
-
+            <LeftMenuBtn animationBtn={animationBtn} operatorMenu={showHideLeftMenu}/>
+            <LeftMenuBlock menuAppear={menuAppear} liAppear={liAppear}/>
         </div>
 
     )
 
 }
 
-export default MenuBtn
+export default LeftMenu
 
 
 //========================
 
-// class MenuBtn extends React.Component {
+// class LeftMenu extends React.Component {
 //     constructor(props) {
 //         super(props);
 //
@@ -142,4 +122,4 @@ export default MenuBtn
 //     }
 // }
 //
-// export default MenuBtn
+// export default LeftMenu
