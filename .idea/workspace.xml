@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/Navigation/NavBtnBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/MyInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/MyInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/CreateSubMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/SubNavigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/navigation/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/navigation/_navigation.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +124,7 @@
       <workItem from="1645001954044" duration="8931000" />
       <workItem from="1645023578613" duration="8787000" />
       <workItem from="1645111054082" duration="6803000" />
-      <workItem from="1645124696511" duration="13169000" />
+      <workItem from="1645124696511" duration="21504000" />
     </task>
     <servers />
   </component>

@@ -275,9 +275,9 @@
       //border: 1px solid red;
       text-align: right;
       font-family: SpaceGrotesk;
-      color: $colors-number-menu;
+      //color: $colors-number-menu;
       text-decoration: none;
-
+      color: rgb(128, 127, 129);
     }
 
     .submenu {
@@ -307,8 +307,8 @@
         font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
         a {
-          color: #807f81;
           text-decoration: none;
+
         }
       }
     }
@@ -339,6 +339,7 @@
 
   .nav_link:hover > div > .text_of_headers_menu {
     width: 150px;
+    //color: rgb(128, 127, 129);
   }
 
   .nav_link:hover > .submenu > li {
@@ -408,8 +409,19 @@
   z-index: 10;
 }
 
-
 .number_menu{
   color: $colors-number-menu;
+}
+
+.text_of_headers_menu{
+  color: #807f81 !important;
+
+  &:hover {
+    color: white !important;
+  }
+
+}
+.nav-btn-active{
+  color: white !important;
 }
 //------------------- MENU_LIST -------------------

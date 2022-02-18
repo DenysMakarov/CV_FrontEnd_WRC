@@ -104,7 +104,7 @@ class FooterInfo extends React.Component {
                             </div>
                         </div>
                         <div className="footer_block_bottom_fifth">
-                            © 2020, RALLY EVENTS Portfolio. Made with passion by Makarov Denys.
+                            © 2022, RALLY EVENTS Portfolio. Made with passion by Makarov Denys.
                             <div className="contacts_icon"><i className="fab fa-youtube"/></div>
                             <div className="contacts_icon"><i className="fab fa-facebook-square"/></div>
                             <div className="contacts_icon"><i className="fab fa-twitter-square"/></div>

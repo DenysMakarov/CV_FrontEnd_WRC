@@ -1,7 +1,7 @@
 import React, {createContext, Fragment, useContext, useEffect, useState} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import Nav from "./components/Navigation/Nav"
+import Navigation from "./components/Navigation/Navigation"
 import MenuBtn from "./components/Navigation/MenuBTN";
 import MenuList from "./components/Navigation/MenuList";
 import Routes from "./Routes";
@@ -112,11 +112,11 @@ const App = () => {
                         </Fragment>
                         :
                         <Fragment>
-                            <Nav/>
+                            <Navigation/>
                             <Routes/>
                         </Fragment>
                     }
-                    {/*<Nav/>*/}
+                    {/*<Navigation/>*/}
                     {/*<h1 className='text-error' >ERROR</h1>*/}
                     {/*<Routes/>*/}
                 </div>
@@ -155,7 +155,7 @@ export default App;
 //                     <div onMouseMove={this.moveRound} className="App">
 //                         <MenuBtn/>
 //                         <div className="main_container">
-//                             <Nav/>
+//                             <Navigation/>
 //                             <Routes/>
 //                         </div>
 //                         <MenuList/>

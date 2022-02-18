@@ -5,8 +5,6 @@ const CongratulationsBlock = ({styleBlockCongratulations, hideCongratulationsBlo
         <div style={{animationName: styleBlockCongratulations}} className='congratulations-block'>
             <p>
                 {textDesc}
-                {/*Congratulations! <br/>*/}
-                {/*Now you can enter in your account*/}
             </p>
             <button onClick={hideCongratulationsBlock}  className='congratulations-btn'>OK</button>
         </div>

@@ -8,7 +8,6 @@ import CongratulationsBlock from "./CongratulationsBlock";
 
 
 const RegistrationForm = () => {
-
     const [user, setUser] = useState(
         {
             login: {name: 'login', text: 'Login', textError: '', valueInput: ''},
@@ -25,10 +24,6 @@ const RegistrationForm = () => {
     const [animation, setAnimation] = useState('clear')
     const [styleBlockCongratulations, setStyleBlockCongratulations] = useState('')
     const [textDesc, setTextDesc] = useState('')
-
-    useEffect(() => {
-
-    }, [])
 
     const fieldForm = []
     for (let key in user) {
@@ -53,16 +48,13 @@ const RegistrationForm = () => {
             body: JSON.stringify(user)
         })
             .then(data => {
-                if(data.status >= 200 && data.status <= 299){
+                if (data.status >= 200 && data.status <= 299) {
                     setTextDesc(`Congratulations! Now you can enter in your account.`)
                     setStyleBlockCongratulations('congratulations-block-appear')
                 } else {
                     setTextDesc(`Sorry! Probably account has already exist.`)
                     setStyleBlockCongratulations('congratulations-block-appear')
                 }
-                setTimeout(() => {
-                    setConflictUser(false)
-                }, 2000)
             })
     }
 
@@ -127,28 +119,17 @@ const RegistrationForm = () => {
                     />
                 })
             }
-                <CongratulationsBlock
-                    textDesc={textDesc}
-                    styleBlockCongratulations={styleBlockCongratulations}
-                    hideCongratulationsBlock={hideCongratulationsBlock}
-                />
+            <CongratulationsBlock
+                textDesc={textDesc}
+                styleBlockCongratulations={styleBlockCongratulations}
+                hideCongratulationsBlock={hideCongratulationsBlock}
+            />
             <button onClick={createUser} className="btn_form btn_registration">REGISTRATION</button>
         </form>
     )
 }
 
 export default RegistrationForm
-
-// conflictUser &&
-// <p className='conflict-registration'>
-//     CONFLICT<br/>
-//     Perhaps account with the same login has already created.
-// </p>
-//     <CongratulationsBlock
-//         styleBlockCongratulations={styleBlockCongratulations}
-//         hideCongratulationsBlock={hideCongratulationsBlock}
-//     />
-// }
 
 // ========================================= //
 

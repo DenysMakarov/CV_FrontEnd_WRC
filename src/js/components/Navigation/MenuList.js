@@ -1,6 +1,6 @@
 import React from 'react';
 import {subMenu} from "../../db/dataBase";
-import {createSubMenu} from "../Navigation/CreateSubMenu"
+import {navBtn} from "./NavBtn"
 
 class MenuList extends React.Component {
     constructor(props) {
