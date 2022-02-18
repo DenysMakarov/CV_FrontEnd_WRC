@@ -34,8 +34,6 @@ export const AuthContext = createContext({
 
 const App = () => {
     const [pos, setPos] = useState({posX: 0, posY: 0})
-    // const [error, setError] = useState(false)
-    // const [isLoadingEvents, setIsLoadingEvents] = useState(true)
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
     const {error, listEvents} = useSelector(state => state.numberOfSlideReducer)
     const {userDetails} = useSelector(state => state.userDetailsReducer)

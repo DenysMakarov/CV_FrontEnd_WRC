@@ -1,3 +1,6 @@
+@import "submenu";
+
+
 .navigation_block {
   width: 100%;
   height: 70px;
@@ -128,42 +131,8 @@
 //------------------- NAV_MENU -------------------
 
 //------------------- BTN_MENU -------------------
-.btn_menu_block {
-  width: 45px;
-  height: 45px;
-  border-radius: 50px;
-  //background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  z-index: 10000;
-  border: 1px solid red;
-}
 
-.label_btn_menu {
-  width: 100%;
-  height: 100%;
-  border-radius: 50px;
-  //background: #1c1a1f;
-  cursor: pointer;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: space-evenly;
-  //align-items: center;
 
-  //&:hover > .line_in_btn_top {
-  //  transform: rotate(45deg);
-  //  margin-left: 20px;
-  //  margin-top: 10px;
-  //}
-  //
-  //&:hover > .line_in_btn_bottom {
-  //  transform: rotate(-45deg);
-  //  margin-left: 20px;
-  //  margin-top: 10px;
-  //}
-
-}
 
 
 .line_in_btn{
@@ -400,6 +369,7 @@
     }
   }
 }
+
 
 .menu_list_show {
   z-index: 100;

@@ -18,6 +18,7 @@ const Routes = () => {
             <Route path="/tickets" component={TicketsBlock} />
             <Route path="/events" component={Events} />
             <Route path="/portfolio" component={Portfolio}/>
+            <Route path='/*' component={RegistrationPanel} />
         </Switch>
     )
 }

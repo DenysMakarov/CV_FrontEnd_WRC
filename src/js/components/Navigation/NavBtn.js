@@ -20,13 +20,6 @@ const NavBtn = ({title, path, num,  setActiveBtn, location}) => {
                         to={path} className={`text_of_headers_menu ${cls}`} >{title}
                     </Link>
                 </div>
-                {/*<ul className="submenu">*/}
-                    {/*{position.map((el)=>(*/}
-                    {/*    <li key={el.id}>*/}
-                    {/*        <Link  onMouseOver={changeColorMenu} className="header_of_submenu" to={el.link}>{el.name}</Link>*/}
-                    {/*    </li>*/}
-                    {/*))}*/}
-                {/*</ul>*/}
             </div>
     )
 }

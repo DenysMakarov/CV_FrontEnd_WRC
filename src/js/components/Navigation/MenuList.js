@@ -30,7 +30,6 @@ class MenuList extends React.Component {
                     <div className="work_inquires"/>
                 </div>
             </div>
-
         )
     }
 }

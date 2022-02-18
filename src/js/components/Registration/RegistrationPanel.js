@@ -5,12 +5,8 @@ import LoginForm from "./LoginForm";
 import InformPage from "./InformPage";
 
 
-class RegistrationPanel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const RegistrationPanel = () => {
 
-    render() {
         return (
             <div id="registration_container" className="registration_container">
                 <RegistrationForm/>
@@ -19,7 +15,6 @@ class RegistrationPanel extends React.Component {
                 <div className="registration_block_cover"/>
             </div>
         )
-    }
 }
 
 export default RegistrationPanel

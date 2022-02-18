@@ -35,6 +35,38 @@
   }
 }
 
+@keyframes sub-menu-appear {
+  0%{
+    opacity: 0;
+    margin-left: -150px;
+  }
+  100%{
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes submenu-cover-appear {
+  0%{
+    opacity: 0;
+    margin-left: -80%;
+  }
+  100%{
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes submenu-cover-hide {
+  0%{
+    opacity: 0;
+    margin-left: 0%;
+  }
+  100%{
+    opacity: 0;
+    margin-left: -80%;
+  }
+}
+
 @keyframes congratulations-block-appear {
   0%{
     z-index: 0;

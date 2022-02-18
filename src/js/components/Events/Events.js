@@ -2,12 +2,8 @@ import React from 'react'
 import {eventInfo} from "../../db/dataBase";
 import EventsDesc from "./EventsDesc";
 
-class Events extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const Events = () => {
 
-    render() {
         return (
             <div className="main_container_event_cover">
                 <div className="main_container_event_filter"/>
@@ -21,7 +17,6 @@ class Events extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Events
