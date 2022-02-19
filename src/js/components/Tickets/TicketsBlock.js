@@ -58,7 +58,7 @@ const TicketsBlock = () => {
         }
     }
 
-    const buyTicket = async (e) => {
+    const buyTicket = (e) => {
         e.preventDefault();
         handleValidation(e);
         changeAnimationBtnLogin()
@@ -67,7 +67,7 @@ const TicketsBlock = () => {
 
         const token = localStorage.getItem('token')
         if (event == null) return;
-        await fetch(`http://localhost:8080/user/tickets/${userDetails.username}/${event['id']}`, {
+        fetch(`http://localhost:8080/user/tickets/${userDetails.username}/${event['id']}`, {
             method: 'put',
             headers: {
                 'Authorization': token,

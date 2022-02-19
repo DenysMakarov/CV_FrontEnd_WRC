@@ -117,93 +117,93 @@ export const eventInfo = [
 ]
 
 
-export const subMenu = {
-    home: [
-        // {
-        //     name: "",
-        //     link: '/',
-        //     id: 1
-        // }
-    ],
-    events: [
-        {
-            name: "Dakkar Rally",
-            link: '/events',
-            id: 2,
-        }, {
-            name: "FIA WRC",
-            link: '/events',
-            id: 3
-        }, {
-            name: "Bamako Rally",
-            link: '/events',
-            id: 4
-        }
-        // , {
-        //     name: "",
-        //     link: '',
-        //     id: 5
-        // }, {
-        //     name: "",
-        //     link: '',
-        //     id: 6
-        // }
-
-    ],
-    tickets: [
-        // {
-        //     name: "Adult",
-        //     id: 7,
-        //     link: '/tickets'
-        // }, {
-        //     name: "Child",
-        //     id: 8,
-        //     link: '/tickets'
-        // }
-    ],
-    portfolio: [
-        // {
-        //     name: "Game",
-        //     id: 10,
-        //     link: ''
-        // }, {
-        //     name: "MagicS",
-        //     id: 11,
-        //     link: ''
-        // }, {
-        //     name: "Footwear",
-        //     id: 12,
-        //     link: ''
-        // }, {
-        //     name: "Restaurant",
-        //     id: 13,
-        //     link: ''
-        // },
-        // {
-        //     name: "React",
-        //     id: 14,
-        //     link: ''
-        // }
-    ],
-    contacts: [
-        {
-            name: "Canada",
-            id: 15,
-            link: '/contacts'
-        }, {
-            name: "USA",
-            id: 16,
-            link: '/contacts'
-        }
-    ],
-    Login: [
-        {
-            name: '',
-            id: 17,
-            link: ''
-        }
-    ]
-}
+// export const subMenu = {
+//     home: [
+//         // {
+//         //     name: "",
+//         //     link: '/',
+//         //     id: 1
+//         // }
+//     ],
+//     events: [
+//         {
+//             name: "Dakkar Rally",
+//             link: '/events',
+//             id: 2,
+//         }, {
+//             name: "FIA WRC",
+//             link: '/events',
+//             id: 3
+//         }, {
+//             name: "Bamako Rally",
+//             link: '/events',
+//             id: 4
+//         }
+//         // , {
+//         //     name: "",
+//         //     link: '',
+//         //     id: 5
+//         // }, {
+//         //     name: "",
+//         //     link: '',
+//         //     id: 6
+//         // }
+//
+//     ],
+//     tickets: [
+//         // {
+//         //     name: "Adult",
+//         //     id: 7,
+//         //     link: '/tickets'
+//         // }, {
+//         //     name: "Child",
+//         //     id: 8,
+//         //     link: '/tickets'
+//         // }
+//     ],
+//     portfolio: [
+//         // {
+//         //     name: "Game",
+//         //     id: 10,
+//         //     link: ''
+//         // }, {
+//         //     name: "MagicS",
+//         //     id: 11,
+//         //     link: ''
+//         // }, {
+//         //     name: "Footwear",
+//         //     id: 12,
+//         //     link: ''
+//         // }, {
+//         //     name: "Restaurant",
+//         //     id: 13,
+//         //     link: ''
+//         // },
+//         // {
+//         //     name: "React",
+//         //     id: 14,
+//         //     link: ''
+//         // }
+//     ],
+//     contacts: [
+//         {
+//             name: "Canada",
+//             id: 15,
+//             link: '/contacts'
+//         }, {
+//             name: "USA",
+//             id: 16,
+//             link: '/contacts'
+//         }
+//     ],
+//     Login: [
+//         {
+//             name: '',
+//             id: 17,
+//             link: ''
+//         }
+//     ]
+// }
 
 export const portfolioData = {
     portfolio: [

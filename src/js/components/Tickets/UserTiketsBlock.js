@@ -84,15 +84,12 @@ const UserTicketsBlock = ({animationStyle}) => {
                 {
                     removeNotice && <NoticeRemoveBlock hideRemoveNotice={hideRemoveNotice} removeTicket={removeTicket}/>
                 }
-
                 {
                     (!isAuth) ?
                         <div className='relocation-block' style={{animationName: animationStyle}}>
                             <Link to={'/login'}>Please Login!</Link>
                         </div> :
-
                         (tickets.length) ?
-
                             <div>
                                 {tickets.map((el, index) => (
                                     <Ticket
@@ -111,14 +108,10 @@ const UserTicketsBlock = ({animationStyle}) => {
                             </div>
                             : <h1>Nothing</h1>
                 }
-
             </div>
         </div>
     )
 }
 
-UserTicketsBlock.propTypes = {
-    arrTickets: PropTypes.array
-}
 export default UserTicketsBlock;
 

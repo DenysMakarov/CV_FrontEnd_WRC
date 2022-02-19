@@ -36,8 +36,8 @@ class Arrows extends React.Component {
     render() {
         return (
             <Fragment>
-                <Arrow changeSlide={this.prevSlide} icon={faArrowLeft} id="arrow_left" classN="arrow arrow_left" childId="arrow_left_cover" childClass="arrow_left_cover"/>
-                <Arrow changeSlide={this.nextSlide} icon={faArrowRight} id="arrow_right" classN="arrow arrow_right" childId="arrow_right_cover" childClass="arrow_right_cover"/>
+                <Arrow refArrow={this.props.leftArrow} changeSlide={this.prevSlide} icon={faArrowLeft} id="arrow_left" classN="arrow arrow_left" childId="arrow_left_cover" childClass="arrow_left_cover"/>
+                <Arrow refArrow={this.props.rightArrow} changeSlide={this.nextSlide} icon={faArrowRight} id="arrow_right" classN="arrow arrow_right" childId="arrow_right_cover" childClass="arrow_right_cover"/>
             </Fragment>
         )
     }
