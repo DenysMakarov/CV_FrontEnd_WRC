@@ -18,7 +18,7 @@ const SliderBlock = () => {
     // NEED REDEVELOP
     useEffect(() => {
         if (listEvents.length) imgPrevSlider()
-    }, [numberOfSlide, loading])
+    }, [numberOfSlide, listEvents.length])
 
     const imgPrevSlider = () => {
         (numberOfSlide === listEvents.length - 1) ?
@@ -65,20 +65,22 @@ const SliderBlock = () => {
 
 
     return (
-        <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">
-            <RoundAnimation styleOfRound={styleOfRound}/>
-            <div className="right_pixel_decoration"/>
-
-            {
-                (loading) ? <Slides path="url(../../img/loading.png)"/>
-                    : (error) ? <Slides path="url(../../img/error.png)"/>
-                        : <Slides numberOfSlide={numberOfSlide} firstSlideImg={listEvents[numberOfSlide].imgPath} prevSlideImg={listEvents[prevSlide].imgPath}/>
-            }
-
-            <TextDesc />
-            <SlidePagination />
-            <Arrows leftArrow={arrowLeft} rightArrow={arrowRight} />
-        </div>
+        listEvents.length
+            ? <div id="slider_block" onMouseMove={setRoundPos} className="slider_block">
+                <RoundAnimation styleOfRound={styleOfRound}/>
+                <div className="right_pixel_decoration"/>
+                {
+                    listEvents.length &&
+                    <Slides numberOfSlide={numberOfSlide}
+                            firstSlideImg={listEvents[numberOfSlide].imgPath}
+                            prevSlideImg={listEvents[prevSlide].imgPath}
+                    />
+                }
+                <TextDesc/>
+                <SlidePagination/>
+                <Arrows leftArrow={arrowLeft} rightArrow={arrowRight}/>
+            </div>
+            : <h1 className='slider-loading' >Loading...</h1>
     )
     // }
 }

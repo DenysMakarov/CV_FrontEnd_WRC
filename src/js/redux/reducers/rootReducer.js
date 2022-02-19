@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {numberOfSlideReducer} from "./numberOfSlideReducer"
+import {eventsReducer} from "./eventsReducer"
 import {usersReducer} from "./usersReducer";
 import {validationFormReducer} from "./validationFormReducer"
 import {isAuthReducer} from "./isAuthReducer";
@@ -8,7 +8,7 @@ import {userDetailsReducer} from "./userDetailsReducer";
 import IsLoadingEventsReducer from "./isLoadingEventsReducer";
 
 export const rootReducer = combineReducers({
-    numberOfSlideReducer,
+    numberOfSlideReducer: eventsReducer,
     usersReducer,
     validationFormReducer,
     isAuthReducer,

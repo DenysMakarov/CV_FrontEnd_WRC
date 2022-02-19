@@ -52,24 +52,25 @@ export function dispatchEvents(arr) {
     }
 }
 
-export function isErrorTrue(){
+export function isErrorTrue() {
     return {
         type: IS_ERROR_TRUE
     }
 }
-export function isErrorFalse(){
+
+export function isErrorFalse() {
     return {
         type: IS_ERROR_FALSE
     }
 }
 
-export function loadingEvents(){
+export function loadingEvents() {
     return {
         type: LOADING_EVENTS
     }
 }
 
-export function loadingEventsDone(){
+export function loadingEventsDone() {
     return {
         type: LOADING_EVENTS_DONE
     }
@@ -80,6 +81,7 @@ export function validForm() {
         type: VALID
     }
 }
+
 export function inValidForm() {
     return {
         type: INVALID
@@ -88,7 +90,7 @@ export function inValidForm() {
 
 export function setUsers(user) {
     return {
-        type:SET_USERS,
+        type: SET_USERS,
         payload: user
     }
 }
@@ -101,7 +103,7 @@ export function logIn() {
 
 export function logOut() {
     return {
-        type:LOGOUT,
+        type: LOGOUT,
     }
 }
 
@@ -125,6 +127,45 @@ export function addUser(user) {
         payload: user
     }
 }
+
+export const authUser = () => (dispatch) => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            fetch("http://localhost:8080/login", {
+                method: 'post',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json;charset=utf-8',
+                },
+            })
+                .then(data => data.json())
+                .then(data => {
+                    dispatch(addUser(data))
+                    dispatch(logIn())
+                })
+        }
+}
+
+export const setEvents = (events) => {
+    return {
+        type: SET_EVENTS,
+        payload: events
+    }
+}
+
+export const getEvents = () => async (dispatch) => {
+    try{
+        const event = await fetch("http://localhost:8080/events/events")
+        const data = await event.json()
+        dispatch(setEvents(data))
+    } catch (e) {
+        // dispatch(error)
+    }
+    
+}
+
+
+
 export function removeUser() {
     return {
         type: REMOVE_USER

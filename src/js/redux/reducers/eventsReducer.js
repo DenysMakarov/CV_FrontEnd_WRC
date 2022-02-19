@@ -11,8 +11,7 @@ const initiallyState = {
     error: true
 }
 
-export const numberOfSlideReducer = (state = initiallyState, action) => {
-    // console.log(state.numberOfSlide)
+export const eventsReducer = (state = initiallyState, action) => {
     switch (action.type) {
         case NEXT_SLIDE :
             if (state.numberOfSlide < state.listEvents.length - 1) {
@@ -43,15 +42,6 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
             return {
                 ...state, listEvents: action.payload
             }
-        case IS_ERROR_TRUE :
-            return {
-                ...state, error: true
-            }
-        case IS_ERROR_FALSE :
-            return {
-                ...state, error: false
-            }
-
         default :
             return state
 
@@ -63,7 +53,7 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
 //     listEvents: listEvents
 // }
 //
-// export const numberOfSlideReducer = (state = initiallyState, action) => {
+// export const eventsReducer = (state = initiallyState, action) => {
 //     switch (action.type) {
 //         case NEXT_SLIDE :
 //             if (state.numberOfSlide < listEvents.length - 1){
