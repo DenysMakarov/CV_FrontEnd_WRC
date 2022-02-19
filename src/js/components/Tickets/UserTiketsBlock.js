@@ -9,6 +9,8 @@ import ArrowsTicketsBlock from "./ArrowsTicketsBlock";
 import {Link} from "react-router-dom";
 
 
+
+
 const UserTicketsBlock = ({animationStyle}) => {
     const {userDetails} = useSelector(state => state.userDetailsReducer)
     const {isAuth} = useSelector(state => state.isAuthReducer)
@@ -17,47 +19,46 @@ const UserTicketsBlock = ({animationStyle}) => {
     const [removeNotice, setRemoveNotice] = useState(false)
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (isAuth) {
-            setTickets([...userDetails.tickets])
-        }
-    }, [isAuth, userDetails])
-
-
-    const nextSlide = () => {
-        if (num === userDetails.tickets.length - 1) setNum(0)
-        else setNum(num + 1)
-
+useEffect(() => {
+    if (isAuth) {
+        setTickets([...userDetails.tickets])
     }
-    const prevSlide = () => {
-        if (num === 0) setNum(userDetails.tickets.length - 1)
-        else setNum(num - 1)
+}, [isAuth, userDetails])
 
-    }
 
-    const active = (index, num) => {
-        if (index === num) return 'wrapper-ticket_mod_slide_active'
-        if ((index === num - 1) || (num === 0 && index === tickets.length - 1)) return 'wrapper-ticket_mod_slide_right'
-        if ((index === num + 1) || (num === tickets.length - 1 && index === 0)) return 'wrapper-ticket_mod_slide_left'
-        else return 'wrapper-ticket_mod_slide_hide'
-    }
+const nextSlide = () => {
+    if (num === userDetails.tickets.length - 1) setNum(0)
+    else setNum(num + 1)
 
-    const showBtnClass = (index, num) => {
-        if (index === num) return 'btn-remove-active'
-        else return 'btn-remove-hide'
-    }
+}
+const prevSlide = () => {
+    if (num === 0) setNum(userDetails.tickets.length - 1)
+    else setNum(num - 1)
 
-    const showRemoveNotice = () => {
-        setRemoveNotice(true)
-    }
+}
 
-    const hideRemoveNotice = () => {
-        setRemoveNotice(false)
-    }
+const active = (index, num) => {
+    if (index === num) return 'wrapper-ticket_mod_slide_active'
+    if ((index === num - 1) || (num === 0 && index === tickets.length - 1)) return 'wrapper-ticket_mod_slide_right'
+    if ((index === num + 1) || (num === tickets.length - 1 && index === 0)) return 'wrapper-ticket_mod_slide_left'
+    else return 'wrapper-ticket_mod_slide_hide'
+}
+const showBtnClass = (index, num) => {
+    if (index === num) return 'btn-remove-active'
+    else return 'btn-remove-hide'
+}
 
-    const removeTicketFromRedux = (id) => {
-        dispatch(removeTicketFromThis(id))
-    }
+const showRemoveNotice = () => {
+    setRemoveNotice(true)
+}
+
+const hideRemoveNotice = () => {
+    setRemoveNotice(false)
+}
+
+const removeTicketFromRedux = (id) => {
+    dispatch(removeTicketFromThis(id))
+}
 
     const removeTicket = () => {
         const login = userDetails.username
@@ -77,6 +78,7 @@ const UserTicketsBlock = ({animationStyle}) => {
                 setNum(0)
             }).catch(e => e.message)
     }
+
 
     return (
         <div className="wrapper-user-tickets-block_mod">
@@ -113,5 +115,6 @@ const UserTicketsBlock = ({animationStyle}) => {
     )
 }
 
-export default UserTicketsBlock;
 
+
+export default UserTicketsBlock;

@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/numberOfSlideReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/eventsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/ticketsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/ticketsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +118,7 @@
       <workItem from="1645001954044" duration="8931000" />
       <workItem from="1645023578613" duration="8787000" />
       <workItem from="1645111054082" duration="6803000" />
-      <workItem from="1645124696511" duration="57809000" />
+      <workItem from="1645124696511" duration="60626000" />
     </task>
     <servers />
   </component>
