@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation/Navigation"
 import Routes from "./Routes";
 import {SET_EVENTS} from "./types";
 import {
-    addUser,
+    addUserAction,
     authUser,
     getEvents,
     isErrorFalse,

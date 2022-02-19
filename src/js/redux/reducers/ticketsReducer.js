@@ -1,8 +1,8 @@
-import {ADD_TICKET, REMOVE_TICKET} from "../../types";
+import {ADD_TICKET, REMOVE_TICKET, GET_ALL_TICKETS} from "../../types";
 
 
 const initiallyState = {
-    arrTickets: [
+    tickets: [
 
     ]
 }
@@ -11,13 +11,13 @@ export const ticketsReducer = (state = initiallyState, action) => {
 
     switch (action.type) {
         case ADD_TICKET :
-            return {...state, arrTickets: state.arrTickets.concat(action.payload)}
+            return {...state, tickets: state.tickets.concat(action.payload)}
         case REMOVE_TICKET :
             return {
-            userDetails: {
-                ...state, arrTickets: state.arrTickets.filter(e => e.id !== action.payload)
-            }
+                ...state, tickets: state.tickets.filter(e => e.id !== action.payload)
         }
+        case GET_ALL_TICKETS :
+            return {...state, tickets: action.payload}
         default:
             return state
     }

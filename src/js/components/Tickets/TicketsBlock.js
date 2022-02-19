@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector} from "react-redux";
-import { setSlide} from "../../redux/actions/actions";
+import {addTicket, setSlide} from "../../redux/actions/actions";
 import UserTicketsBlock from "./UserTiketsBlock";
 import EventNavigation from "./EventNavigation";
 import Form from "./Form";
@@ -25,7 +25,7 @@ const TicketsBlock = () => {
 
     useEffect(() => {
         setEvent(listEvents[numberOfSlide])
-    }, [])
+    }, [listEvents.length])
 
     const getValueFromInput = (e) => {
         e.preventDefault()
@@ -54,7 +54,7 @@ const TicketsBlock = () => {
             setAnimationStyle('clear')
             setTimeout(() => {
                 setAnimationStyle('ticket-btn-login')
-            }, 100)
+            }, 50)
         }
     }
 
@@ -64,22 +64,9 @@ const TicketsBlock = () => {
         changeAnimationBtnLogin()
         if (!isAuth) return
         // if(!validation) return;
-
-        const token = localStorage.getItem('token')
         if (event == null) return;
-        fetch(`http://localhost:8080/user/tickets/${userDetails.username}/${event['id']}`, {
-            method: 'put',
-            headers: {
-                'Authorization': token,
-                'Content-Type': 'application/json;charset=utf-8'
-            }
-        })
-            .then(data => data.json())
-            .then((data) => {
-                let tickets = [...userDetails.tickets, data]
-                dispatch({type: ADD_TICKET, payload: tickets})
-            })
-            .catch(e => e.message)
+
+        dispatch(addTicket(userDetails, event))
     }
 
     return (
