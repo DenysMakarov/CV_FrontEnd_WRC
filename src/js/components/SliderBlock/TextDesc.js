@@ -2,13 +2,32 @@ import React, {Fragment, useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 
 
-const TextDesc = ({clearAnimation}) => {
+const TextDesc = () => {
     const {numberOfSlide, listEvents, error} = useSelector(state => state.numberOfSlideReducer)
     const {loading} = useSelector(state => state.IsLoadingEventsReducer)
+    const [styleText, setStyleText] = useState({animationName : "text_slider_appear"})
+    //  had to created 'desc' => to set line animation
+    const [desc, setDesc] = useState({
+        title: '',
+        titleDesc: '',
+        date: ''
+    })
 
     useEffect(() => {
-        clearAnimation().map(el => el.style.animationName = "text_slider_appear")
-    }, [numberOfSlide])
+        setStyleText({animationName : "none"})
+        setTimeout(() => {
+            setStyleText({animationName : "text_slider_appear"})
+            if(listEvents.length){
+                setDesc({
+                    title:  listEvents[numberOfSlide].title,
+                    titleDesc:  listEvents[numberOfSlide].titleDesc,
+                    date:  listEvents[numberOfSlide].date
+                })
+            }
+
+        }, 50)
+    }, [numberOfSlide, listEvents.length])
+
 
     return (
         (loading) ? <h1>LOADING...</h1>
@@ -16,18 +35,19 @@ const TextDesc = ({clearAnimation}) => {
                 :
                 <Fragment>
                     <div className="text_description_block">
-                        <h5 className="text_description_slide text_description_slide_top">{listEvents[numberOfSlide].titleDesc}</h5>
-                        <h5 className="text_description_slide text_description_slide_center">Strategy decision <br/>
-                            {new Date(listEvents[numberOfSlide].date).getDate()}
+
+                        <h5 style={styleText} className={`text_description_slide text_description_slide_top `}>{desc.titleDesc}</h5>
+                        <h5 style={styleText} className={`text_description_slide text_description_slide_center `}>Strategy decision <br/>
+                            {new Date(desc.date).getDate()}
                             <span
-                                style={{color: "red"}}> / </span> {new Date(listEvents[numberOfSlide].date).getMonth() + 1}
-                            <span style={{color: "red"}}> / </span> {new Date(listEvents[numberOfSlide].date).getFullYear()}<br/>
+                                style={{color: "red"}}> / </span> {new Date(desc.date).getMonth() + 1}
+                            <span style={{color: "red"}}> / </span> {new Date(desc.date).getFullYear()}<br/>
                         </h5>
-                        <h1 className="text_description_slide text_description_slide_bottom">{listEvents[numberOfSlide].title}</h1>
+                        <h1 style={styleText} className={`text_description_slide text_description_slide_bottom `}>{desc.title}</h1>
                         {/*<BtnEvent/>*/}
                     </div>
                     <h1 id="text_description_slide_behind"
-                        className="text_description_slide_behind">{listEvents[numberOfSlide].title}</h1>
+                        className={`text_description_slide_behind `}>{desc.title}</h1>
                 </Fragment>
     )
 }

@@ -41,10 +41,11 @@
   background-size: cover;
   animation-name: first_animate_Slider;
   animation-fill-mode: forwards;
-  animation-duration: 1s;
+  animation-duration: .5s;
   opacity: 0;
-  animation-delay: 1s;
+  animation-delay: .5s;
   z-index: 100;
+  //display: none;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -65,8 +66,8 @@
   background-position: right;
   animation-name: "first_animate_prevSlider";
   animation-fill-mode: forwards;
-  animation-duration: .5s;
-  animation-delay: .5s;
+  animation-duration: .1s;
+  animation-delay: .3s;
   left: -50%;
   z-index: 100;
   background-size: cover;
@@ -155,24 +156,24 @@
 }
 
 .text_description_slide {
-  //border: 1px solid red;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: #ffffff;
   text-align: left;
-  animation-name: text_slider_appear;
+  //animation-name: text_slider_appear;
   animation-fill-mode: forwards;
   animation-duration: .5s;
   animation-timing-function: ease-in;
-  //animation-delay: .1s;
   opacity: 0;
-  //transition: .5s;
+  //display: none;
 
   @media all and (min-width: 1920px) {
     font-size: 30px;
   }
 }
+
+
 
 .text_description_slide_hide {
   opacity: 0;
@@ -252,7 +253,7 @@
 
 .text_description_slide_bottom {
   margin-top: 20px;
-  animation-delay: .4s;
+  //animation-delay: .4s;
   font-size: 50px;
 
   @media screen and (min-width: 1920px) {

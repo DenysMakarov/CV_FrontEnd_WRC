@@ -25,12 +25,10 @@ class Arrows extends React.Component {
 
     prevSlide = () => {
         this.props.prevSlide()
-        this.props.clearAnimation()
     }
 
     nextSlide = () => {
         this.props.nextSlide()
-        this.props.clearAnimation()
     }
 
     render() {

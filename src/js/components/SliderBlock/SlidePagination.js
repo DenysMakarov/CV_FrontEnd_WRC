@@ -1,28 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {setSlide} from "../../redux/actions/actions";
 
-const SlidePagination = ({clearAnimation}) => {
+const SlidePagination = () => {
     const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        if (listEvents.length) setActivePag()
-    }, [numberOfSlide, listEvents.length])
-
 
     const setSlider = (e) => {
         if (+e.target.dataset.id !== numberOfSlide) {
             dispatch(setSlide(+e.target.dataset.id))
-            clearAnimation()
         }
     }
 
-    const setActivePag = () => {
-        const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
-        arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
-        arrPag[numberOfSlide].classList.add("pagination_panel_number_active")
-    }
+    const cls = (index) => (index == numberOfSlide) ? 'pagination_panel_number pagination_panel_number_active' : 'pagination_panel_number'
 
     return (
         <div>
@@ -34,7 +24,7 @@ const SlidePagination = ({clearAnimation}) => {
                         onClick={setSlider}
                         data-id={index}
                         style={{height: 100 / listEvents.length + "%"}}
-                        className="pagination_panel_number">{"0" + (index + 1)}</li>
+                        className={cls(index)}>{"0" + (index + 1)}</li>
                 ))
                 }
             </ul>

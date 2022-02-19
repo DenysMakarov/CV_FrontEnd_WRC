@@ -5,14 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Arrow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/Slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/Slides.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/db/dataBase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_slide_paginatuon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_slide_paginatuon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,7 @@
       <workItem from="1645001954044" duration="8931000" />
       <workItem from="1645023578613" duration="8787000" />
       <workItem from="1645111054082" duration="6803000" />
-      <workItem from="1645124696511" duration="46185000" />
+      <workItem from="1645124696511" duration="53181000" />
     </task>
     <servers />
   </component>
