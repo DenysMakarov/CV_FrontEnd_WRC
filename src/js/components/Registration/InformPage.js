@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 export default function InformPage () {
     return (
         <div id="informPage_cover" className="informPage_cover">

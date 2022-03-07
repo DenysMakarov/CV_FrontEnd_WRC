@@ -1,5 +1,4 @@
 import React from 'react';
-
 import MenuTextBtn from "./MenuTextBtn";
 import NavBtnBlock from "./NavBtnBlock";
 import LeftMenu from "./LeftMenu";

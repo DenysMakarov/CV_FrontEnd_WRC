@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CongratulationsBlock = ({styleBlockCongratulations, hideCongratulationsBlock, textDesc={textDesc} }) => {
+const CongratulationsBlock = ({styleBlockCongratulations, hideCongratulationsBlock, textDesc }) => {
     return (
         <div style={{animationName: styleBlockCongratulations}} className='congratulations-block'>
             <p>

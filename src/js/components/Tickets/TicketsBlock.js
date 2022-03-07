@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector} from "react-redux";
-// import {addTicket, setSlide} from "../../redux/actions/actions";
 import UserTicketsBlock from "./UserTiketsBlock";
 import EventNavigation from "./EventNavigation";
 import Form from "./Form";
-import {ADD_TICKET, SET_EVENTS} from "../../types";
 import {setSlide} from "../../redux/actions/eventsActions";
 import {addTicket} from "../../redux/actions/ticketsActions";
-// import {addTicket} from "../../redux/actions/actions";
 
 const TicketsBlock = () => {
     const [event, setEvent] = useState(null)
-    const [eventsId, setEventId] = useState(0)
+    const [eventId, setEventId] = useState(0)
     const [owner, setOwner] = useState({
         firstName: "",
         secondName: "",

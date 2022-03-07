@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {compose, createStore, applyMiddleware} from "redux";
@@ -7,7 +7,6 @@ import thunk from "redux-thunk";
 //------------------------------
 import {rootReducer} from "./redux/reducers/rootReducer";
 import App from "./App";
-import Context from "react-redux/lib/components/Context";
 
 const store = createStore(rootReducer, compose(
     applyMiddleware(thunk),

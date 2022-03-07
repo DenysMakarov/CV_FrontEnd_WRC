@@ -1,5 +1,5 @@
 import React from "react"
-import {portfolioData} from "../../db/dataBase";
+import {portfolioData} from "../../utils/constants";
 
 function goToLink () {
     window.location = portfolioData.portfolio[0].link

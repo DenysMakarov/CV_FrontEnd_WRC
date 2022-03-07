@@ -1,6 +1,6 @@
 import React from 'react'
-import {eventInfo} from "../../db/dataBase";
 import EventsDesc from "./EventsDesc";
+import {eventInfo} from "../../utils/constants";
 
 const Events = () => {
 

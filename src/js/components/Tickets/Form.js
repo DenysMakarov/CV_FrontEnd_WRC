@@ -1,9 +1,6 @@
-import React, {Fragment} from 'react';
-import {eventInfo} from "../../db/dataBase";
+import React from 'react';
 import Input from "./Input";
 import Btn from "./Btn";
-import {useSelector} from "react-redux";
-import Events from "../Events/Events";
 import EventDesc from "./EventDesc";
 
 const Form = ({firstName, secondName, phoneNumber, getValueFromInput, byTicketFun, handleValidation}) => {

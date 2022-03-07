@@ -1,6 +1,5 @@
 import React, {Fragment} from "react"
 
-
 class BackgroundText extends React.Component{
     constructor(props) {
         super(props);

@@ -8,7 +8,6 @@ import Slides from "./Slides";
 
 const SliderBlock = () => {
     const {numberOfSlide, listEvents, error} = useSelector(state => state.numberOfSlideReducer)
-    const {loading} = useSelector(state => state.IsLoadingEventsReducer)
     const [prevSlide, setPrevSlide] = useState(0)
     const [styleOfRound, setStyleOfRound] = useState({})
 

@@ -2,8 +2,6 @@ import React from 'react';
 
 const BtnRemoveTicket = ({dataNumber, removeTicketNotice, btnClassActive}) => {
 
-
-
     return (
         <button data-id={dataNumber}
                 onClick={removeTicketNotice}

@@ -2,38 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/redux/actions/eventsActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/redux/actions/isAuthActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/redux/actions/isLoaddingActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/redux/actions/userActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Events/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/BackgroundText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/BackgroundText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/GameBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/GameBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/Portfolio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/InformPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/InformPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/db/dataBase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/DB/db2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/OOP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/RegEx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/api _fetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/async_await_fetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/challenge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/destructor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/get_post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/localStorage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/promise.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/rec_zam.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/other/spread_rest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/eventsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/reducers/eventsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/json_server.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +141,7 @@
       <workItem from="1646043226947" duration="2717000" />
       <workItem from="1646136336748" duration="620000" />
       <workItem from="1646210186987" duration="2031000" />
-      <workItem from="1646658812078" duration="2636000" />
+      <workItem from="1646658812078" duration="5645000" />
     </task>
     <servers />
   </component>

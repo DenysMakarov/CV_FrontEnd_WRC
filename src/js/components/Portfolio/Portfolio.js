@@ -1,10 +1,10 @@
 import React from "react"
 import BackgroundText from "./BackgroundText";
-import {portfolioData} from "../../db/dataBase";
 import GameBlock from "./GameBlock";
 import SliderMS from "./SliderMS";
 import SneakersShopBlock from "./SneakersShopBlock";
 import Restaurant from "./Restaurant";
+import {portfolioData} from "../../utils/constants";
 
 
 class Portfolio extends React.Component {
@@ -37,7 +37,6 @@ class Portfolio extends React.Component {
             <SneakersShopBlock/>,
             <Restaurant/>,
         ]
-
 
         return (
             <div className="portfolio_container">
