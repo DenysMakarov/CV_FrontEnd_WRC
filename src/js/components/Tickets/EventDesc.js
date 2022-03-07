@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {setSlide} from "../../redux/actions/actions";
+// import {setSlide} from "../../redux/actions/actions";
 
 const EventDesc = () => {
     const {listEvents, numberOfSlide} = useSelector(state => state.numberOfSlideReducer)

@@ -1,13 +1,15 @@
 import React, {useContext, useEffect, useState} from "react"
 import {connect, useDispatch, useSelector} from "react-redux";
 import PropTypes from "prop-types"
-import {addUserAction, logIn, removeTicket, removeTicketAction} from "../../redux/actions/actions";
+// import {addUserAction, logIn, removeTicket, removeTicketAction} from "../../redux/actions/actions";
 import Ticket from "./Ticket";
 import NoticeRemoveBlock from "./NoticeRemoveBlock";
 
 import ArrowsTicketsBlock from "./ArrowsTicketsBlock";
 import {Link} from "react-router-dom";
 import {ticketsReducer} from "../../redux/reducers/ticketsReducer";
+import {removeTicket} from "../../redux/actions/ticketsActions";
+// import {removeTicket} from "../../redux/actions/actions";
 
 
 const UserTicketsBlock = ({animationStyle}) => {

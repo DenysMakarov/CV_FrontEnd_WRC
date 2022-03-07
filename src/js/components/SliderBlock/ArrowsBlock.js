@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
 import {connect} from "react-redux";
-import {nextSlide, prevSlide} from "../../redux/actions/actions";
+// import {nextSlide, prevSlide} from "../../redux/actions/actions";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types"
 import Arrow from "./Arrow";
+import {nextSlide, prevSlide} from "../../redux/actions/eventsActions";
 
 
 const mapStateToProps = (state) => {

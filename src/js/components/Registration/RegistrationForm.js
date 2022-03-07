@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
-import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
+// import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
 import MyInput from "./MyInput";
 import {test} from "npm/lib/utils/module-name";
 import CongratulationsBlock from "./CongratulationsBlock";

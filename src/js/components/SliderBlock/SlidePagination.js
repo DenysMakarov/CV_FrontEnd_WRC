@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {setSlide} from "../../redux/actions/actions";
+import {setSlide} from "../../redux/actions/eventsActions";
+
 
 const SlidePagination = () => {
     const {numberOfSlide, listEvents} = useSelector(state => state.numberOfSlideReducer)

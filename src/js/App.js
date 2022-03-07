@@ -4,15 +4,18 @@ import {useDispatch, useSelector} from "react-redux";
 import Navigation from "./components/Navigation/Navigation"
 import Routes from "./Routes";
 import {SET_EVENTS} from "./types";
-import {
-    addUserAction,
-    authUser,
-    getEvents,
-    isErrorFalse,
-    isErrorTrue,
-    loadingEventsDone,
-    logIn
-} from "./redux/actions/actions";
+import {authUser} from "./redux/actions/userActions";
+import {getEvents} from "./redux/actions/eventsActions";
+// import {getEvents} from "./redux/actions/actions";
+// import {
+//     addUserAction,
+//     authUser,
+//     getEvents,
+//     isErrorFalse,
+//     isErrorTrue,
+//     loadingEventsDone,
+//     logIn
+// } from "./redux/actions/actions";
 
 
 
@@ -101,7 +104,6 @@ const App = () => {
                     {/*        <Routes/>*/}
                     {/*    </Fragment>*/}
                     {/*}*/}
-
 
                         <Fragment>
                             <Navigation/>
