@@ -138,7 +138,6 @@ export const portfolioData = {
     portfolio: [
         {
             nameOfWork: "Game",
-            // link: "https://1985makarovdenis1985.github.io/New_CV_Game/dist/index.html",
             link: "https://denysmakarov.github.io/New_CV_Game/dist/index.html",
         },{
             nameOfWork: "Magic Slider",

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/Restaurant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/SneakersShopBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/SneakersShopBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +133,7 @@
       <workItem from="1646210186987" duration="2031000" />
       <workItem from="1646658812078" duration="5645000" />
       <workItem from="1673209940313" duration="7330000" />
-      <workItem from="1673220707026" duration="307000" />
+      <workItem from="1673220707026" duration="550000" />
     </task>
     <servers />
   </component>

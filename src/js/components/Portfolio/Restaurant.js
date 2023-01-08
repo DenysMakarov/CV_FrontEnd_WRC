@@ -1,7 +1,8 @@
 import React from "react"
+import {portfolioData} from "../../utils/constants";
 
 function goToLink () {
-    window.location = "https://1985makarovdenis1985.github.io/New_CV_restaurant/dist/"
+    window.location = portfolioData.portfolio[3].link
 }
 
 function Restaurant () {
