@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +62,7 @@
       <recent name="$PROJECT_DIR$/src/js/components/Tickets" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/js/components/Tickets">
       <method v="2" />
     </configuration>
@@ -95,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.UserTiketsBlock.js" />
       </list>
     </recent_temporary>
@@ -138,7 +131,8 @@
       <workItem from="1646136336748" duration="620000" />
       <workItem from="1646210186987" duration="2031000" />
       <workItem from="1646658812078" duration="5645000" />
-      <workItem from="1673209940313" duration="6664000" />
+      <workItem from="1673209940313" duration="7330000" />
+      <workItem from="1673220707026" duration="307000" />
     </task>
     <servers />
   </component>

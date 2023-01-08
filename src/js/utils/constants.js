@@ -138,18 +138,19 @@ export const portfolioData = {
     portfolio: [
         {
             nameOfWork: "Game",
-            link: "https://1985makarovdenis1985.github.io/New_CV_Game/dist/index.html",
+            // link: "https://1985makarovdenis1985.github.io/New_CV_Game/dist/index.html",
+            link: "https://denysmakarov.github.io/New_CV_Game/dist/index.html",
         },{
             nameOfWork: "Magic Slider",
             link: "http://www.codester.com/index.php?url=items/preview/20183/magicslider-javascript-css-html",
 
         },{
             nameOfWork: "Sneakers Store",
-            link: "https://1985makarovdenis1985.github.io/New_CV_SneakersShop/dist/index.html",
+            link: "https://denysmakarov.github.io/New_CV_SneakersShop/dist/index.html",
 
         },{
             nameOfWork: "Restaurant",
-            link: "https://1985makarovdenis1985.github.io/New_CV_restaurant/dist/",
+            link: "https://denysmakarov.github.io/New_CV_restaurant/dist/",
         },
     ]
 }
