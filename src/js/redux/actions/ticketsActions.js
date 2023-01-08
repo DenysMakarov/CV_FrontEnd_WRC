@@ -10,7 +10,9 @@ export function addTicketAction(ticket) {
 export const addTicket = (userDetails, event) => (dispatch) => {
     const token = localStorage.getItem('token')
 
-    fetch(`http://localhost:8080/user/tickets/${userDetails.username}/${event['id']}`, {
+
+
+    fetch(`http://localhost:8080/user/tickets/${userDetails.login}/${event['id']}`, {
         method: 'put',
         headers: {
             'Authorization': token,
@@ -19,6 +21,7 @@ export const addTicket = (userDetails, event) => (dispatch) => {
     })
         .then(data => data.json())
         .then((data) => {
+            console.log(data)
             dispatch(addTicketAction(data))
         })
         .catch(e => e.message)

@@ -53,6 +53,11 @@
   line-height: 15px;
   bottom: 8%;
   left: 10%;
+
+  @media all and (max-width: 1366px) {
+    bottom: 18%;
+    left: 20%;
+  }
 }
 
 .btn-remove-hide{

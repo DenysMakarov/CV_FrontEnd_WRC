@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import UserTicketsBlock from "./UserTiketsBlock";
 import EventNavigation from "./EventNavigation";
 import Form from "./Form";
@@ -38,7 +38,8 @@ const TicketsBlock = () => {
 
     const handleValidation = () => {
         const {firstName, secondName, phoneNumber} = owner;
-        setValidation((!(!firstName || !secondName || !phoneNumber || !event )))
+        return !(!firstName || !secondName || !phoneNumber || !event)
+        // setValidation(!(!firstName || !secondName || !phoneNumber || !event))
     }
 
     const createTicket = (e) => {
@@ -57,14 +58,16 @@ const TicketsBlock = () => {
             }, 50)
         }
     }
-
     const buyTicket = (e) => {
         e.preventDefault();
-        handleValidation(e);
         changeAnimationBtnLogin()
-        if (!isAuth) return
+
+        const valid = handleValidation()
+        console.log(validation)
+
+        if (!isAuth || !valid || event == null) return
         // if(!validation) return;
-        if (event == null) return;
+        // if (event == null) return;
 
         dispatch(addTicket(userDetails, event))
     }

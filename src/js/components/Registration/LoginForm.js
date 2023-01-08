@@ -62,7 +62,7 @@ const LoginForm = () => {
                     ?
                     <React.Fragment>
                         <span className="name_of_block">ACCOUNT</span>
-                        <label htmlFor="login_email">Email</label>
+                        <label htmlFor="login_email">Login</label>
                         <input id="login_email" onChange={e => setAuth({...auth, login: e.target.value})}
                                value={auth.login}
                                className="input_panel input_login" name="email" type="text"/>

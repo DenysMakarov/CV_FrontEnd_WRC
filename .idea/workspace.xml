@@ -3,29 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Events/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/BackgroundText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/BackgroundText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/GameBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/GameBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Portfolio/Portfolio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/InformPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/InformPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/db/dataBase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/json_server.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +36,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Events/Events.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/MyInput.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/ContactsBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/BodyInfo.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Contacts/ContactsBlock.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/js/components/Registration/MyInput.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="23k3ODmn8no3ARmnKaKXfNj5tzT" />
   <component name="ProjectViewState">
@@ -84,8 +69,18 @@
       <recent name="$PROJECT_DIR$/src/js/components/Tickets" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/js/components/Tickets">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -100,6 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.UserTiketsBlock.js" />
       </list>
@@ -142,6 +138,7 @@
       <workItem from="1646136336748" duration="620000" />
       <workItem from="1646210186987" duration="2031000" />
       <workItem from="1646658812078" duration="5645000" />
+      <workItem from="1673209940313" duration="6664000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux";
 import Ticket from "./Ticket";
 import NoticeRemoveBlock from "./NoticeRemoveBlock";
@@ -15,12 +15,17 @@ const UserTicketsBlock = ({animationStyle}) => {
     const [removeNotice, setRemoveNotice] = useState(false)
     const dispatch = useDispatch();
 
+    useEffect(() => {
+
+    }, [userDetails])
+
 
     const nextSlide = () => {
         if (num === tickets.length - 1) setNum(0)
         else setNum(num + 1)
 
     }
+
     const prevSlide = () => {
         if (num === 0) setNum(tickets.length - 1)
         else setNum(num - 1)
@@ -69,17 +74,20 @@ const UserTicketsBlock = ({animationStyle}) => {
                         (tickets.length) ?
                             <div>
                                 {tickets.map((el, index) => (
-                                    <Ticket
-                                        key={el.id}
-                                        dataId={index}
-                                        dataNumber={el.id}
-                                        el={el}
-                                        index={index}
-                                        numberOfSlide={num}
-                                        cls={active(index, num)}
-                                        btnClassActive={showBtnClass(index, num)}
-                                        removeTicketNotice={showRemoveNotice}
-                                    />
+                                    <div key={el.id + index}>
+                                        <Ticket
+                                            key={el.id}
+                                            dataId={index}
+                                            dataNumber={el.id}
+                                            el={el}
+                                            index={index}
+                                            numberOfSlide={num}
+                                            cls={active(index, num)}
+                                            btnClassActive={showBtnClass(index, num)}
+                                            removeTicketNotice={showRemoveNotice}
+                                        />
+                                    </div>
+
                                 ))}
                                 <ArrowsTicketsBlock prevSlide={prevSlide} nextSlide={nextSlide}/>
                             </div>
