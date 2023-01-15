@@ -1,5 +1,5 @@
-import "./scss/main.scss"
-import "./js/main"
+import "./assets/styles/main.scss"
+import "./main"
 
 
 
