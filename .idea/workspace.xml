@@ -2,171 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41b8e4d-b3ee-4c16-a5de-9c84ccc4acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useInterval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useScroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/configureStore/configureStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/stringUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Lobster_Two/LobsterTwo-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Lobster_Two/LobsterTwo-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Lobster_Two/LobsterTwo-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Lobster_Two/LobsterTwo-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Lobster_Two/LobsterTwo-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Lobster_Two/LobsterTwo-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Lobster_Two/LobsterTwo-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Lobster_Two/LobsterTwo-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Lobster_Two/OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Lobster_Two/OFL.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/SpaceGrotesk-Bold.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/SpaceGrotesk-Light.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/SpaceGrotesk-Medium.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/SpaceGrotesk-Regular.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Bamaco.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Bamaco.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Bamaco_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Bamaco_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_kamaz_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_kamaz_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_kamaz_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_kamaz_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_kamaz_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_kamaz_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_kamaz_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_kamaz_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_kamaz_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_kamaz_5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_rally_toyo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_rally_toyo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_renault_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_renault_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Dakar_renault_2jpg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Dakar_renault_2jpg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_ferarry_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_ferarry_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_ferarry_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_ferarry_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_infinity_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_infinity_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_infinity_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_infinity_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_maclaren_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_maclaren_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_maclaren_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_maclaren_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/f1_title.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/f1_title.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/bg_game.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/bg_game.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/game/card_8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/game/card_8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/iconBG.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/iconBG.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/loading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/loading.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mark.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/mark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/pilot_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/pilot_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/pilot_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/pilot_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/qr_code.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/qr_code.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally-slider-trophy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally-slider-trophy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_c3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_c3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_c3_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_c3_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_c3_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_c3_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_c3_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_c3_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_c3_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_c3_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_ford_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_ford_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_ford_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_ford_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_ford_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_ford_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_subaru_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_subaru_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rally_subaru_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/rally_subaru_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/restaurant/restaurant.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/restaurant/restaurant.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/restaurant/restaurant_iphone.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/restaurant/restaurant_iphone.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/slider/slider.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/slider/slider.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/sneakers/snk_full.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/sneakers/snk_full.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/sneakers/snk_iphone.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/sneakers/snk_iphone.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/ticketBg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/ticketBg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Contacts/BodyInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Contacts/BodyInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Contacts/ContactsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Contacts/ContactsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Contacts/FooterInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Contacts/FooterInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Contacts/HeaderInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Contacts/HeaderInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Events/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Events/EventsDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Events/EventsDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Events/PilotBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Events/PilotBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/FontAwesomeIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/FontAwesomeIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenuBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/LeftMenuBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/LeftMenuBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/LeftMenuBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/MenuList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/MenuTextBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/MenuTextBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/NavBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/NavBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/NavBtnBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/NavBtnBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/BackgroundText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/BackgroundText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/GameBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/GameBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/Portfolio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/Restaurant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/SliderMS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/SliderMS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Portfolio/SneakersShopBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Portfolio/SneakersShopBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/CongratulationsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/CongratulationsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/InformPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/InformPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/MyInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/MyInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/RegistrationPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/RegistrationPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Registration/validationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Registration/validationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/Arrow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/ArrowsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/ArrowsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/BtnEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/BtnEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/RoundAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/RoundAnimation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SlidePagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/SlidePagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/SliderBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/SliderBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/Slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/Slides.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/SliderBlock/TextDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/SliderBlock/TextDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/ArrowTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/ArrowTicket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/ArrowsTicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/ArrowsTicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Btn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/Btn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/BtnRemoveTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/BtnRemoveTicket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/EventDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/EventNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/EventNavigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/NoticeRemoveBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/NoticeRemoveBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TickedDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/TickedDesc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/TicketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/TicketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Tickets/UserTiketsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmps/Tickets/UserTiketsBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/eventsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/eventsActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/isAuthActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/isAuthActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/isLoaddingActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/isLoaddingActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/ticketsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/ticketsActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/eventsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/eventsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/isAuthReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/isAuthReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/isLoadingEventsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/isLoadingEventsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/mainMenuReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/mainMenuReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/ticketsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/ticketsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/userDetailsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/userDetailsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/usersReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/redux/reducers/validationFormReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/validationFormReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_img.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/_img.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_keyframes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/_keyframes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_main_container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/_main_container.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/contacts/_body_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/contacts/_body_contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/contacts/_contacts_full.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/contacts/_contacts_full.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/contacts/_footer_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/contacts/_footer_contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/contacts/_header_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/contacts/_header_contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/events/events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/events/events.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/navigation/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/navigation/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/navigation/_submenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/navigation/_submenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/portfolio/portfolioFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/portfolio/portfolioFull.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/portfolio/works.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/portfolio/works.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/registrationPanel/registration.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/registrationPanel/registration.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_full_slider_block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/slider_block/_full_slider_block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_slide_paginatuon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/slider_block/_slide_paginatuon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/slider_block/_sliderBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/slider_block/_sliderBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_main_tickets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_main_tickets.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_notice_block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_notice_block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_ticket_options.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_ticket_options.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_tickets_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_slide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_tickets_slide.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/modules/tickets/_tickets_which_allredy_exist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/modules/tickets/_tickets_which_allredy_exist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/SpaceGrotesk-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/spacegrotesk-boldSpaceGrotesk.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/spacegrotesk-boldSpaceGrotesk.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/Bamaco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/Bamaco_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/Dakar_kamaz_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/Dakar_rally_toyo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/bg_game.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/card_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/f1_maclaren_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/f1_maclaren_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/iconBG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/pilot_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/pilot_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/qr_code.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_c3_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_c3_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_c3_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_c3_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_ford_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/rally_subaru_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/restaurant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/restaurant_iphone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/slider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/snk_full.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/snk_iphone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/ticketBg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +109,7 @@
       <recent name="$PROJECT_DIR$/src/js/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="UserTiketsBlock.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cmps/Tickets/UserTiketsBlock.js" working-dir="$PROJECT_DIR$/src/cmps/Tickets">
       <method v="2" />
     </configuration>
@@ -238,6 +118,16 @@
       <command value="run" />
       <scripts>
         <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -255,6 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
         <item itemvalue="Node.js.UserTiketsBlock.js" />
@@ -300,7 +191,7 @@
       <workItem from="1646658812078" duration="5645000" />
       <workItem from="1673209940313" duration="7330000" />
       <workItem from="1673220707026" duration="888000" />
-      <workItem from="1673801116747" duration="2181000" />
+      <workItem from="1673801116747" duration="6906000" />
     </task>
     <servers />
   </component>
